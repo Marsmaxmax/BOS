@@ -112,7 +112,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Planets
 - [ ] Oxygen System
 - [ ] Rockets
-    -[ ] Spacestations
+    - [ ] Spacestations
 
 See the [open issues](https://github.com/Marsmaxmax/BOS/issues) for a full list of proposed features (and known issues).
 
