@@ -6,7 +6,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class CreativeTab {
-    public static final CreativeModeTab BOS = new CreativeModeTab("Beyond Our Stars") {
+    public static final CreativeModeTab BOS = new CreativeModeTab("bostab") {
         @Override
         
         public ItemStack makeIcon() {
