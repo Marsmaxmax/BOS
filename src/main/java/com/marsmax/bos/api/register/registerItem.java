@@ -21,7 +21,7 @@ public class registerItem {
 
     public static final RegistryObject<Item> PLANET_CHIP = ITEMS.register("planet_chip", () -> new Item(new Item.Properties().tab(CreativeTab.BOS)));
 
-    public static final RegistryObject<Item> SATELITE_CHIP = ITEMS.register("satelite_chip", () -> new Item(new Item.Properties().tab(CreativeTab.BOS)));
+    public static final RegistryObject<Item> SATELLITE_CHIP = ITEMS.register("satellite_chip", () -> new Item(new Item.Properties().tab(CreativeTab.BOS)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

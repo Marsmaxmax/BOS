@@ -29,6 +29,53 @@ public class registerBlock {
                                                                                 .sound(SoundType.SAND))
                                                                 , CreativeTab.BOS);
 
+    public static final RegistryObject IRIDIUM_BLOCK = registerBlock("iridium_block", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeTab.BOS);
+
+    public static final RegistryObject TIN_BLOCK = registerBlock("tin_block", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeTab.BOS);
+
+
+    public static final RegistryObject TITANIUM_BLOCK = registerBlock("titanium_block", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeTab.BOS);
+
+
+    public static final RegistryObject IRIDIUM_COIL = registerBlock("iridium_coil", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeTab.BOS);
+
+    public static final RegistryObject TIN_COIL = registerBlock("tin_coil", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeTab.BOS);
+
+
+    public static final RegistryObject TITANIUM_COIL = registerBlock("titanium_coil", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeTab.BOS);
+
+
+
 
     //Registers Blocks as a Block
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
