@@ -1,0 +1,9 @@
+{
+    "item.bos.asteroid_chip" : "Asteroid Chip",
+    "item.bos.satelite_chip" : "Satellite Chip",
+    "item.bos.station_chip" : "Station Chip",
+    "item.bos.planet_chip" : "Planet Chip",
+    "item.bos.elevator_chip" : "Elevator Chip",
+    "block.bos.launchpad": "Launchpad",
+    "itemGroup.bostab" : "Beyond Our Stars"
+}
