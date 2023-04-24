@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Marsmaxmax/Mm-s-Additional-Structures">
+  <a href="https://github.com/Marsmaxmax/BOS">
   </a>
 
 <h3 align="center">Marsmax's Additional Structures</h3>
@@ -20,14 +20,14 @@
   <p align="center">
     A datapack with some really cool structures like Jungle Villages
     <br />
-    <a href="https://github.com/Marsmaxmax/Mm-s-Additional-Structures"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Marsmaxmax/BOS"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Marsmaxmax/Mm-s-Additional-Structures">View Demo</a>
+    <a href="https://github.com/Marsmaxmax/BOS">View Demo</a>
     ·
-    <a href="https://github.com/Marsmaxmax/Mm-s-Additional-Structures/issues">Report Bug</a>
+    <a href="https://github.com/Marsmaxmax/BOS/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Marsmaxmax/Mm-s-Additional-Structures/issues">Request Feature</a>
+    <a href="https://github.com/Marsmaxmax/BOS/issues">Request Feature</a>
   </p>
 </div>
 
@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-MM's Additional Structures Datapack for Minecraft is a Datapack with some Structures that make Minecraft more interesting
+Beyond the Stars is a Minecraft Space exploration mod, inspired by Advanced Rocketry
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -73,31 +73,22 @@ MM's Additional Structures Datapack for Minecraft is a Datapack with some Struct
 ### Built With
 
 * [Visual Studio Code](https://code.visualstudio.com)
-
+* [Minecraft Forge Mdk](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.19.2.html)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-You need just two things:
-
+First up you need to gather resources, craft and fly to Space!
 ### Prerequisites
-
-1. Download the Zip File 
-    1.1 Klick "Code" A Dropdown Window will appear 
-    1.2 Select "Download Zip"
-2. And of corse: Minecraft (Only Java Edition)
-
+Download it with the Curseforge App
 ### Installation
-
-1. Start Minecraft 
-2. Klick "Singelplayer" and then "Create new World"
-3. Then click "Datapack"
-4. A folder opens drag and drop the Zip File in the folder
-5. Click Create new World
-6. Done!
+You can also build it with gradle yourself
+So you call yourself a developer, hu?
+1. Download the Zip file and extract it
+2. In the extracted folder run "gradlew build"
+3. Put the .jar file to your other mods
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -117,12 +108,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Blocks & Items
+- [ ] Planets
+- [ ] Oxygen System
+- [ ] Rockets
+    -[ ] Spacestations
 
-See the [open issues](https://github.com/Marsmaxmax/Mm-s-Additional-Structures/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Marsmaxmax/BOS/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -160,7 +152,7 @@ Distributed under the MIT License.
 
 winterrmaxl@gmail.com
 
-Project Link: [https://github.com/Marsmaxmax/Mm-s-Additional-Structures](https://github.com/Marsmaxmax/Mm-s-Additional-Structures)
+Project Link: [https://github.com/Marsmaxmax/BOS](https://github.com/Marsmaxmax/BOS)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
