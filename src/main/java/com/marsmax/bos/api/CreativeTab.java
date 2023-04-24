@@ -10,7 +10,7 @@ public class CreativeTab {
         @Override
         
         public ItemStack makeIcon() {
-            return new ItemStack(registerItem.TESTITEM.get());
+            return new ItemStack(registerItem.ASTEROID_CHIP.get());
         }
     };
 }
