@@ -26,6 +26,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
+import com.marsmax.bos.api.register.registerBlock;
 import  com.marsmax.bos.api.register.registerItem;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -40,6 +41,7 @@ public class Bos
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         registerItem.register(modEventBus);
+        registerBlock.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

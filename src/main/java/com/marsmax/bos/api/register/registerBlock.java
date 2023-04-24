@@ -1,8 +1,13 @@
 package com.marsmax.bos.api.register;
 
+import java.util.function.Supplier;
+
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.client.gui.screens.CreateBuffetWorldScreen;
 import net.minecraft.world.item.BlockItem;
 
 import com.marsmax.bos.Bos;
@@ -16,7 +21,26 @@ import net.minecraftforge.registries.RegistryObject;
 public class registerBlock {
     public static final DeferredRegister<Block> BLOCKS  = DeferredRegister.create(ForgeRegistries.BLOCKS, Bos.MODID);
 
-    public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("testblock", () -> new Block(new Block.Properties.create(Material.STONE)));
+    public static final RegistryObject LAUNCHPAD = registerBlock("launchpad", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND))
+                                                                , CreativeModeTab.TAB_REDSTONE);
+
+
+    //Registers Blocks as a Block
+    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
+        return toReturn;
+
+    }
+    //Registers Blocks as an ItemBlock
+    public static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
+        registerItem.ITEMS.register(name, () -> new BlockItem(block.get(),
+        new Item.Properties().tab(tab)));
+    }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

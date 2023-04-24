@@ -1,3 +1,5 @@
 {
-    "item.bos.testitem" : "Test Item"
+    "item.bos.testitem" : "Test Item",
+    "item.bos.launchpad": "Launchpad",
+    "block.bos.launchpad": "Launchpad"
 }
