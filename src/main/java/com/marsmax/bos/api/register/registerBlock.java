@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screens.CreateBuffetWorldScreen;
 import net.minecraft.world.item.BlockItem;
 
 import com.marsmax.bos.Bos;
+import com.marsmax.bos.api.CreativeTab;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.eventbus.api.IEventBus;
