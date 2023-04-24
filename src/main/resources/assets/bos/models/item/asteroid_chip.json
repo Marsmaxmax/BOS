@@ -1,6 +1,0 @@
-{
-    "parent":"bos:item/generate",
-    "textures":{
-        "layer0": "bos:item/asteroid_chip"
-    }
-}
