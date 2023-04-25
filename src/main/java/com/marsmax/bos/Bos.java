@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.item.CreativeModeTab;    
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +27,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
+import com.marsmax.bos.api.CreativeTab;
 import com.marsmax.bos.api.register.registerBlock;
 import  com.marsmax.bos.api.register.registerItem;
 
@@ -45,7 +47,13 @@ public class Bos
 
         MinecraftForge.EVENT_BUS.register(this);
 
+        modEventBus.addListener(this::addCreativeTab);
+    }
 
-        
+    private void addCreativeTab(CreativeModeTab.BuildContents event) {
+        if(event.getTab() == CreativeTab.BOS_TAB) {
+            event.accept(registerItem.ASTEROID_CHIP);
+            
+        }
     }
 }

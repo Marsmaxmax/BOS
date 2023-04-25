@@ -26,68 +26,61 @@ public class registerBlock {
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeModeTab.TAB_REDSTONE);
+                                                                                .sound(SoundType.SAND)));
 
     public static final RegistryObject IRIDIUM_BLOCK = registerBlock("iridium_block", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeTab.BOS);
+                                                                                .sound(SoundType.SAND)));
 
     public static final RegistryObject TIN_BLOCK = registerBlock("tin_block", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeTab.BOS);
+                                                                                .sound(SoundType.SAND)));
 
 
     public static final RegistryObject TITANIUM_BLOCK = registerBlock("titanium_block", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeTab.BOS);
+                                                                                .sound(SoundType.SAND)));
 
 
     public static final RegistryObject IRIDIUM_COIL = registerBlock("iridium_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeTab.BOS);
+                                                                                .sound(SoundType.SAND)));
 
     public static final RegistryObject TIN_COIL = registerBlock("tin_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeTab.BOS);
+                                                                                .sound(SoundType.SAND)));
 
 
     public static final RegistryObject TITANIUM_COIL = registerBlock("titanium_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND))
-                                                                , CreativeTab.BOS);
+                                                                                .sound(SoundType.SAND)));
 
 
 
 
     //Registers Blocks as a Block
-    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab);
+        registerBlockItem(name, toReturn); 
         return toReturn;
 
     }
     //Registers Blocks as an ItemBlock
-    public static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
+    public static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
         registerItem.ITEMS.register(name, () -> new BlockItem(block.get(),
-        new Item.Properties().tab(tab)));
+        new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
