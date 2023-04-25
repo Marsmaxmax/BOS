@@ -50,7 +50,7 @@ public class Bos
         modEventBus.addListener(this::addCreativeTab);
     }
 
-    private void addCreativeTab(CreativeModeTab.BuildContents event) {
+    private void addCreativeTab(CreativeModeTab.buildContents event) {
         if(event.getTab() == CreativeTab.BOS_TAB) {
             event.accept(registerItem.ASTEROID_CHIP);
             
