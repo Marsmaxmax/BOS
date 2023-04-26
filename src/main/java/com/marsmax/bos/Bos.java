@@ -58,6 +58,16 @@ public class Bos
             event.accept(registerItem.STATION_CHIP);
             event.accept(registerItem.PLANET_CHIP);
             event.accept(registerItem.ELEVATOR_CHIP);
+
+            event.accept(registerBlock.LAUNCHPAD);
+            event.accept(registerBlock.IRIDIUM_BLOCK);
+            event.accept(registerBlock.IRIDIUM_COIL);
+            event.accept(registerBlock.TIN_BLOCK);
+            event.accept(registerBlock.TIN_COIL);
+            event.accept(registerBlock.TITANIUM_BLOCK);
+            event.accept(registerBlock.TITANIUM_COIL);
+            event.accept(registerBlock.DILITHIUM_BLOCK);
+            event.accept(registerBlock.DILITHIUM_ORE);
             
         }
     }

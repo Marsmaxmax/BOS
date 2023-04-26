@@ -11,5 +11,7 @@
     "block.bos.tin_block": "Tin Coil",
     "block.bos.titanium_block": "Titanium Block",
     "block.bos.titanium_coil": "Titanium Coil",
+    "block.bos.dilithium_ore": "Dilithium Ore",
+    "block.bos.dilithium_block": "Dilithium Block",
     "itemGroup.bostab" : "Beyond Our Stars"
 }

@@ -67,7 +67,17 @@ public class registerBlock {
                                                                                 .strength(1F, 3F)
                                                                                 .sound(SoundType.SAND)));
 
+    public static final RegistryObject DILITHIUM_ORE = registerBlock("dilithium_ore", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND)));
 
+    public static final RegistryObject DILITHIUM_BLOCK = registerBlock("dilithium_block", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.SAND)));
 
 
     //Registers Blocks as a Block
