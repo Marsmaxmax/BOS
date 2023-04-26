@@ -1,5 +1,5 @@
 {
-    "parent":"bos:item/generate",
+    "parent":"minecraft:item/generated",
     "textures":{
         "layer0": "bos:item/station_chip"
     }
