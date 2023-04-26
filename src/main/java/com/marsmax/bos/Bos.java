@@ -12,6 +12,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.item.CreativeModeTab;    
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -50,9 +51,13 @@ public class Bos
         modEventBus.addListener(this::addCreativeTab);
     }
 
-    private void addCreativeTab(CreativeModeTab.buildContents event) {
+    private void addCreativeTab(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeTab.BOS_TAB) {
             event.accept(registerItem.ASTEROID_CHIP);
+            event.accept(registerItem.SATELLITE_CHIP);
+            event.accept(registerItem.STATION_CHIP);
+            event.accept(registerItem.PLANET_CHIP);
+            event.accept(registerItem.ELEVATOR_CHIP);
             
         }
     }

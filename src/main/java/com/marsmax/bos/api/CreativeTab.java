@@ -16,6 +16,8 @@ public class CreativeTab {
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
         BOS_TAB = event.registerCreativeModeTab(new ResourceLocation(Bos.MODID, "bostab"),
-            builder -> builder.icon(() -> new ItemStack(registerItem.ASTEROID_CHIP.get())).build());
+            builder -> builder.icon(() -> new ItemStack(registerItem.ASTEROID_CHIP.get()))
+                                .title(Component.literal("Beyond our Stars"))
+                                .build());
     }
 }
