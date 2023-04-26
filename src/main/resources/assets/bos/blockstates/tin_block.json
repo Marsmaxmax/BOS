@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "bos:block/tin_block"
+        }
+    }
+}
