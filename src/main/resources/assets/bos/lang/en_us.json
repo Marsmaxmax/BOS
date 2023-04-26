@@ -1,17 +1,43 @@
 {
+    "itemGroup.bostab" : "Beyond Our Stars",
+
+
+
     "item.bos.asteroid_chip" : "Asteroid Chip",
     "item.bos.satellite_chip" : "Satellite Chip",
     "item.bos.station_chip" : "Station Chip",
     "item.bos.planet_chip" : "Planet Chip",
     "item.bos.elevator_chip" : "Elevator Chip",
+
+    "item.bos.basic_circuit" : "Basic Circuit",
+    "item.bos.adv_circuit" : "Advanced Circuit",
+    "item.bos.liquid_circuit" : "Liquid Circuit",
+    "item.bos.item_circuit" : "Item Circuit",
+    "item.bos.contr_circuit" : "Control Circuit",
+    "item.bos.track_circuit" : "Tracking Circuit",
+
     "block.bos.launchpad": "Launchpad",
+
+    "item.bos.iridium_raw":"Raw Iridium",
+    "item.bos.iridium_ingot":"Iridium Ingot",
+    "block.bos.iridium_ore": "Iridium Ore",
     "block.bos.iridium_block": "Iridium Block",
     "block.bos.iridium_coil": "Iridium Coil",
+
+    "item.bos.tin_raw":"Raw Tin",
+    "item.bos.tin_ingot":"Tin Ingot",
+    "block.bos.tin_ore": "Tin Ore",
     "block.bos.tin_coil": "Tin Block",
     "block.bos.tin_block": "Tin Coil",
+
+    "item.bos.titanium_raw":"Raw Titanium",
+    "item.bos.titanium_ingot":"Titanium Ingot",
+    "block.bos.titanium_ore": "Titanium Ore",
     "block.bos.titanium_block": "Titanium Block",
     "block.bos.titanium_coil": "Titanium Coil",
+
+    "item.bos.dilithium_dust": "Dilithium Dust",
+    "item.bos.dilithium_crystal": "Dilithium Crystal",
     "block.bos.dilithium_ore": "Dilithium Ore",
-    "block.bos.dilithium_block": "Dilithium Block",
-    "itemGroup.bostab" : "Beyond Our Stars"
+    "block.bos.dilithium_block": "Dilithium Block"
 }

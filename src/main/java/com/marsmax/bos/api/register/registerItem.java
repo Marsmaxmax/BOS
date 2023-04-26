@@ -23,6 +23,36 @@ public class registerItem {
 
     public static final RegistryObject<Item> SATELLITE_CHIP = ITEMS.register("satellite_chip", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> BASIC_CIRCUIT = ITEMS.register("basic_circuit", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ADV_CIRCUIT = ITEMS.register("adv_circuit", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TRACK_CIRCUIT = ITEMS.register("track_circuit", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CONTR_CIRCUIT = ITEMS.register("contr_circuit", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ITEM_CIRCUIT = ITEMS.register("item_circuit", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> LIQUID_CIRCUIT = ITEMS.register("liquid_circuit", () -> new Item(new Item.Properties()));
+
+
+
+    public static final RegistryObject<Item> DILITIUM_DUST = ITEMS.register("dilithium_dust", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> DILITHIUM_CRYSTAL = ITEMS.register("dilithium_crystal", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> IRIDIUM_RAW = ITEMS.register("iridium_raw", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> IRIDIUM_INGOT = ITEMS.register("iridium_ingot", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TIN_RAW = ITEMS.register("tin_raw", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TITANIUM_RAW = ITEMS.register("titanium_raw", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

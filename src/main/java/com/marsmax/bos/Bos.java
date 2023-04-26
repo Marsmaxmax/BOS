@@ -53,22 +53,47 @@ public class Bos
 
     private void addCreativeTab(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeTab.BOS_TAB) {
+            //Chips
             event.accept(registerItem.ASTEROID_CHIP);
             event.accept(registerItem.SATELLITE_CHIP);
             event.accept(registerItem.STATION_CHIP);
             event.accept(registerItem.PLANET_CHIP);
             event.accept(registerItem.ELEVATOR_CHIP);
-
+            event.accept(registerItem.BASIC_CIRCUIT);
+            event.accept(registerItem.ADV_CIRCUIT);
+            event.accept(registerItem.TRACK_CIRCUIT);
+            event.accept(registerItem.ITEM_CIRCUIT);
+            event.accept(registerItem.LIQUID_CIRCUIT);
+            event.accept(registerItem.CONTR_CIRCUIT);
+            //Rocket Blocks
             event.accept(registerBlock.LAUNCHPAD);
+        }
+    
+        if(event.getTab() == CreativeTab.BOS_RES_TAB) {
+            //Dilithium
+            event.accept(registerItem.DILITHIUM_CRYSTAL);
+            event.accept(registerItem.DILITIUM_DUST);
+            event.accept(registerBlock.DILITHIUM_ORE);
+            event.accept(registerBlock.DILITHIUM_BLOCK);
+            //Iridium
+            event.accept(registerItem.IRIDIUM_RAW);
+            event.accept(registerItem.IRIDIUM_INGOT);
+            event.accept(registerBlock.IRIDIUM_ORE);
             event.accept(registerBlock.IRIDIUM_BLOCK);
             event.accept(registerBlock.IRIDIUM_COIL);
+            //Tin
+            event.accept(registerItem.TIN_RAW);
+            event.accept(registerItem.TIN_INGOT);
+            event.accept(registerBlock.TIN_ORE);
             event.accept(registerBlock.TIN_BLOCK);
             event.accept(registerBlock.TIN_COIL);
+            //Titanium
+            event.accept(registerItem.TITANIUM_RAW);
+            event.accept(registerItem.TITANIUM_INGOT);
+            event.accept(registerBlock.TITANIUM_ORE);
             event.accept(registerBlock.TITANIUM_BLOCK);
             event.accept(registerBlock.TITANIUM_COIL);
-            event.accept(registerBlock.DILITHIUM_BLOCK);
-            event.accept(registerBlock.DILITHIUM_ORE);
-            
+
         }
     }
 }

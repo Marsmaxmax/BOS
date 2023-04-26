@@ -1,0 +1,6 @@
+{
+    "parent":"bos:item/generate",
+    "textures":{
+        "layer0": "bos:item/titanium_raw"
+    }
+}

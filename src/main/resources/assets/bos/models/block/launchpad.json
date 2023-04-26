@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "launchpad",
-		"particle": "launchpad"
+		"0": "bos:block/launchpad",
+		"particle": "bos:block/launchpad"
 	},
 	"elements": [
 		{

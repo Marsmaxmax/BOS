@@ -26,58 +26,73 @@ public class registerBlock {
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
+                                                                                .sound(SoundType.STONE)));
+
+    public static final RegistryObject IRIDIUM_ORE = registerBlock("iridium_ore", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.STONE)));
 
     public static final RegistryObject IRIDIUM_BLOCK = registerBlock("iridium_block", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
-
-    public static final RegistryObject TIN_BLOCK = registerBlock("tin_block", 
-                                                                () -> new Block(BlockBehaviour.Properties
-                                                                                .of(Material.STONE)
-                                                                                .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
-
-
-    public static final RegistryObject TITANIUM_BLOCK = registerBlock("titanium_block", 
-                                                                () -> new Block(BlockBehaviour.Properties
-                                                                                .of(Material.STONE)
-                                                                                .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
-
+                                                                                .sound(SoundType.STONE)));
 
     public static final RegistryObject IRIDIUM_COIL = registerBlock("iridium_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
+                                                                                .sound(SoundType.STONE)));
+
+    public static final RegistryObject TIN_ORE = registerBlock("tin_ore", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.STONE)));
+
+    public static final RegistryObject TIN_BLOCK = registerBlock("tin_block", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.STONE)));
 
     public static final RegistryObject TIN_COIL = registerBlock("tin_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
+                                                                                .sound(SoundType.STONE)));
 
+    public static final RegistryObject TITANIUM_ORE = registerBlock("titanium_ore", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.STONE)));
+                                                                                
+    public static final RegistryObject TITANIUM_BLOCK = registerBlock("titanium_block", 
+                                                                () -> new Block(BlockBehaviour.Properties
+                                                                                .of(Material.STONE)
+                                                                                .strength(1F, 3F)
+                                                                                .sound(SoundType.STONE)));
 
     public static final RegistryObject TITANIUM_COIL = registerBlock("titanium_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
+                                                                                .sound(SoundType.STONE)));
 
     public static final RegistryObject DILITHIUM_ORE = registerBlock("dilithium_ore", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
+                                                                                .sound(SoundType.STONE)));
 
     public static final RegistryObject DILITHIUM_BLOCK = registerBlock("dilithium_block", 
                                                                 () -> new Block(BlockBehaviour.Properties
                                                                                 .of(Material.STONE)
                                                                                 .strength(1F, 3F)
-                                                                                .sound(SoundType.SAND)));
+                                                                            .sound(SoundType.STONE)));
 
 
     //Registers Blocks as a Block
