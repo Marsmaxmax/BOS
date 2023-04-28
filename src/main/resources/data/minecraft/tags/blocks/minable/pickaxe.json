@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "bos:dilithium_ore",
+        "bos:iridium_ore",
+        "bos:tin_ore",
+        "bos:titanium_ore",
+        "bos:dilithium_block",
+        "bos:iridium_block",
+        "bos:tin_block",
+        "bos:titanium_block",
+        "bos:iridium_coil",
+        "bos:tin_coil",
+        "bos:titanium_coil"
+    ]
+}
