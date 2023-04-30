@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "bos:dilithium_block"
+        }
+    ],
+    "result": {
+        "item": "bos:dilithium_dust",
+        "count": 8
+    }
+}

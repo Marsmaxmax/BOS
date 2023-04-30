@@ -1,5 +1,7 @@
 package com.marsmax.bos.api.datagen;
 
-public class ModItemModelProvier {
+import net.minecraftforge.client.model.generators.ItemModelProvider;
+
+public class ModItemModelProvier extends ItemModelProvider {
     
 }
