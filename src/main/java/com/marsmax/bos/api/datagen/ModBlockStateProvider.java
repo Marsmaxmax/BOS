@@ -30,7 +30,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(registerBlock.TITANIUM_ORE);
     }
 
-    private void  blockWithItem(RegistryObject<Block> blockRegistryObject) {
+    private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 }

@@ -1,5 +1,44 @@
 package com.marsmax.bos.api.datagen;
 
-public class ModBlockLootTables {
-    
+import com.marsmax.bos.api.register.registerBlock;
+import com.marsmax.bos.api.register.registerItem;
+
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Set;
+
+public class ModBlockLootTables extends BlockLootSubProvider {
+    public ModBlockLootTables() {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    }
+
+    @Override
+    protected void generate() {
+        dropSelf(registerBlock.LAUNCHPAD);
+
+        dropSelf(registerBlock.IRIDIUM_COIL);
+        dropSelf(registerBlock.TIN_COIL);
+        dropSelf(registerBlock.TITANIUM_COIL);
+        dropSelf(registerBlock.IRIDIUM_BLOCK);
+        dropSelf(registerBlock.TIN_BLOCK);
+        dropSelf(registerBlock.TITANIUM_BLOCK);
+        dropSelf(registerBlock.DILITHIUM_BLOCK);
+
+        add(registerBlock.IRIDIUM_ORE.get(),
+            (block) -> createOreDrop(registerBlock.IRIDIUM_ORE.get(), registerItem.IRIDIUM_RAW.get()));
+        add(registerBlock.DILITHIUM_ORE.get(),
+            (block) -> createOreDrop(registerBlock.DILITHIUM_ORE.get(), registerItem.DILITIUM_DUST.get()));
+        add(registerBlock.TIN_ORE.get(),
+            (block) -> createOreDrop(registerBlock.TIN_ORE.get(), registerItem.TIN_RAW.get()));
+        add(registerBlock.TITANIUM_ORE.get(),
+            (block) -> createOreDrop(registerBlock.TITANIUM_ORE.get(), registerItem.TITANIUM_RAW.get()));
+    }
+
+    @Override
+    protected Iterable<Block> getKnownBlocks() {
+        return registerBlock.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
 }

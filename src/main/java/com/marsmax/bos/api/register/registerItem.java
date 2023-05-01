@@ -4,7 +4,6 @@ import com.marsmax.bos.Bos;
 import com.marsmax.bos.api.CreativeTab;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
