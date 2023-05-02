@@ -11,8 +11,8 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModItemModelProvier extends ItemModelProvider {
-    public ModItemModelProvier(PackOutput output, ExistingFileHelper existingFileHelper){
+public class ModItemModelProvider extends ItemModelProvider {
+    public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Bos.MODID, existingFileHelper);
     }
 
@@ -47,12 +47,12 @@ public class ModItemModelProvier extends ItemModelProvider {
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Bos.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(Bos.MODID,"item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(Bos.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(Bos.MODID,"item/" + item.getId().getPath()));
     }
 }

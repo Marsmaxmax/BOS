@@ -14,9 +14,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         super(output, Bos.MODID, exFileHelper);
     }
 
-
     @Override
-    protected void registerStatesAndModules() {
+    protected void registerStatesAndModels() {
         blockWithItem(registerBlock.DILITHIUM_BLOCK);
         blockWithItem(registerBlock.DILITHIUM_ORE);
         blockWithItem(registerBlock.IRIDIUM_BLOCK);
@@ -28,6 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(registerBlock.TITANIUM_BLOCK);
         blockWithItem(registerBlock.TITANIUM_COIL);
         blockWithItem(registerBlock.TITANIUM_ORE);
+        blockWithItem(registerBlock.DEEPSLATE_TITANIUM_ORE);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

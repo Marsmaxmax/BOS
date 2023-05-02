@@ -17,15 +17,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(registerBlock.LAUNCHPAD);
+        dropSelf(registerBlock.LAUNCHPAD.get());
 
-        dropSelf(registerBlock.IRIDIUM_COIL);
-        dropSelf(registerBlock.TIN_COIL);
-        dropSelf(registerBlock.TITANIUM_COIL);
-        dropSelf(registerBlock.IRIDIUM_BLOCK);
-        dropSelf(registerBlock.TIN_BLOCK);
-        dropSelf(registerBlock.TITANIUM_BLOCK);
-        dropSelf(registerBlock.DILITHIUM_BLOCK);
+        dropSelf(registerBlock.IRIDIUM_COIL.get());
+        dropSelf(registerBlock.TIN_COIL.get());
+        dropSelf(registerBlock.TITANIUM_COIL.get());
+        dropSelf(registerBlock.IRIDIUM_BLOCK.get());
+        dropSelf(registerBlock.TIN_BLOCK.get());
+        dropSelf(registerBlock.TITANIUM_BLOCK.get());
+        dropSelf(registerBlock.DILITHIUM_BLOCK.get());
 
         add(registerBlock.IRIDIUM_ORE.get(),
             (block) -> createOreDrop(registerBlock.IRIDIUM_ORE.get(), registerItem.IRIDIUM_RAW.get()));
@@ -34,6 +34,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         add(registerBlock.TIN_ORE.get(),
             (block) -> createOreDrop(registerBlock.TIN_ORE.get(), registerItem.TIN_RAW.get()));
         add(registerBlock.TITANIUM_ORE.get(),
+            (block) -> createOreDrop(registerBlock.TITANIUM_ORE.get(), registerItem.TITANIUM_RAW.get()));
+        add(registerBlock.DEEPSLATE_TITANIUM_ORE.get(),
             (block) -> createOreDrop(registerBlock.TITANIUM_ORE.get(), registerItem.TITANIUM_RAW.get()));
     }
 
