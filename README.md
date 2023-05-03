@@ -109,6 +109,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Blocks & Items
+- [x] Space Suits
+  - [ ] Functional Space Suits
 - [ ] Planets
 - [ ] Oxygen System
 - [ ] Rockets
