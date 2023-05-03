@@ -67,6 +67,15 @@ public class Bos
             event.accept(registerItem.CONTR_CIRCUIT);
             //Rocket Blocks
             event.accept(registerBlock.LAUNCHPAD);
+            //Armor
+            event.accept(registerItem.SPACESUIT_HELMET);
+            event.accept(registerItem.SPACESUIT_CHESTPLATE);
+            event.accept(registerItem.SPACESUIT_LEGGINGS);
+            event.accept(registerItem.SPACESUIT_BOOTS);
+            event.accept(registerItem.NETHER_SPACESUIT_HELMET);
+            event.accept(registerItem.NETHER_SPACESUIT_CHESTPLATE);
+            event.accept(registerItem.NETHER_SPACESUIT_LEGGINGS);
+            event.accept(registerItem.NETHER_SPACESUIT_BOOTS);
         }
     
         if(event.getTab() == CreativeTab.BOS_RES_TAB) {

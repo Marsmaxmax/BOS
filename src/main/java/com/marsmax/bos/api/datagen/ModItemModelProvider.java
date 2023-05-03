@@ -25,6 +25,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(registerItem.SATELLITE_CHIP);
         simpleItem(registerItem.STATION_CHIP);
 
+        simpleItem(registerItem.SPACESUIT_HELMET);
+        simpleItem(registerItem.SPACESUIT_CHESTPLATE);
+        simpleItem(registerItem.SPACESUIT_LEGGINGS);
+        simpleItem(registerItem.SPACESUIT_BOOTS);
+        simpleItem(registerItem.NETHER_SPACESUIT_HELMET);
+        simpleItem(registerItem.NETHER_SPACESUIT_CHESTPLATE);
+        simpleItem(registerItem.NETHER_SPACESUIT_LEGGINGS);
+        simpleItem(registerItem.NETHER_SPACESUIT_BOOTS);
+
         simpleItem(registerItem.ADV_CIRCUIT);
         simpleItem(registerItem.BASIC_CIRCUIT);
         simpleItem(registerItem.CONTR_CIRCUIT);

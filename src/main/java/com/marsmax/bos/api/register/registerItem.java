@@ -1,13 +1,17 @@
 package com.marsmax.bos.api.register;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.CreativeTab;
+import com.marsmax.bos.api.register.registerModArmorMaterials;
+import com.marsmax.bos.api.register.custom.spacesuitArmorItem;
+import com.marsmax.bos.api.register.custom.netherspacesuitArmorItem;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 
 public class registerItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Bos.MODID);
@@ -33,6 +37,23 @@ public class registerItem {
     public static final RegistryObject<Item> ITEM_CIRCUIT = ITEMS.register("item_circuit", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> LIQUID_CIRCUIT = ITEMS.register("liquid_circuit", () -> new Item(new Item.Properties()));
+
+
+    public static final RegistryObject<Item> SPACESUIT_HELMET = ITEMS.register("space_suit_helmet", () -> new spacesuitArmorItem(registerModArmorMaterials.SPACESUIT, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> SPACESUIT_CHESTPLATE = ITEMS.register("space_suit_chestplate", () -> new spacesuitArmorItem(registerModArmorMaterials.SPACESUIT, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> SPACESUIT_LEGGINGS = ITEMS.register("space_suit_leggings", () -> new spacesuitArmorItem(registerModArmorMaterials.SPACESUIT, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> SPACESUIT_BOOTS = ITEMS.register("space_suit_boots", () -> new spacesuitArmorItem(registerModArmorMaterials.SPACESUIT, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHER_SPACESUIT_HELMET = ITEMS.register("nether_space_suit_helmet", () -> new netherspacesuitArmorItem(registerModArmorMaterials.NETHERSPACESUIT, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHER_SPACESUIT_CHESTPLATE = ITEMS.register("nether_space_suit_chestplate", () -> new netherspacesuitArmorItem(registerModArmorMaterials.NETHERSPACESUIT, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHER_SPACESUIT_LEGGINGS = ITEMS.register("nether_space_suit_leggings", () -> new netherspacesuitArmorItem(registerModArmorMaterials.NETHERSPACESUIT, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHER_SPACESUIT_BOOTS = ITEMS.register("nether_space_suit_boots", () -> new netherspacesuitArmorItem(registerModArmorMaterials.NETHERSPACESUIT, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
 
