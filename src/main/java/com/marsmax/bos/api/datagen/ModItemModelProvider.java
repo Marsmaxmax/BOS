@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.datagen;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.RegisterItem;
+import com.marsmax.bos.register.RegisterItem;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

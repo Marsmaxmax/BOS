@@ -1,11 +1,12 @@
-package com.marsmax.bos.api.register.client;
+package com.marsmax.bos.register.client;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.custom.spacesuitArmorItem;
+import com.marsmax.bos.register.custom.spacesuitArmorItem;
+
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 
-public class spacesuitArmorModel extends GeoModel<spacesuitArmorItem>{
+public class SpacesuitArmorModel extends GeoModel<spacesuitArmorItem>{
     @Override
     public ResourceLocation getModelResource(spacesuitArmorItem animatable) {
         return new ResourceLocation(Bos.MODID, "geo/spacesuit.geo.json");

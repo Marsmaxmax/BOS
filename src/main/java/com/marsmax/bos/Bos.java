@@ -29,8 +29,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 import com.marsmax.bos.api.CreativeTab;
-import com.marsmax.bos.api.register.RegisterBlock;
-import  com.marsmax.bos.api.register.RegisterItem;
+import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterItem;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Bos.MODID)

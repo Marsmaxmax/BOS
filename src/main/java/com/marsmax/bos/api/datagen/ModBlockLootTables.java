@@ -1,14 +1,14 @@
 package com.marsmax.bos.api.datagen;
 
-import com.marsmax.bos.api.register.RegisterBlock;
-import com.marsmax.bos.api.register.RegisterItem;
-
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
+
+import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterItem;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables() {

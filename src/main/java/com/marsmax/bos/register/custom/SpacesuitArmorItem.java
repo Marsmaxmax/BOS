@@ -1,6 +1,4 @@
-package com.marsmax.bos.api.register.custom;
-
-import com.marsmax.bos.api.register.client.spacesuitArmorRenderer;
+package com.marsmax.bos.register.custom;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,6 +8,9 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
+
+import com.marsmax.bos.register.client.SpacesuitArmorRenderer;
+
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
@@ -28,7 +29,7 @@ public class spacesuitArmorItem extends ArmorItem implements GeoItem{
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
-            private spacesuitArmorRenderer renderer;
+            private SpacesuitArmorRenderer renderer;
 
             @Override
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(
@@ -37,7 +38,7 @@ public class spacesuitArmorItem extends ArmorItem implements GeoItem{
                                                                 EquipmentSlot equipmentSlot, 
                                                                 HumanoidModel<?> original) {
                 if (this.renderer == null)
-                    this.renderer = new spacesuitArmorRenderer();
+                    this.renderer = new SpacesuitArmorRenderer();
 
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
                 return this.renderer;

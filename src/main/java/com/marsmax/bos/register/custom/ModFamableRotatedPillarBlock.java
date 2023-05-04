@@ -1,3 +1,4 @@
+package com.marsmax.bos.register.custom;
 //package com.marsmax.bos.api.register.custom;
 //
 //import net.minecraft.core.BlockPos;

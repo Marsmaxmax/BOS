@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.datagen;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterBlock;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;

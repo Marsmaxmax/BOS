@@ -1,8 +1,8 @@
 package com.marsmax.bos.api;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.RegisterItem;
-import com.marsmax.bos.api.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterItem;
 
 import net.minecraft.client.gui.screens.CreateBuffetWorldScreen;
 import net.minecraft.network.chat.Component;

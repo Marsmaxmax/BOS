@@ -1,7 +1,7 @@
-package com.marsmax.bos.api.register;
+package com.marsmax.bos.register;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.RegisterItem;
+import com.marsmax.bos.register.RegisterItem;
 
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;

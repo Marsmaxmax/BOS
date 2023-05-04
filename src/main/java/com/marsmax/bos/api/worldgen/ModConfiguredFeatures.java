@@ -2,7 +2,7 @@ package com.marsmax.bos.api.worldgen;
 
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
