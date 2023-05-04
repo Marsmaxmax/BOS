@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 
-public class registerItem {
+public class RegisterItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Bos.MODID);
 
     public static final RegistryObject<Item> ELEVATOR_CHIP = ITEMS.register("elevator_chip", () -> new Item(new Item.Properties()));

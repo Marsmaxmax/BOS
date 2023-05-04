@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.register;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerItem;
+import com.marsmax.bos.api.register.RegisterItem;
 
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -17,7 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class registerBlock {
+public class RegisterBlock {
     public static final DeferredRegister<Block> BLOCKS  = DeferredRegister.create(ForgeRegistries.BLOCKS, Bos.MODID);
 
     public static final RegistryObject<Block> LAUNCHPAD = registerBlock("launchpad", 
@@ -67,7 +67,7 @@ public class registerBlock {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return registerItem.ITEMS.register(name, () -> new BlockItem(block.get(),
+        return RegisterItem.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties()));
     }
 

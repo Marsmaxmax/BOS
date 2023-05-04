@@ -1,8 +1,8 @@
 package com.marsmax.bos.api;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerItem;
-import com.marsmax.bos.api.register.registerBlock;
+import com.marsmax.bos.api.register.RegisterItem;
+import com.marsmax.bos.api.register.RegisterBlock;
 
 import net.minecraft.client.gui.screens.CreateBuffetWorldScreen;
 import net.minecraft.network.chat.Component;
@@ -21,12 +21,12 @@ public class CreativeTab {
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
         BOS_TAB = event.registerCreativeModeTab(new ResourceLocation(Bos.MODID, "bostab"),
-            builder -> builder  .icon(() -> new ItemStack(registerItem.ASTEROID_CHIP.get()))
+            builder -> builder  .icon(() -> new ItemStack(RegisterItem.ASTEROID_CHIP.get()))
                                 .title(Component.literal("Beyond our Stars"))
                                 .build());
                                 
         BOS_RES_TAB = event.registerCreativeModeTab(new ResourceLocation(Bos.MODID, "bostab_res"),
-            builder -> builder  .icon(() -> new ItemStack(registerItem.DILITIUM_DUST.get()))
+            builder -> builder  .icon(() -> new ItemStack(RegisterItem.DILITIUM_DUST.get()))
                                 .title(Component.literal("BOS Ores and Ingots"))
                                 .build());
     }

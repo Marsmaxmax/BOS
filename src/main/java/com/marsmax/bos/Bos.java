@@ -29,8 +29,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 import com.marsmax.bos.api.CreativeTab;
-import com.marsmax.bos.api.register.registerBlock;
-import  com.marsmax.bos.api.register.registerItem;
+import com.marsmax.bos.api.register.RegisterBlock;
+import  com.marsmax.bos.api.register.RegisterItem;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Bos.MODID)
@@ -43,8 +43,8 @@ public class Bos
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        registerItem.register(modEventBus);
-        registerBlock.register(modEventBus);
+        RegisterItem.register(modEventBus);
+        RegisterBlock.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -54,54 +54,54 @@ public class Bos
     private void addCreativeTab(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeTab.BOS_TAB) {
             //Chips
-            event.accept(registerItem.ASTEROID_CHIP);
-            event.accept(registerItem.SATELLITE_CHIP);
-            event.accept(registerItem.STATION_CHIP);
-            event.accept(registerItem.PLANET_CHIP);
-            event.accept(registerItem.ELEVATOR_CHIP);
-            event.accept(registerItem.BASIC_CIRCUIT);
-            event.accept(registerItem.ADV_CIRCUIT);
-            event.accept(registerItem.TRACK_CIRCUIT);
-            event.accept(registerItem.ITEM_CIRCUIT);
-            event.accept(registerItem.LIQUID_CIRCUIT);
-            event.accept(registerItem.CONTR_CIRCUIT);
+            event.accept(RegisterItem.ASTEROID_CHIP);
+            event.accept(RegisterItem.SATELLITE_CHIP);
+            event.accept(RegisterItem.STATION_CHIP);
+            event.accept(RegisterItem.PLANET_CHIP);
+            event.accept(RegisterItem.ELEVATOR_CHIP);
+            event.accept(RegisterItem.BASIC_CIRCUIT);
+            event.accept(RegisterItem.ADV_CIRCUIT);
+            event.accept(RegisterItem.TRACK_CIRCUIT);
+            event.accept(RegisterItem.ITEM_CIRCUIT);
+            event.accept(RegisterItem.LIQUID_CIRCUIT);
+            event.accept(RegisterItem.CONTR_CIRCUIT);
             //Rocket Blocks
-            event.accept(registerBlock.LAUNCHPAD);
+            event.accept(RegisterBlock.LAUNCHPAD);
             //Armor
-            event.accept(registerItem.SPACESUIT_HELMET);
-            event.accept(registerItem.SPACESUIT_CHESTPLATE);
-            event.accept(registerItem.SPACESUIT_LEGGINGS);
-            event.accept(registerItem.SPACESUIT_BOOTS);
-            event.accept(registerItem.NETHER_SPACESUIT_HELMET);
-            event.accept(registerItem.NETHER_SPACESUIT_CHESTPLATE);
-            event.accept(registerItem.NETHER_SPACESUIT_LEGGINGS);
-            event.accept(registerItem.NETHER_SPACESUIT_BOOTS);
+            event.accept(RegisterItem.SPACESUIT_HELMET);
+            event.accept(RegisterItem.SPACESUIT_CHESTPLATE);
+            event.accept(RegisterItem.SPACESUIT_LEGGINGS);
+            event.accept(RegisterItem.SPACESUIT_BOOTS);
+            event.accept(RegisterItem.NETHER_SPACESUIT_HELMET);
+            event.accept(RegisterItem.NETHER_SPACESUIT_CHESTPLATE);
+            event.accept(RegisterItem.NETHER_SPACESUIT_LEGGINGS);
+            event.accept(RegisterItem.NETHER_SPACESUIT_BOOTS);
         }
     
         if(event.getTab() == CreativeTab.BOS_RES_TAB) {
             //Dilithium
-            event.accept(registerItem.DILITHIUM_CRYSTAL);
-            event.accept(registerItem.DILITIUM_DUST);
-            event.accept(registerBlock.DILITHIUM_ORE);
-            event.accept(registerBlock.DILITHIUM_BLOCK);
+            event.accept(RegisterItem.DILITHIUM_CRYSTAL);
+            event.accept(RegisterItem.DILITIUM_DUST);
+            event.accept(RegisterBlock.DILITHIUM_ORE);
+            event.accept(RegisterBlock.DILITHIUM_BLOCK);
             //Iridium
-            event.accept(registerItem.IRIDIUM_RAW);
-            event.accept(registerItem.IRIDIUM_INGOT);
-            event.accept(registerBlock.IRIDIUM_ORE);
-            event.accept(registerBlock.IRIDIUM_BLOCK);
-            event.accept(registerBlock.IRIDIUM_COIL);
+            event.accept(RegisterItem.IRIDIUM_RAW);
+            event.accept(RegisterItem.IRIDIUM_INGOT);
+            event.accept(RegisterBlock.IRIDIUM_ORE);
+            event.accept(RegisterBlock.IRIDIUM_BLOCK);
+            event.accept(RegisterBlock.IRIDIUM_COIL);
             //Tin
-            event.accept(registerItem.TIN_RAW);
-            event.accept(registerItem.TIN_INGOT);
-            event.accept(registerBlock.TIN_ORE);
-            event.accept(registerBlock.TIN_BLOCK);
-            event.accept(registerBlock.TIN_COIL);
+            event.accept(RegisterItem.TIN_RAW);
+            event.accept(RegisterItem.TIN_INGOT);
+            event.accept(RegisterBlock.TIN_ORE);
+            event.accept(RegisterBlock.TIN_BLOCK);
+            event.accept(RegisterBlock.TIN_COIL);
             //Titanium
-            event.accept(registerItem.TITANIUM_RAW);
-            event.accept(registerItem.TITANIUM_INGOT);
-            event.accept(registerBlock.TITANIUM_ORE);
-            event.accept(registerBlock.TITANIUM_BLOCK);
-            event.accept(registerBlock.TITANIUM_COIL);
+            event.accept(RegisterItem.TITANIUM_RAW);
+            event.accept(RegisterItem.TITANIUM_INGOT);
+            event.accept(RegisterBlock.TITANIUM_ORE);
+            event.accept(RegisterBlock.TITANIUM_BLOCK);
+            event.accept(RegisterBlock.TITANIUM_COIL);
 
         }
     }

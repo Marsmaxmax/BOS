@@ -1,6 +1,6 @@
 package com.marsmax.bos.api.datagen;
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerItem;
+import com.marsmax.bos.api.register.RegisterItem;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -23,16 +23,16 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        oreBlasting(consumer, List.of(registerItem.TITANIUM_RAW.get()), RecipeCategory.MISC,
-                registerItem.TITANIUM_INGOT.get(), 0.7f, 200, "titanium");
-        oreSmelting(consumer, List.of(registerItem.TIN_RAW.get()), RecipeCategory.MISC,
-                registerItem.TIN_INGOT.get(), 0.7f, 200, "tin");
-        oreBlasting(consumer, List.of(registerItem.TIN_RAW.get()), RecipeCategory.MISC,
-                registerItem.TIN_INGOT.get(), 0.7f, 200, "tin");
-        oreSmelting(consumer, List.of(registerItem.IRIDIUM_RAW.get()), RecipeCategory.MISC,
-                registerItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
-        oreBlasting(consumer, List.of(registerItem.IRIDIUM_RAW.get()), RecipeCategory.MISC,
-                registerItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
+        oreBlasting(consumer, List.of(RegisterItem.TITANIUM_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.TITANIUM_INGOT.get(), 0.7f, 200, "titanium");
+        oreSmelting(consumer, List.of(RegisterItem.TIN_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.TIN_INGOT.get(), 0.7f, 200, "tin");
+        oreBlasting(consumer, List.of(RegisterItem.TIN_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.TIN_INGOT.get(), 0.7f, 200, "tin");
+        oreSmelting(consumer, List.of(RegisterItem.IRIDIUM_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
+        oreBlasting(consumer, List.of(RegisterItem.IRIDIUM_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
 
         // ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLACK_OPAL.get())
         //         .requires(ModBlocks.BLACK_OPAL_BLOCK.get())

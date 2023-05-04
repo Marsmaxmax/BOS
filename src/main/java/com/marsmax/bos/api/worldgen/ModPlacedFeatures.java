@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.worldgen;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerBlock;
+import com.marsmax.bos.api.register.RegisterBlock;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;

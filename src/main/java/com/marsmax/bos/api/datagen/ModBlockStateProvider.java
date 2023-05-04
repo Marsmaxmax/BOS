@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.datagen;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerBlock;
+import com.marsmax.bos.api.register.RegisterBlock;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
@@ -16,18 +16,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(registerBlock.DILITHIUM_BLOCK);
-        blockWithItem(registerBlock.DILITHIUM_ORE);
-        blockWithItem(registerBlock.IRIDIUM_BLOCK);
-        blockWithItem(registerBlock.IRIDIUM_COIL);
-        blockWithItem(registerBlock.IRIDIUM_ORE);
-        blockWithItem(registerBlock.TIN_BLOCK);
-        blockWithItem(registerBlock.TIN_COIL);
-        blockWithItem(registerBlock.TIN_ORE);
-        blockWithItem(registerBlock.TITANIUM_BLOCK);
-        blockWithItem(registerBlock.TITANIUM_COIL);
-        blockWithItem(registerBlock.TITANIUM_ORE);
-        blockWithItem(registerBlock.DEEPSLATE_TITANIUM_ORE);
+        blockWithItem(RegisterBlock.DILITHIUM_BLOCK);
+        blockWithItem(RegisterBlock.DILITHIUM_ORE);
+        blockWithItem(RegisterBlock.IRIDIUM_BLOCK);
+        blockWithItem(RegisterBlock.IRIDIUM_COIL);
+        blockWithItem(RegisterBlock.IRIDIUM_ORE);
+        blockWithItem(RegisterBlock.TIN_BLOCK);
+        blockWithItem(RegisterBlock.TIN_COIL);
+        blockWithItem(RegisterBlock.TIN_ORE);
+        blockWithItem(RegisterBlock.TITANIUM_BLOCK);
+        blockWithItem(RegisterBlock.TITANIUM_COIL);
+        blockWithItem(RegisterBlock.TITANIUM_ORE);
+        blockWithItem(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
