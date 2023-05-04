@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.datagen;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerItem;
+import com.marsmax.bos.api.register.RegisterItem;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -19,38 +19,38 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        simpleItem(registerItem.ASTEROID_CHIP);
-        simpleItem(registerItem.ELEVATOR_CHIP);
-        simpleItem(registerItem.PLANET_CHIP);
-        simpleItem(registerItem.SATELLITE_CHIP);
-        simpleItem(registerItem.STATION_CHIP);
+        simpleItem(RegisterItem.ASTEROID_CHIP);
+        simpleItem(RegisterItem.ELEVATOR_CHIP);
+        simpleItem(RegisterItem.PLANET_CHIP);
+        simpleItem(RegisterItem.SATELLITE_CHIP);
+        simpleItem(RegisterItem.STATION_CHIP);
 
-        simpleItem(registerItem.SPACESUIT_HELMET);
-        simpleItem(registerItem.SPACESUIT_CHESTPLATE);
-        simpleItem(registerItem.SPACESUIT_LEGGINGS);
-        simpleItem(registerItem.SPACESUIT_BOOTS);
-        simpleItem(registerItem.NETHER_SPACESUIT_HELMET);
-        simpleItem(registerItem.NETHER_SPACESUIT_CHESTPLATE);
-        simpleItem(registerItem.NETHER_SPACESUIT_LEGGINGS);
-        simpleItem(registerItem.NETHER_SPACESUIT_BOOTS);
+        simpleItem(RegisterItem.SPACESUIT_HELMET);
+        simpleItem(RegisterItem.SPACESUIT_CHESTPLATE);
+        simpleItem(RegisterItem.SPACESUIT_LEGGINGS);
+        simpleItem(RegisterItem.SPACESUIT_BOOTS);
+        simpleItem(RegisterItem.NETHER_SPACESUIT_HELMET);
+        simpleItem(RegisterItem.NETHER_SPACESUIT_CHESTPLATE);
+        simpleItem(RegisterItem.NETHER_SPACESUIT_LEGGINGS);
+        simpleItem(RegisterItem.NETHER_SPACESUIT_BOOTS);
 
-        simpleItem(registerItem.ADV_CIRCUIT);
-        simpleItem(registerItem.BASIC_CIRCUIT);
-        simpleItem(registerItem.CONTR_CIRCUIT);
-        simpleItem(registerItem.TRACK_CIRCUIT);
-        simpleItem(registerItem.ITEM_CIRCUIT);
-        simpleItem(registerItem.LIQUID_CIRCUIT);
+        simpleItem(RegisterItem.ADV_CIRCUIT);
+        simpleItem(RegisterItem.BASIC_CIRCUIT);
+        simpleItem(RegisterItem.CONTR_CIRCUIT);
+        simpleItem(RegisterItem.TRACK_CIRCUIT);
+        simpleItem(RegisterItem.ITEM_CIRCUIT);
+        simpleItem(RegisterItem.LIQUID_CIRCUIT);
 
-        simpleItem(registerItem.DILITHIUM_CRYSTAL);
-        simpleItem(registerItem.DILITIUM_DUST);
+        simpleItem(RegisterItem.DILITHIUM_CRYSTAL);
+        simpleItem(RegisterItem.DILITIUM_DUST);
 
-        simpleItem(registerItem.IRIDIUM_INGOT);
-        simpleItem(registerItem.IRIDIUM_RAW);
+        simpleItem(RegisterItem.IRIDIUM_INGOT);
+        simpleItem(RegisterItem.IRIDIUM_RAW);
 
-        simpleItem(registerItem.TIN_INGOT);
-        simpleItem(registerItem.TIN_RAW);
-        simpleItem(registerItem.TITANIUM_INGOT);
-        simpleItem(registerItem.TITANIUM_RAW);
+        simpleItem(RegisterItem.TIN_INGOT);
+        simpleItem(RegisterItem.TIN_RAW);
+        simpleItem(RegisterItem.TITANIUM_INGOT);
+        simpleItem(RegisterItem.TITANIUM_RAW);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
