@@ -15,10 +15,10 @@
   <a href="https://github.com/Marsmaxmax/BOS">
   </a>
 
-<h3 align="center">Marsmax's Additional Structures</h3>
+<h3 align="center">Beyond our Stars</h3>
 
   <p align="center">
-    A datapack with some really cool structures like Jungle Villages
+    Space Mod. Nothing Left to say
     <br />
     <a href="https://github.com/Marsmaxmax/BOS"><strong>Explore the docs »</strong></a>
     <br />
