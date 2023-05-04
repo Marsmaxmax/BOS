@@ -173,16 +173,16 @@ Project Link: [https://github.com/Marsmaxmax/BOS](https://github.com/Marsmaxmax/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Marsmaxmax/Mm-s-Additional-Structures.svg?style=for-the-badge
-[contributors-url]: https://github.com/Marsmaxmax/Mm-s-Additional-Structures/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Marsmaxmax/Mm-s-Additional-Structures.svg?style=for-the-badge
-[forks-url]: https://github.com/Marsmaxmax/Mm-s-Additional-Structures/network/members
-[stars-shield]: https://img.shields.io/github/stars/Marsmaxmax/Mm-s-Additional-Structures.svg?style=for-the-badge
-[stars-url]: https://github.com/Marsmaxmax/Mm-s-Additional-Structures/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Marsmaxmax/Mm-s-Additional-Structures.svg?style=for-the-badge
-[issues-url]: https://github.com/Marsmaxmax/Mm-s-Additional-Structures/issues
-[license-shield]: https://img.shields.io/github/license/Marsmaxmax/Mm-s-Additional-Structures.svg?style=for-the-badge
-[license-url]: https://github.com/Marsmaxmax/Mm-s-Additional-Structures/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Marsmaxmax/BOS.svg?style=for-the-badge
+[contributors-url]: https://github.com/Marsmaxmax/BOS/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Marsmaxmax/BOS.svg?style=for-the-badge
+[forks-url]: https://github.com/Marsmaxmax/BOS/network/members
+[stars-shield]: https://img.shields.io/github/stars/Marsmaxmax/BOS.svg?style=for-the-badge
+[stars-url]: https://github.com/Marsmaxmax/BOS/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Marsmaxmax/BOS.svg?style=for-the-badge
+[issues-url]: https://github.com/Marsmaxmax/BOS/issues
+[license-shield]: https://img.shields.io/github/license/Marsmaxmax/BOS.svg?style=for-the-badge
+[license-url]: https://github.com/Marsmaxmax/BOS/blob/master/LICENSE.txt
 
 [product-screenshot]: images/screenshot.png
 
