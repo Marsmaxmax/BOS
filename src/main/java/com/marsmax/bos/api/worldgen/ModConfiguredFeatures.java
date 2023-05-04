@@ -2,7 +2,7 @@ package com.marsmax.bos.api.worldgen;
 
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.api.register.registerBlock;
+import com.marsmax.bos.api.register.RegisterBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -41,16 +41,16 @@ public class ModConfiguredFeatures {
         RuleTest endstoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
         List<OreConfiguration.TargetBlockState> overworldTitaniumOres = List.of(OreConfiguration.target(stoneReplaceables,
-                registerBlock.TITANIUM_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, registerBlock.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState()));
+                RegisterBlock.TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState()));
 
         register(context, TITANIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldTitaniumOres, 9));
         register(context, TIN_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                registerBlock.TIN_ORE.get().defaultBlockState(), 9));
+                RegisterBlock.TIN_ORE.get().defaultBlockState(), 9));
         register(context, IRIDIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                registerBlock.IRIDIUM_ORE.get().defaultBlockState(), 9));
+                RegisterBlock.IRIDIUM_ORE.get().defaultBlockState(), 9));
         register(context, DILITHIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                registerBlock.DILITHIUM_ORE.get().defaultBlockState(), 9));
+                RegisterBlock.DILITHIUM_ORE.get().defaultBlockState(), 9));
 
         //register(context, EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
         //        BlockStateProvider.simple(ModBlocks.EBONY_LOG.get()),
