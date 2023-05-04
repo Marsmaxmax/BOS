@@ -1,12 +1,12 @@
 package com.marsmax.bos.register.client;
 
-import com.marsmax.bos.register.custom.netherspacesuitArmorItem;
+import com.marsmax.bos.register.custom.NetherSpacesuitArmorItem;
 
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class NetherspacesuitArmorRenderer extends GeoArmorRenderer<netherspacesuitArmorItem> {
-    public NetherspacesuitArmorRenderer() {
-        super(new NetherspacesuitArmorModel());
+public class NetherSpacesuitArmorRenderer extends GeoArmorRenderer<NetherSpacesuitArmorItem> {
+    public NetherSpacesuitArmorRenderer() {
+        super(new NetherSpacesuitArmorModel());
     }
 }
     

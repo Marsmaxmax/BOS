@@ -19,10 +19,10 @@ import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.function.Consumer;
 
-public class spacesuitArmorItem extends ArmorItem implements GeoItem{
+public class SpacesuitArmorItem extends ArmorItem implements GeoItem{
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public spacesuitArmorItem(ArmorMaterial material, Type type, Properties properties) {
+    public SpacesuitArmorItem(ArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);
     }
 
