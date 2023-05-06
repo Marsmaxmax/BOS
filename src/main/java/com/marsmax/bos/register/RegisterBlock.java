@@ -59,6 +59,14 @@ public class RegisterBlock {
     public static final RegistryObject<Block> DILITHIUM_BLOCK = registerBlock("dilithium_block", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
 
+    public static final RegistryObject<Block> MOON_BLOCK = registerBlock("moon_block", 
+                                                                () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
+
+    public static final RegistryObject<Block> DARK_MOON_BLOCK = registerBlock("dark_moon_block", 
+                                                                () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
+
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

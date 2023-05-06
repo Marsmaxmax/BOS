@@ -35,12 +35,12 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
                 RegisterItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
 
         // ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLACK_OPAL.get())
-        //         .requires(ModBlocks.BLACK_OPAL_BLOCK.get())
+        //         .requires(RegisterBlock.BLACK_OPAL_BLOCK.get())
         //         .unlockedBy("has_black_opal_block", inventoryTrigger(ItemPredicate.Builder.item()
-        //                 .of(ModBlocks.BLACK_OPAL_BLOCK.get()).build()))
+        //                 .of(RegisterBlock.BLACK_OPAL_BLOCK.get()).build()))
         //         .save(consumer);
 
-        // ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BLACK_OPAL_BLOCK.get())
+        // ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegisterBlock.BLACK_OPAL_BLOCK.get())
         //         .define('B', ModItems.BLACK_OPAL.get())
         //         .pattern("BBB")
         //         .pattern("BBB")

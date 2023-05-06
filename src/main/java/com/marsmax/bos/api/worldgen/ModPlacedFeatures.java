@@ -20,7 +20,7 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    //public static final ResourceKey<PlacedFeature> EBONY_PLACED_KEY = createKey("ebony_placed");
+    //public static final ResourceKey<PlacedFeature> TEST_PLACED_KEY = createKey("TEST_placed");
     public static final ResourceKey<PlacedFeature> TITANIUM_PLACED_KEY = createKey("titanium_placed");
     public static final ResourceKey<PlacedFeature> TIN_PLACED_KEY = createKey("tin_placed");
     public static final ResourceKey<PlacedFeature> IRIDIUM_PLACED_KEY = createKey("iridium_placed");
@@ -30,8 +30,8 @@ public class ModPlacedFeatures {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        //register(context, EBONY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EBONY_KEY),
-        //        VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.EBONY_SAPLING.get()));
+        //register(context, TEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TEST_KEY),
+        //        VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), RegisterBlock.TEST_SAPLING.get()));
 
         register(context, TITANIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_OVERWORLD_KEY),
                 ModOrePlacement.commonOrePlacement(16, // veins per chunk
