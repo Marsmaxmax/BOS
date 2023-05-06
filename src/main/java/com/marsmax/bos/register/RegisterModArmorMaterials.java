@@ -21,7 +21,7 @@ public enum RegisterModArmorMaterials implements ArmorMaterial {
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 3);
         p_266655_.put(ArmorItem.Type.HELMET, 2);
     }), 19, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
-        return Ingredient.of(Items.AMETHYST_SHARD);
+        return Ingredient.of(Items.WHITE_WOOL);
     }),
     NETHERSPACESUIT("netherspacesuit", 25,Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
         p_266655_.put(ArmorItem.Type.BOOTS, 5);
@@ -29,7 +29,7 @@ public enum RegisterModArmorMaterials implements ArmorMaterial {
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 7);
         p_266655_.put(ArmorItem.Type.HELMET, 6);
     }), 19, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
-        return Ingredient.of(Items.AMETHYST_SHARD);
+        return Ingredient.of(Items.NETHERITE_INGOT);
     });
 
     public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);

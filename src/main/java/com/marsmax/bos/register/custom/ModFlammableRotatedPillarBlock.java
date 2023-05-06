@@ -11,6 +11,7 @@ import net.minecraftforge.common.ToolAction;
 import org.jetbrains.annotations.Nullable;
 
 import com.marsmax.bos.register.RegisterBlock;
+
 //UNUSED IMPLEMENTATION: LOG BLOCKS
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public ModFlammableRotatedPillarBlock(Properties properties) {
@@ -41,6 +42,7 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
             //if(state.is(RegisterBlock.TEST_WOOD.get())) {
             //    return RegisterBlock.STRIPPED_TEST_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             //}
+            // USED FOR TREES
         }
 
         return super.getToolModifiedState(state, context, toolAction, simulate);

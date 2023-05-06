@@ -1,5 +1,8 @@
 package com.marsmax.bos;
 
+import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterItem;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -9,11 +12,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
-import com.marsmax.bos.api.CreativeTab;
-import com.marsmax.bos.register.RegisterBlock;
-import com.marsmax.bos.register.RegisterItem;
-import com.marsmax.bos.register.RegisterCreativeTab;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Bos.MODID)

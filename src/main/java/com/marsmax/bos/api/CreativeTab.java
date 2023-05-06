@@ -27,7 +27,7 @@ public class CreativeTab {
                         .build());
 
         BOS_RES_TAB = event.registerCreativeModeTab(id("bostab_res"),
-                builder -> builder.icon(() -> new ItemStack(RegisterItem.DILITIUM_DUST.get()))
+                builder -> builder.icon(() -> new ItemStack(RegisterBlock.DILITHIUM_BLOCK.get()))
                         .title(Component.literal("BOS Ores and Ingots"))
                         .build());
     }

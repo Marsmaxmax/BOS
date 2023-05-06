@@ -4,10 +4,10 @@ import net.minecraft.world.level.Level;
 
 public interface IAtmosphereHandler {    
     /**
-    * Prüft, ob der Spieler in der aktuellen Atmosphäre atmen kann.
+    * Checks if the player can breathe in this atmosphere
     * 
-    * @param level Die Welt, in der sich der Spieler befindet.
-    * @return True, wenn der Spieler atmen kann, false sonst.
+    * @param level level the player is currently on
+    * @return True, if player can breathe, else false 
     */
     boolean canBreathe(Level level);
 
