@@ -1,0 +1,2 @@
+If anybody makes a function that isnt used now but may have a use in the future, add an comment with a capitalized keeword ex. tree generator //TREE
+this is so we can hop backt to the lines easily and add something

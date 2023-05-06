@@ -28,6 +28,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(RegisterBlock.TITANIUM_COIL);
         blockWithItem(RegisterBlock.TITANIUM_ORE);
         blockWithItem(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
+
+        // logBlock(RegisterBlock.TEST_LOG); used for TREES
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

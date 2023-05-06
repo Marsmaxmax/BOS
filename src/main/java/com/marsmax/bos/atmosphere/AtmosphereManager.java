@@ -1,4 +1,4 @@
-package com.marsmax.bos.api.atmosphere;
+package com.marsmax.bos.atmosphere;
 
 import com.marsmax.bos.api.atmosphere.IAtmosphereHandler;
 import net.minecraft.world.level.Level;
