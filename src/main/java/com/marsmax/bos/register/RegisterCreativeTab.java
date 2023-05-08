@@ -1,12 +1,12 @@
 package com.marsmax.bos.register;
 
-import com.marsmax.bos.Bos;
 import com.marsmax.bos.api.CreativeTab;
+
 import net.minecraftforge.event.CreativeModeTabEvent.BuildContents;
 
-public class RegisterCreativeTab extends Bos{
 
-    @Override
+public class RegisterCreativeTab {
+
     public void addCreativeTab(BuildContents event) {
         if (event.getTab() == CreativeTab.BOS_TAB) {
             //Chips
@@ -66,7 +66,6 @@ public class RegisterCreativeTab extends Bos{
             event.accept(RegisterBlock.TITANIUM_COIL);
 
         }
-        super.addCreativeTab(event);
-    }
+    } 
     
 }

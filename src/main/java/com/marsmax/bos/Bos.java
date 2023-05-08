@@ -1,7 +1,9 @@
 package com.marsmax.bos;
 
 import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.RegisterCreativeTab;
 import com.marsmax.bos.register.RegisterItem;
+import com.marsmax.bos.register.RegisterCreativeTab;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,7 +29,9 @@ public class Bos {
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreativeTab);
+        RegisterCreativeTab newCreativeTabRegister = new RegisterCreativeTab();
+
+        modEventBus.addListener(newCreativeTabRegister::addCreativeTab);
     }
 
     public static ResourceLocation id(String path) {
@@ -41,11 +45,5 @@ public class Bos {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
-    }
-
-
-
-    public void addCreativeTab(CreativeModeTabEvent.BuildContents event) {
-       // Gets extended in RegisterCreativeTab
     }
 }

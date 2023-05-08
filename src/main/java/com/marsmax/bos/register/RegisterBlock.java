@@ -23,6 +23,7 @@ public class RegisterBlock {
     public static final RegistryObject<Block> LAUNCHPAD = registerBlock("launchpad", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.SAND).strength(3f)));
 
+
     public static final RegistryObject<Block> IRIDIUM_ORE = registerBlock("iridium_ore", 
                                                                 () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
 
@@ -32,6 +33,7 @@ public class RegisterBlock {
     public static final RegistryObject<Block> IRIDIUM_COIL = registerBlock("iridium_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
 
+
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", 
                                                                 () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
 
@@ -40,6 +42,7 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> TIN_COIL = registerBlock("tin_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
+
 
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", 
                                                                 () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
@@ -53,11 +56,20 @@ public class RegisterBlock {
     public static final RegistryObject<Block> TITANIUM_COIL = registerBlock("titanium_coil", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
 
+
     public static final RegistryObject<Block> DILITHIUM_ORE = registerBlock("dilithium_ore", 
                                                                 () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
 
     public static final RegistryObject<Block> DILITHIUM_BLOCK = registerBlock("dilithium_block", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
+
+                                                                
+    public static final RegistryObject<Block> ALUMINIUM_ORE = registerBlock("aluminium_ore",
+                                                                () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    public static final RegistryObject<Block> ALUMINIUM_BLOCK = registerBlock("aluminium_block",
+                                                                () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
+
 
     public static final RegistryObject<Block> MOON_BLOCK = registerBlock("moon_block", 
                                                                 () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f)));
