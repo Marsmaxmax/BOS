@@ -14,13 +14,24 @@ public class AtmosphereManager implements IAtmosphereHandler {
     @Override
     public float getOxygenLevel(Level level) {
 
-        return 0.21f; //Beispiel: 21% Oxygen
+        return 0.21f; //Example: 21% Oxygen
     }
 
     @Override
     public float getCO2Level(Level level) {
 
         return 0.01f;
+    }
+
+    @Override
+    public float getNLevel(Level level) {
+
+        return 0.71f;
+    }
+
+    @Override
+    public float getOtherGasesLevel(Level level){
+        return 0.001f;
     }
 
     @Override

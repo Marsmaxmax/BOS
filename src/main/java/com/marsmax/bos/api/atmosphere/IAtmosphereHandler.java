@@ -12,25 +12,41 @@ public interface IAtmosphereHandler {
     boolean canBreathe(Level level);
 
     /**
-    * Gibt den aktuellen Sauerstoffgehalt in der Atmosphäre zurück.
+    * gets Oxygen level 
     * 
-    * @param level Die Welt, in der sich der Spieler befindet.
-    * @return Der Sauerstoffgehalt als Dezimalzahl zwischen 0 und 1.
+    * @param level level the player is currently on
+    * @return Oxygen level as a number between 0 and 1
     */
     float getOxygenLevel(Level level);
 
     /**
-    * Gibt den aktuellen CO2 Wert in der Atmosphäre zurück.
+    * gets Co2 level
     * 
-    * @param level Die Welt, in der sich der Spieler befindet.
-    * @return Der Co2 Wert als Dezimalzahl zwischen 0 und 1.
+    * @param level level the player is currently on
+    * @return Co2  level as a number between 0 and 1
     */
     float getCO2Level(Level level);
 
     /**
-    * Wird aufgerufen, um die Atmosphärenbedingungen im Spiel im Laufe der Zeit zu aktualisieren.
+    * Gets Nitrogen level
     * 
-    * @param level Die Welt, in der sich der Spieler befindet.
+    * @param level level the player is currently on
+    * @return nitrogen  level as a number between 0 and 1
+    */
+    float getNLevel(Level level);
+
+    /**
+    * Gets the level of other gases in the atmosphere
+    * 
+    * @param level level the player is currently on
+    * @return level of other gases as a number between 0 and 1
+    */
+    float getOtherGasesLevel(Level level);
+
+    /**
+    *gets called to trigger the atmosphere
+    * 
+    * @param level level the player is currently on
     */
     void onTick(Level level);
     

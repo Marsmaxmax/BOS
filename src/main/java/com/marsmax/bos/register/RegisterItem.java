@@ -1,17 +1,15 @@
 package com.marsmax.bos.register;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.register.RegisterModArmorMaterials;
 import com.marsmax.bos.register.custom.NetherSpacesuitArmorItem;
 import com.marsmax.bos.register.custom.SpacesuitArmorItem;
 
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraftforge.common.ForgeSpawnEggItem;
 
 public class RegisterItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Bos.MODID);
@@ -66,15 +64,22 @@ public class RegisterItem {
 
     public static final RegistryObject<Item> IRIDIUM_INGOT = ITEMS.register("iridium_ingot", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> IRIDIUM_PLATE = ITEMS.register("iridium_plate", () -> new Item(new Item.Properties()));
+
 
     public static final RegistryObject<Item> TIN_RAW = ITEMS.register("tin_raw", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> TIN_PLATE = ITEMS.register("tin_plate", () -> new Item(new Item.Properties()));
+
+
 
     public static final RegistryObject<Item> TITANIUM_RAW = ITEMS.register("titanium_raw", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TITANIUM_PLATE = ITEMS.register("titanium_plate", () -> new Item(new Item.Properties()));
 
 
     public static final RegistryObject<Item> SILICON_INGOT = ITEMS.register("silicon_ingot", () -> new Item(new Item.Properties()));
@@ -83,6 +88,8 @@ public class RegisterItem {
     public static final RegistryObject<Item> ALUMINIUM_INGOT = ITEMS.register("aluminium_ingot", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ALUMINIUM_DUST = ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ALUMINIUM_PLATE = ITEMS.register("aluminium_plate", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

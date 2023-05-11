@@ -1,13 +1,11 @@
 package com.marsmax.bos.api.worldgen;
 
 
-import com.marsmax.bos.Bos;
 import com.marsmax.bos.register.RegisterBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -19,6 +17,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 import java.util.List;
+
+import static com.marsmax.bos.Bos.id;
 
 public class ModConfiguredFeatures {
     //public static final ResourceKey<ConfiguredFeature<?, ?>> TESTTREE_KEY = registerKey("test");
@@ -57,8 +57,8 @@ public class ModConfiguredFeatures {
     }
 
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Bos.MODID, name));
+    private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, id(name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
