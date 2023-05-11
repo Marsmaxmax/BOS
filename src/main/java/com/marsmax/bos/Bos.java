@@ -3,12 +3,10 @@ package com.marsmax.bos;
 import com.marsmax.bos.register.RegisterBlock;
 import com.marsmax.bos.register.RegisterCreativeTab;
 import com.marsmax.bos.register.RegisterItem;
-import com.marsmax.bos.register.RegisterCreativeTab;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,15 +20,17 @@ public class Bos {
     public static final String MODID = "bos";
 
     public Bos() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        //IEventBus
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        //Registering Itmes and Blocks
         RegisterItem.register(modEventBus);
         RegisterBlock.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        RegisterCreativeTab newCreativeTabRegister = new RegisterCreativeTab();
 
+        RegisterCreativeTab newCreativeTabRegister = new RegisterCreativeTab();
         modEventBus.addListener(newCreativeTabRegister::addCreativeTab);
     }
 
