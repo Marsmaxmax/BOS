@@ -1,12 +1,18 @@
 package com.marsmax.bos;
 
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.marsmax.bos.register.RegisterBlock;
 import com.marsmax.bos.register.RegisterCreativeTab;
 import com.marsmax.bos.register.RegisterItem;
 
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -32,6 +38,7 @@ public class Bos {
 
         RegisterCreativeTab newCreativeTabRegister = new RegisterCreativeTab();
         modEventBus.addListener(newCreativeTabRegister::addCreativeTab);
+
     }
 
     public static ResourceLocation id(String path) {
@@ -46,4 +53,24 @@ public class Bos {
 
         }
     }
+
+    private static final List<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ArrayList<>();
+
+	public static void queueServerWork(int tick, Runnable action) {
+		workQueue.add(new AbstractMap.SimpleEntry(action, tick));
+	}
+
+    @SubscribeEvent
+	public void tick(TickEvent.ServerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
+			workQueue.forEach(work -> {
+				work.setValue(work.getValue() - 1);
+				if (work.getValue() == 0)
+					actions.add(work);
+			});
+			actions.forEach(e -> e.getKey().run());
+			workQueue.removeAll(actions);
+		}
+	}
 }

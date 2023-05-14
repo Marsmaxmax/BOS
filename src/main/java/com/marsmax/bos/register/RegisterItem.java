@@ -64,14 +64,14 @@ public class RegisterItem {
 
     public static final RegistryObject<Item> IRIDIUM_INGOT = ITEMS.register("iridium_ingot", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> IRIDIUM_PLATE = ITEMS.register("iridium_plate", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRIDIUM_SHEET = ITEMS.register("iridium_sheet", () -> new Item(new Item.Properties()));
 
 
     public static final RegistryObject<Item> TIN_RAW = ITEMS.register("tin_raw", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> TIN_PLATE = ITEMS.register("tin_plate", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TIN_SHEET = ITEMS.register("tin_sheet", () -> new Item(new Item.Properties()));
 
 
 
@@ -79,7 +79,7 @@ public class RegisterItem {
 
     public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> TITANIUM_PLATE = ITEMS.register("titanium_plate", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_SHEET = ITEMS.register("titanium_sheet", () -> new Item(new Item.Properties()));
 
 
     public static final RegistryObject<Item> SILICON_INGOT = ITEMS.register("silicon_ingot", () -> new Item(new Item.Properties()));
@@ -89,7 +89,7 @@ public class RegisterItem {
 
     public static final RegistryObject<Item> ALUMINIUM_DUST = ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> ALUMINIUM_PLATE = ITEMS.register("aluminium_plate", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_SHEET = ITEMS.register("aluminium_sheet", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

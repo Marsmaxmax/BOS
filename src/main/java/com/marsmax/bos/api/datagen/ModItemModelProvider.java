@@ -46,11 +46,15 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(RegisterItem.IRIDIUM_INGOT);
         simpleItem(RegisterItem.IRIDIUM_RAW);
+        simpleItem(RegisterItem.IRIDIUM_SHEET);
 
         simpleItem(RegisterItem.TIN_INGOT);
         simpleItem(RegisterItem.TIN_RAW);
+        simpleItem(RegisterItem.TIN_SHEET);
+
         simpleItem(RegisterItem.TITANIUM_INGOT);
         simpleItem(RegisterItem.TITANIUM_RAW);
+        simpleItem(RegisterItem.TITANIUM_SHEET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

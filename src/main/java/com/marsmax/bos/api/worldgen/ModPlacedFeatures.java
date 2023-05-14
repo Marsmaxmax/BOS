@@ -1,14 +1,13 @@
 package com.marsmax.bos.api.worldgen;
 
+import java.util.List;
+
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.register.RegisterBlock;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -16,8 +15,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
-
-import java.util.List;
 
 public class ModPlacedFeatures {
     //public static final ResourceKey<PlacedFeature> TEST_PLACED_KEY = createKey("TEST_placed");
@@ -59,10 +56,4 @@ public class ModPlacedFeatures {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 
-    private static void register(BootstapContext<PlacedFeature> context, 
-                                ResourceKey<PlacedFeature> key, 
-                                Holder<ConfiguredFeature<?, ?>> configuration,
-                                PlacementModifier... modifiers) {
-        register(context, key, configuration, List.of(modifiers));
-    }
 }

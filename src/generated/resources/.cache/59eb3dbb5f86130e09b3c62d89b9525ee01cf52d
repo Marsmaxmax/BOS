@@ -1,0 +1,18 @@
+// 1.19.4	2023-05-14T19:29:11.2338349	Loot Tables
+5dc10a7ae9dfe0aed90a266a454d9a49b7e8f66b data/bos/loot_tables/blocks/aluminium_block.json
+9132f2cecca0c58812a405b2a0cbdcd6b2988106 data/bos/loot_tables/blocks/aluminium_ore.json
+1df5e96f377e0f249720ad0395e8f06b5204e1c4 data/bos/loot_tables/blocks/dark_moon_block.json
+a88a7b3e422a20164bd54c09c7a9f50bd8bc612c data/bos/loot_tables/blocks/deepslate_titanium_ore.json
+1bc999af87623c8b0fdfb40d4fdb79ef952cdbc7 data/bos/loot_tables/blocks/dilithium_block.json
+1a08fc2f05ec774a209064386289d135b4764f95 data/bos/loot_tables/blocks/dilithium_ore.json
+bbe96e29c580fd674008b996ec3ff343a20b86b7 data/bos/loot_tables/blocks/iridium_block.json
+41d9875fb009fca11fbaef605192f872d58c6ed3 data/bos/loot_tables/blocks/iridium_coil.json
+5701a93d97d9d4f4e4955750c45ad03ee0ec82c0 data/bos/loot_tables/blocks/iridium_ore.json
+b91a09ba74f65271ad8639d410b6c77cc3943e74 data/bos/loot_tables/blocks/launchpad.json
+cb4fb8f727cf40b443e965bdd7254d7b041c7c35 data/bos/loot_tables/blocks/moon_block.json
+07741c0e45146c9424fe071919714ff02e7caf3a data/bos/loot_tables/blocks/tin_block.json
+f0c211cd2e80ebc5ba9fe99f39d6a2e8c6db4b53 data/bos/loot_tables/blocks/tin_coil.json
+218cb576c2376f33906416f205481200661d4f1c data/bos/loot_tables/blocks/tin_ore.json
+dfa0f5e16dc5120d079a60a92d8ffc554ed69505 data/bos/loot_tables/blocks/titanium_block.json
+7a8f2a8da46b42df8adfe0cc25c0e3ea4199584b data/bos/loot_tables/blocks/titanium_coil.json
+f6f237d3f8b7fa9bb64cfdbefdb136baed8e96c4 data/bos/loot_tables/blocks/titanium_ore.json

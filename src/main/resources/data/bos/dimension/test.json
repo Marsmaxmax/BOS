@@ -1,0 +1,37 @@
+{
+  "type": "bos:test",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "seed": 0,
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "forest",
+          "parameters": {
+            "temperature": -2,
+            "humidity": 0,
+            "continentalness": 0,
+            "weirdness": 0,
+            "erosion": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "plains",
+          "parameters": {
+            "temperature": 2,
+            "humidity": 0,
+            "continentalness": 0,
+            "weirdness": 0,
+            "erosion": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
