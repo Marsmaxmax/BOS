@@ -66,10 +66,14 @@ public class RegisterItem {
 
     public static final RegistryObject<Item> IRIDIUM_SHEET = ITEMS.register("iridium_sheet", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> IRIDIUM_DUST = ITEMS.register("iridium_dust", () -> new Item(new Item.Properties()));
+
 
     public static final RegistryObject<Item> TIN_RAW = ITEMS.register("tin_raw", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TIN_DUST = ITEMS.register("tin_dust", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TIN_SHEET = ITEMS.register("tin_sheet", () -> new Item(new Item.Properties()));
 

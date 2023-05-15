@@ -31,7 +31,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(RegisterBlock.TITANIUM_ORE);
         blockWithItem(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
         blockWithItem(RegisterBlock.ALUMINIUM_BLOCK);
-        blockWithItem(RegisterBlock.ALUMINIUM_ORE);
+        blockWithItem(RegisterBlock.BAUXIT_ORE);
         
         
         
