@@ -31,6 +31,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(RegisterBlock.MOON_TURF.get());
         dropSelf(RegisterBlock.DARK_MOON_TURF.get());
         dropSelf(RegisterBlock.MOON_ROCK.get());
+        dropSelf(RegisterBlock.CHISSLED_MOON_ROCK.get());
+        dropSelf(RegisterBlock.SMOOTH_MOON_ROCK.get());
+        dropSelf(RegisterBlock.MOON_BRICKS.get());
 
 
         add(RegisterBlock.IRIDIUM_ORE.get(),

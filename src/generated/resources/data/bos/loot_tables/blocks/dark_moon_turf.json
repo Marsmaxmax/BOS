@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bos:dark_moon_block"
+          "name": "bos:dark_moon_turf"
         }
       ],
       "rolls": 1.0

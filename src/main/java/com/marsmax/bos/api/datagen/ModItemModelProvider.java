@@ -25,14 +25,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(RegisterItem.SATELLITE_CHIP);
         simpleItem(RegisterItem.STATION_CHIP);
 
-        simpleItem(RegisterItem.SPACESUIT_HELMET);
-        simpleItem(RegisterItem.SPACESUIT_CHESTPLATE);
-        simpleItem(RegisterItem.SPACESUIT_LEGGINGS);
-        simpleItem(RegisterItem.SPACESUIT_BOOTS);
-        simpleItem(RegisterItem.NETHER_SPACESUIT_HELMET);
-        simpleItem(RegisterItem.NETHER_SPACESUIT_CHESTPLATE);
-        simpleItem(RegisterItem.NETHER_SPACESUIT_LEGGINGS);
-        simpleItem(RegisterItem.NETHER_SPACESUIT_BOOTS);
+        //simpleItem(RegisterItem.SPACESUIT_HELMET);
+        //simpleItem(RegisterItem.SPACESUIT_CHESTPLATE);
+        //simpleItem(RegisterItem.SPACESUIT_LEGGINGS);
+        //simpleItem(RegisterItem.SPACESUIT_BOOTS);
+        //simpleItem(RegisterItem.NETHER_SPACESUIT_HELMET);
+        //simpleItem(RegisterItem.NETHER_SPACESUIT_CHESTPLATE);
+        //simpleItem(RegisterItem.NETHER_SPACESUIT_LEGGINGS);
+        //simpleItem(RegisterItem.NETHER_SPACESUIT_BOOTS);
 
         simpleItem(RegisterItem.ADV_CIRCUIT);
         simpleItem(RegisterItem.BASIC_CIRCUIT);
@@ -45,16 +45,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(RegisterItem.DILITIUM_DUST);
 
         simpleItem(RegisterItem.IRIDIUM_INGOT);
-        simpleItem(RegisterItem.IRIDIUM_RAW);
+        // simpleItem(RegisterItem.IRIDIUM_RAW);
         simpleItem(RegisterItem.IRIDIUM_SHEET);
 
         simpleItem(RegisterItem.TIN_INGOT);
-        simpleItem(RegisterItem.TIN_RAW);
+        // simpleItem(RegisterItem.TIN_RAW);
         simpleItem(RegisterItem.TIN_SHEET);
 
         simpleItem(RegisterItem.TITANIUM_INGOT);
-        simpleItem(RegisterItem.TITANIUM_RAW);
+        // simpleItem(RegisterItem.TITANIUM_RAW);
         simpleItem(RegisterItem.TITANIUM_SHEET);
+
+        // simpleItem(RegisterItem.BAUXITE_RAW);
+        simpleItem(RegisterItem.ALUMINIUM_DUST);
+        simpleItem(RegisterItem.ALUMINIUM_INGOT);
+        simpleItem(RegisterItem.ALUMINIUM_SHEET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

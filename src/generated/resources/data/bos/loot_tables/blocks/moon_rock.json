@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bos:moon_block"
+          "name": "bos:moon_rock"
         }
       ],
       "rolls": 1.0

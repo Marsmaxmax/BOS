@@ -31,14 +31,14 @@ public class CustomBlockPresets {
     /**
      * Used for Sand Based Blocks like Moon Turf
      */
-    public static Block SandBasedFloorBlock() {
+    public static Block SandBasedBlock() {
         return new Block(BlockBehaviour.Properties.of(Material.SAND).strength(3f));
     }
 
     /**
      * Used for Rock Based Blocks like Moon Stone
      */
-    public static Block RockBasedFloorBlock() {
+    public static Block RockBasedBlock() {
         return new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f));
     }
 }

@@ -3,8 +3,8 @@ package com.marsmax.bos.register;
 import static com.marsmax.bos.register.custom.CustomBlockPresets.MachineBlock;
 import static com.marsmax.bos.register.custom.CustomBlockPresets.MetalBlock;
 import static com.marsmax.bos.register.custom.CustomBlockPresets.OreBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.RockBasedFloorBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.SandBasedFloorBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.RockBasedBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.SandBasedBlock;
 
 import java.util.function.Supplier;
 
@@ -58,12 +58,17 @@ public class RegisterBlock {
     public static final RegistryObject<Block> ALUMINIUM_BLOCK = registerBlock("aluminium_block", () -> MetalBlock());
 
 
-    public static final RegistryObject<Block> MOON_TURF = registerBlock("moon_turf", () -> SandBasedFloorBlock());
+    public static final RegistryObject<Block> MOON_TURF = registerBlock("moon_turf", () -> SandBasedBlock());
 
-    public static final RegistryObject<Block> DARK_MOON_TURF = registerBlock("dark_moon_turf", () -> SandBasedFloorBlock());
+    public static final RegistryObject<Block> DARK_MOON_TURF = registerBlock("dark_moon_turf", () -> SandBasedBlock());
 
-    public static final RegistryObject<Block> MOON_ROCK = registerBlock("moon_rock", () -> RockBasedFloorBlock());
+    public static final RegistryObject<Block> MOON_ROCK = registerBlock("moon_rock", () -> RockBasedBlock());
 
+    public static final RegistryObject<Block> CHISSLED_MOON_ROCK = registerBlock("chissled_moon_rock", () -> RockBasedBlock());
+
+    public static final RegistryObject<Block> SMOOTH_MOON_ROCK = registerBlock("smooth_moon_rock", () -> RockBasedBlock());
+
+    public static final RegistryObject<Block> MOON_BRICKS = registerBlock("moon_bricks", () -> RockBasedBlock());
 
 
 

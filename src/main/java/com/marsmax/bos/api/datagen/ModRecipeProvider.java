@@ -1,5 +1,6 @@
 package com.marsmax.bos.api.datagen;
 import com.marsmax.bos.Bos;
+import com.marsmax.bos.register.RegisterBlock;
 import com.marsmax.bos.register.RegisterItem;
 
 import net.minecraft.data.PackOutput;
@@ -33,21 +34,19 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
                 RegisterItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
         oreBlasting(consumer, List.of(RegisterItem.IRIDIUM_RAW.get()), RecipeCategory.MISC,
                 RegisterItem.IRIDIUM_INGOT.get(), 0.7f, 200, "iridium");
+        oreSmelting(consumer, List.of(RegisterItem.BAUXITE_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.ALUMINIUM_INGOT.get(), 0.7f, 200, "aluminium");
+        oreBlasting(consumer, List.of(RegisterItem.BAUXITE_RAW.get()), RecipeCategory.MISC,
+                RegisterItem.ALUMINIUM_INGOT.get(), 0.7f, 200, "aluminium");
 
-        // ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLACK_OPAL.get())
-        //         .requires(RegisterBlock.BLACK_OPAL_BLOCK.get())
-        //         .unlockedBy("has_black_opal_block", inventoryTrigger(ItemPredicate.Builder.item()
-        //                 .of(RegisterBlock.BLACK_OPAL_BLOCK.get()).build()))
-        //         .save(consumer);
-
-        // ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegisterBlock.BLACK_OPAL_BLOCK.get())
-        //         .define('B', ModItems.BLACK_OPAL.get())
-        //         .pattern("BBB")
-        //         .pattern("BBB")
-        //         .pattern("BBB")
-        //         .unlockedBy("has_black_opal", inventoryTrigger(ItemPredicate.Builder.item()
-        //                 .of(ModItems.BLACK_OPAL.get()).build()))
-        //         .save(consumer);
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, RegisterItem.TITANIUM_INGOT.get(),
+                RecipeCategory.MISC, RegisterBlock.TITANIUM_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, RegisterItem.TIN_INGOT.get(),
+                RecipeCategory.MISC, RegisterBlock.TIN_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, RegisterItem.IRIDIUM_INGOT.get(),
+                RecipeCategory.MISC, RegisterBlock.IRIDIUM_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, RegisterItem.ALUMINIUM_INGOT.get(),
+                RecipeCategory.MISC, RegisterBlock.ALUMINIUM_BLOCK.get());
     }
 
 }

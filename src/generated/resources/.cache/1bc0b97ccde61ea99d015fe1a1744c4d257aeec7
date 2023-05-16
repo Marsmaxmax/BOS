@@ -1,0 +1,23 @@
+// 1.19.4	2023-05-16T17:05:20.9770576	Item Models: bos
+dd04c9bba8f04a39ba25645b898bc8c1be65531e assets/bos/models/item/adv_circuit.json
+397ad220018162d4e9edb406c9afde2569569d59 assets/bos/models/item/aluminium_dust.json
+91f16498a7e217ed89dccbc49d834b8c3a480639 assets/bos/models/item/aluminium_ingot.json
+5833944e2e11cb09e19bce876f75cddb30c20418 assets/bos/models/item/aluminium_sheet.json
+4b2600fe65acac524d0db130dab74d92655fd4c9 assets/bos/models/item/asteroid_chip.json
+5271063019084382494c9d621faea29b3c754e72 assets/bos/models/item/basic_circuit.json
+9b5263192f9d6e8801300ca4f6a55242c97f5c2c assets/bos/models/item/contr_circuit.json
+cb9d4320532ef40b98c27b58e593428a78d8a87f assets/bos/models/item/dilithium_crystal.json
+482602a2fbb7df68dbb8469f3cc09871593e586a assets/bos/models/item/dilithium_dust.json
+7172bdaa36407a502d2cb5f40ed7cea21b5c8912 assets/bos/models/item/elevator_chip.json
+ad47b32d1da7046d9516c89bcacd0c52e5275e05 assets/bos/models/item/iridium_ingot.json
+a854cd318bbcc8473c100525c22f2ee31169a785 assets/bos/models/item/iridium_sheet.json
+6bed57abf28dd2593c950273186840697c0fb408 assets/bos/models/item/item_circuit.json
+d21e78d812c378d3c44e93c83e4a0680101c98d3 assets/bos/models/item/liquid_circuit.json
+583addf839045c95f2bf6bdf0a2881baf070dfd8 assets/bos/models/item/planet_chip.json
+0a60e70c6b32abbf8aa634932c3e8c4f8520400d assets/bos/models/item/satellite_chip.json
+4c7f3720faf5ab1262b75e2dd29fa61396c935eb assets/bos/models/item/station_chip.json
+a121b47cd6d1c46cfe576140138cb91537daeaf8 assets/bos/models/item/tin_ingot.json
+03b9ba5dcd21288250521f75e3a64ea0b0415606 assets/bos/models/item/tin_sheet.json
+567c3a8dd163267923e68ecacbacf21980908371 assets/bos/models/item/titanium_ingot.json
+e6d484a835b608c881c746b8741c152820fd3427 assets/bos/models/item/titanium_sheet.json
+c364c01cb24a7e485831aeaf1955d3e7a8cc48db assets/bos/models/item/track_circuit.json
