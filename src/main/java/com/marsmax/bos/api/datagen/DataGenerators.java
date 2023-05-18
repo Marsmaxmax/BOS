@@ -22,10 +22,10 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new ModRecipeProvider(packOutput));
-        generator.addProvider(true, ModLootTableProvider.create(packOutput));
-        generator.addProvider(true, new ModItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(false, new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(false, new ModRecipeProvider(packOutput));
+        generator.addProvider(false, ModLootTableProvider.create(packOutput));
+        generator.addProvider(false, new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(true, new ModBlockStateProvider(packOutput, existingFileHelper));
     }
 }
 

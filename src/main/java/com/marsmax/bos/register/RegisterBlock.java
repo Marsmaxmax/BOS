@@ -5,14 +5,23 @@ import static com.marsmax.bos.register.custom.CustomBlockPresets.MetalBlock;
 import static com.marsmax.bos.register.custom.CustomBlockPresets.OreBlock;
 import static com.marsmax.bos.register.custom.CustomBlockPresets.RockBasedBlock;
 import static com.marsmax.bos.register.custom.CustomBlockPresets.SandBasedBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.LogBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.StrippedLogBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.WoodBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.StrippedWoodBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.PlanksBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.LeavesBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.ModSaplingBlock;
 
 import java.util.function.Supplier;
 
 import com.marsmax.bos.Bos;
+import com.marsmax.bos.api.worldgen.tree.TestTreeGrower;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -72,6 +81,20 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> MOON_BRICKS = registerBlock("moon_bricks", () -> RockBasedBlock());
 
+
+    public static final RegistryObject<Block> STRIPPED_TEST_LOG = registerBlock("stripped_test_log", () -> StrippedLogBlock(true));
+
+    public static final RegistryObject<Block> TEST_LOG = registerBlock("test_log", () -> LogBlock(true, STRIPPED_TEST_LOG));
+
+    public static final RegistryObject<Block> STRIPPED_TEST_WOOD = registerBlock("stripped_test_wood", () -> StrippedWoodBlock(true));
+
+    public static final RegistryObject<Block> TEST_WOOD = registerBlock("test_wood", () -> WoodBlock(true, STRIPPED_TEST_WOOD));
+
+    public static final RegistryObject<Block> TEST_PLANKS = registerBlock("test_planks", () -> PlanksBlock(true));
+
+    public static final RegistryObject<Block> TEST_LEAVES = registerBlock("test_leaves", () -> LeavesBlock(true));
+
+    public static final RegistryObject<Block> TEST_SAPLING = registerBlock("test_sapling", () -> ModSaplingBlock(new TestTreeGrower()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

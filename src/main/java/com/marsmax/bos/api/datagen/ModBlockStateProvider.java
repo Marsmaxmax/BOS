@@ -1,10 +1,15 @@
 package com.marsmax.bos.api.datagen;
 
+import java.util.function.Supplier;
+
 import com.marsmax.bos.Bos;
+import static com.marsmax.bos.Bos.id;
 import com.marsmax.bos.register.RegisterBlock;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -35,33 +40,46 @@ public class ModBlockStateProvider extends BlockStateProvider {
         
         
         
-        //TREE blocks
-        // logBlock((RotatedPillarBlock) RegisterBlock.TEST_LOG); 
-        //axisBlock((RotatedPillarBlock) RegisterBlock.TEST_WOOD.get(), blockTexture(RegisterBlock.TEST_LOG.get()), blockTexture(RegisterBlock.TEST_LOG.get()));
-        //axisBlock((RotatedPillarBlock) RegisterBlock.STRIPPED_TEST_LOG.get(), new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"),
-        //        new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log_top"));
-        //axisBlock((RotatedPillarBlock) RegisterBlock.STRIPPED_TEST_WOOD.get(), new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"),
-        //        new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"));
+        //TREE blocks 
+        modLogBlock(RegisterBlock.TEST_LOG);
 
-        //blockWithItem(RegisterBlock.TEST_PLANKS);
-        //blockWithItem(RegisterBlock.TEST_LEAVES);
-        //saplingBlock(RegisterBlock.TEST_SAPLING);
-
-        //simpleBlockItem(RegisterBlock.TEST_LOG.get(), models().withExistingParent("tutorialmod:ebony_log", "minecraft:block/cube_column"));
-        //simpleBlockItem(RegisterBlock.TEST_WOOD.get(), models().withExistingParent("tutorialmod:ebony_wood", "minecraft:block/cube_column"));
-        //simpleBlockItem(RegisterBlock.STRIPPED_TEST_LOG.get(), models().withExistingParent("tutorialmod:stripped_ebony_log", "minecraft:block/cube_column"));
-        //simpleBlockItem(RegisterBlock.STRIPPED_TEST_WOOD.get(), models().withExistingParent("tutorialmod:stripped_ebony_wood", "minecraft:block/cube_column"));
-
-
+        blockWithItem(RegisterBlock.TEST_PLANKS);
+        blockWithItem(RegisterBlock.TEST_LEAVES);
+        saplingBlock(RegisterBlock.TEST_SAPLING);
 
     }
 
-    private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
+    private ResourceLocation extend(ResourceLocation rl, String suffix) {
+        return new ResourceLocation(rl.getNamespace(), rl.getPath() + suffix);
+    }
+
+    public String modelLocation(Block block) {
+        ResourceLocation name = ForgeRegistries.BLOCKS.getKey(block);
+        return new String(name.getNamespace() +":"+ name.getPath());
+    }
+
+
+    public void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+    public void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
-                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+        models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), 
+        blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    public void modLogBlock(RegistryObject<Block> block) {
+        axisBlock((RotatedPillarBlock)block.get(), blockTexture(block.get()), extend(blockTexture(block.get()), "_top"));
+        modBlockItem(block.get());
+    }
+
+    public void modWoodBlock(RegistryObject<Block> block) {
+        axisBlock((RotatedPillarBlock)block.get(), blockTexture(block.get()), blockTexture(block.get()));
+        modBlockItem(block.get());
+    }
+
+    private void modBlockItem(Block block) {
+        simpleBlockItem(((Supplier<Block>) block).get(), models().withExistingParent(modelLocation(block), "mincraft:block/cube_column"));
     }
 }
