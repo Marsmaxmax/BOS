@@ -24,8 +24,8 @@
     "item.bos.tin_raw":"Raw Tin",
     "item.bos.tin_ingot":"Tin Ingot",
     "block.bos.tin_ore": "Tin Ore",
-    "block.bos.tin_coil": "Tin Block",
-    "block.bos.tin_block": "Tin Coil",
+    "block.bos.tin_coil": "Tin Coil",
+    "block.bos.tin_block": "Tin Block",
 
     "item.bos.titanium_raw":"Raw Titanium",
     "item.bos.titanium_ingot":"Titanium Ingot",
@@ -36,5 +36,12 @@
     "item.bos.dilithium_dust": "Dilithium Dust",
     "item.bos.dilithium_crystal": "Dilithium Crystal",
     "block.bos.dilithium_ore": "Dilithium Ore",
-    "block.bos.dilithium_block": "Dilithium Block"
+    "block.bos.dilithium_block": "Dilithium Block",
+
+    "block.bos.bauxit_ore":"Bauxit Ore",
+    "item.bos.bauxit_raw":"Raw Bauxit",
+    "block.bos.aluminium_block":"Aluminium Block",
+    "item.bos.aluminium_ingot":"Aluminium Ingot",
+    "item.bos.aluminium_sheet":"Aluminium Sheet",
+    "block.bos.aluminium_coil":"Aluminium Coil"
 }

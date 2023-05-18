@@ -1,20 +1,15 @@
 package com.marsmax.bos.api.datagen;
-import com.marsmax.bos.Bos;
+import java.util.List;
+import java.util.function.Consumer;
+
 import com.marsmax.bos.register.RegisterBlock;
 import com.marsmax.bos.register.RegisterItem;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.function.Consumer;
 
 
 public class ModRecipeProvider  extends RecipeProvider implements IConditionBuilder{

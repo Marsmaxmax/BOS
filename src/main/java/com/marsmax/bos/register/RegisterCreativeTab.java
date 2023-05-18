@@ -22,10 +22,8 @@ public class RegisterCreativeTab {
             event.accept(RegisterItem.LIQUID_CIRCUIT);
             event.accept(RegisterItem.CONTR_CIRCUIT);
 
-            //Rocket Blocks
             event.accept(RegisterBlock.LAUNCHPAD);
 
-            //Armor
             event.accept(RegisterItem.SPACESUIT_HELMET);
             event.accept(RegisterItem.SPACESUIT_CHESTPLATE);
             event.accept(RegisterItem.SPACESUIT_LEGGINGS);
@@ -38,33 +36,31 @@ public class RegisterCreativeTab {
 
         if (event.getTab() == CreativeTab.BOS_RES_TAB) {
 
-            //Dilithium
-            event.accept(RegisterItem.DILITHIUM_CRYSTAL);
-            event.accept(RegisterItem.DILITIUM_DUST);
-            event.accept(RegisterBlock.DILITHIUM_ORE);
-            event.accept(RegisterBlock.DILITHIUM_BLOCK);
-
-            //Iridium
-            event.accept(RegisterItem.IRIDIUM_RAW);
-            event.accept(RegisterItem.IRIDIUM_INGOT);
-            event.accept(RegisterBlock.IRIDIUM_ORE);
-            event.accept(RegisterBlock.IRIDIUM_BLOCK);
-            event.accept(RegisterBlock.IRIDIUM_COIL);
-
-            //Tin
-            event.accept(RegisterItem.TIN_RAW);
-            event.accept(RegisterItem.TIN_INGOT);
+            event.accept(RegisterBlock.BAUXIT_ORE);
             event.accept(RegisterBlock.TIN_ORE);
-            event.accept(RegisterBlock.TIN_BLOCK);
-            event.accept(RegisterBlock.TIN_COIL);
-
-            //Titanium
-            event.accept(RegisterItem.TITANIUM_RAW);
-            event.accept(RegisterItem.TITANIUM_INGOT);
             event.accept(RegisterBlock.TITANIUM_ORE);
-            event.accept(RegisterBlock.TITANIUM_BLOCK);
-            event.accept(RegisterBlock.TITANIUM_COIL);
+            event.accept(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
+            event.accept(RegisterBlock.IRIDIUM_ORE);
 
+            event.accept(RegisterItem.BAUXITE_RAW);
+            event.accept(RegisterItem.TIN_RAW);
+            event.accept(RegisterItem.TITANIUM_RAW);
+            event.accept(RegisterItem.IRIDIUM_RAW);
+
+            event.accept(RegisterItem.ALUMINIUM_INGOT);
+            event.accept(RegisterItem.TIN_INGOT);
+            event.accept(RegisterItem.TITANIUM_INGOT);
+            event.accept(RegisterItem.IRIDIUM_INGOT);
+
+            event.accept(RegisterBlock.ALUMINIUM_BLOCK);
+            event.accept(RegisterBlock.TIN_BLOCK);
+            event.accept(RegisterBlock.TITANIUM_BLOCK);
+            event.accept(RegisterBlock.IRIDIUM_BLOCK);
+
+            event.accept(RegisterBlock.ALUMINIUM_COIL);
+            event.accept(RegisterBlock.TIN_COIL);
+            event.accept(RegisterBlock.TITANIUM_COIL);
+            event.accept(RegisterBlock.IRIDIUM_COIL);
         }
     } 
     

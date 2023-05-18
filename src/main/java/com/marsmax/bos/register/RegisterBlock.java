@@ -57,6 +57,8 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> ALUMINIUM_BLOCK = registerBlock("aluminium_block", () -> MetalBlock());
 
+    public static final RegistryObject<Block> ALUMINIUM_COIL = registerBlock("aluminium_coil", () -> MetalBlock());
+
 
     public static final RegistryObject<Block> MOON_TURF = registerBlock("moon_turf", () -> SandBasedBlock());
 
