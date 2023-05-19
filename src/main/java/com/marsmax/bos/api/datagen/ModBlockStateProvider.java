@@ -26,22 +26,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(RegisterBlock.DILITHIUM_BLOCK);
         blockWithItem(RegisterBlock.DILITHIUM_ORE);
         blockWithItem(RegisterBlock.IRIDIUM_BLOCK);
-        blockWithItem(RegisterBlock.IRIDIUM_COIL);
+        coilBlock((RotatedPillarBlock)RegisterBlock.IRIDIUM_COIL.get());
         blockWithItem(RegisterBlock.IRIDIUM_ORE);
-        blockWithItem(RegisterBlock.TIN_BLOCK);
-        blockWithItem(RegisterBlock.TIN_COIL);
-        blockWithItem(RegisterBlock.TIN_ORE);
-        blockWithItem(RegisterBlock.TITANIUM_BLOCK);
-        blockWithItem(RegisterBlock.TITANIUM_COIL);
-        blockWithItem(RegisterBlock.TITANIUM_ORE);
-        blockWithItem(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
-        blockWithItem(RegisterBlock.ALUMINIUM_BLOCK);
-        blockWithItem(RegisterBlock.BAUXIT_ORE);
+        //blockWithItem(RegisterBlock.TIN_BLOCK);
+        //coilBlock(RegisterBlock.TIN_COIL);
+        //blockWithItem(RegisterBlock.TIN_ORE);
+        //blockWithItem(RegisterBlock.TITANIUM_BLOCK);
+        //coilBlock(RegisterBlock.TITANIUM_COIL);
+        //blockWithItem(RegisterBlock.TITANIUM_ORE);
+        //blockWithItem(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
+        //blockWithItem(RegisterBlock.ALUMINIUM_BLOCK);
+        //coilBlock(RegisterBlock.ALUMINIUM_COIL);
+        //blockWithItem(RegisterBlock.BAUXIT_ORE);
         
         
         
         //TREE blocks 
-        modLogBlock(RegisterBlock.TEST_LOG);
+        modLogBlock((RotatedPillarBlock) RegisterBlock.TEST_LOG.get());
+        modWoodBlock((RotatedPillarBlock) RegisterBlock.TEST_WOOD.get());
+        modLogBlock((RotatedPillarBlock) RegisterBlock.STRIPPED_TEST_LOG.get());
+        modWoodBlock((RotatedPillarBlock) RegisterBlock.STRIPPED_TEST_WOOD.get());
 
         blockWithItem(RegisterBlock.TEST_PLANKS);
         blockWithItem(RegisterBlock.TEST_LEAVES);
@@ -58,6 +62,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return new String(name.getNamespace() +":"+ name.getPath());
     }
 
+    public String parentLocation(Block block) {
+        ResourceLocation name = ForgeRegistries.BLOCKS.getKey(block);
+        return new String(name.getNamespace() +":block/"+ name.getPath());
+    }
+
 
     public void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
@@ -69,17 +78,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
-    public void modLogBlock(RegistryObject<Block> block) {
-        axisBlock((RotatedPillarBlock)block.get(), blockTexture(block.get()), extend(blockTexture(block.get()), "_top"));
-        modBlockItem(block.get());
+    public void modLogBlock(RotatedPillarBlock block) {
+        axisBlock(block, blockTexture(block), extend(blockTexture(block), "_top"));
+        modBlockItem(block);
     }
 
-    public void modWoodBlock(RegistryObject<Block> block) {
-        axisBlock((RotatedPillarBlock)block.get(), blockTexture(block.get()), blockTexture(block.get()));
-        modBlockItem(block.get());
+    public void coilBlock(RotatedPillarBlock block){
+        axisBlock(block, blockTexture(block),id("block/coil_top"));
+        modBlockItem(block);
+    }
+
+    public void modWoodBlock(RotatedPillarBlock block) {
+        axisBlock(block, blockTexture(block), blockTexture(block));
+        modBlockItem(block);
     }
 
     private void modBlockItem(Block block) {
-        simpleBlockItem(((Supplier<Block>) block).get(), models().withExistingParent(modelLocation(block), "mincraft:block/cube_column"));
+        simpleBlockItem((block), models().withExistingParent(modelLocation(block),"minecraft:block/cube_column"));
     }
 }

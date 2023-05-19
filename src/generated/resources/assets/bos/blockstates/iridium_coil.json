@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "bos:block/iridium_coil_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "bos:block/iridium_coil"
+    },
+    "axis=z": {
+      "model": "bos:block/iridium_coil_horizontal",
+      "x": 90
+    }
+  }
+}

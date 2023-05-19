@@ -1,17 +1,6 @@
 package com.marsmax.bos.register;
 
-import static com.marsmax.bos.register.custom.CustomBlockPresets.MachineBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.MetalBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.OreBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.RockBasedBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.SandBasedBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.LogBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.StrippedLogBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.WoodBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.StrippedWoodBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.PlanksBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.LeavesBlock;
-import static com.marsmax.bos.register.custom.CustomBlockPresets.ModSaplingBlock;
+import static com.marsmax.bos.register.custom.CustomBlockPresets.*;
 
 import java.util.function.Supplier;
 
@@ -21,11 +10,12 @@ import com.marsmax.bos.api.worldgen.tree.TestTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SaplingBlock;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
 
 public class RegisterBlock {
     public static final DeferredRegister<Block> BLOCKS  = DeferredRegister.create(ForgeRegistries.BLOCKS, Bos.MODID);
@@ -38,7 +28,7 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> IRIDIUM_BLOCK = registerBlock("iridium_block", () -> MetalBlock());
 
-    public static final RegistryObject<Block> IRIDIUM_COIL = registerBlock("iridium_coil", () -> MetalBlock());
+    public static final RegistryObject<Block> IRIDIUM_COIL = registerBlock("iridium_coil", () -> CoilBlock());
 
 
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", () -> OreBlock());

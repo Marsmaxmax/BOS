@@ -11,6 +11,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,6 +26,13 @@ public class CustomBlockPresets {
      */
     public static Block MetalBlock() {
         return new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f));
+    }
+
+    /**
+     * Used for Metal Coils
+     */
+    public static Block CoilBlock() {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f));
     }
 
     /**
@@ -58,7 +66,7 @@ public class CustomBlockPresets {
     /**
      * Used for Logs
      */
-    public static Block LogBlock(Boolean flamable, RegistryObject<Block> stripped_var) {
+    public static ModFlammableRotatedPillarBlock LogBlock(Boolean flamable, RegistryObject<Block> stripped_var) {
         return new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(5f)){
 
             @Override

@@ -1,6 +1,7 @@
-// 1.19.4	2023-05-16T17:05:20.9740473	Registries
+// 1.19.4	2023-05-18T20:38:05.3030882	Registries
 c611d65876a26ecde032127c0f0c5d6fc49e31cd data/bos/worldgen/configured_feature/dilithium_ore_overworld.json
 6c68663e19aac48922fd335118229e34ac405d82 data/bos/worldgen/configured_feature/iridium_ore_overworld.json
+f969a0daf5ce97fc74ee74fba88f9c7d2f87ef2c data/bos/worldgen/configured_feature/test.json
 877a7262c99b54370ac3e94470b266329224b5ed data/bos/worldgen/configured_feature/tin_ore_overworld.json
 011dff74e31c2f644b367870667b064228b0a5aa data/bos/worldgen/configured_feature/titanium_ore_overworld.json
 7bab392c014d153b9189bc58869ca0122975bc4a data/bos/worldgen/placed_feature/dilithium_placed.json
