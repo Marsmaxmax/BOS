@@ -1,5 +1,6 @@
-// 1.19.4	2023-05-16T17:05:20.9710312	Loot Tables
+// 1.19.4	2023-05-20T10:53:59.0629753	Loot Tables
 5dc10a7ae9dfe0aed90a266a454d9a49b7e8f66b data/bos/loot_tables/blocks/aluminium_block.json
+dee80c3a687a94c6367a60e902c1601507e08fec data/bos/loot_tables/blocks/aluminium_coil.json
 c571b9322f6cd1720d7cae83a1e34a545b9844ff data/bos/loot_tables/blocks/bauxit_ore.json
 b9f561bbeeb1114f78ad7553b48dfb59fabf0db6 data/bos/loot_tables/blocks/chissled_moon_rock.json
 200698ac86d4dfe61f861152597466a678e8f90e data/bos/loot_tables/blocks/dark_moon_turf.json
@@ -14,6 +15,13 @@ b91a09ba74f65271ad8639d410b6c77cc3943e74 data/bos/loot_tables/blocks/launchpad.j
 b471d7014426e5154db1635e59d14b478e02f17e data/bos/loot_tables/blocks/moon_rock.json
 ef8d337b48698e04554bc10a933a02e538759456 data/bos/loot_tables/blocks/moon_turf.json
 f2b329706bceff7d907d2c2efe3cea2682c6fff6 data/bos/loot_tables/blocks/smooth_moon_rock.json
+9353469795400c257f0ee8b8702b4172000df020 data/bos/loot_tables/blocks/stripped_test_log.json
+5fcd56c57ecc3ab1b57b97dbc5a1b80c557be973 data/bos/loot_tables/blocks/stripped_test_wood.json
+117ff4156abf1bf549e4fc31deb64d36b0fee7bb data/bos/loot_tables/blocks/test_leaves.json
+913a7b0a08dca76a80323e8b4b790a5bb263e2ca data/bos/loot_tables/blocks/test_log.json
+4a3b3cc5dc0c52a1a42b0b29a4c653479cf51baf data/bos/loot_tables/blocks/test_planks.json
+5d558f61b140ed83627806e39a3533c991871cf6 data/bos/loot_tables/blocks/test_sapling.json
+923c79691b8c602faf7c5699148e4722a05471ec data/bos/loot_tables/blocks/test_wood.json
 07741c0e45146c9424fe071919714ff02e7caf3a data/bos/loot_tables/blocks/tin_block.json
 f0c211cd2e80ebc5ba9fe99f39d6a2e8c6db4b53 data/bos/loot_tables/blocks/tin_coil.json
 218cb576c2376f33906416f205481200661d4f1c data/bos/loot_tables/blocks/tin_ore.json

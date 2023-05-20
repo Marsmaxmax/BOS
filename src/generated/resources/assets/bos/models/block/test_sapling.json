@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "minecraft:item/generated",
   "render_type": "minecraft:cutout",
   "textures": {
     "cross": "bos:block/test_sapling"

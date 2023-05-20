@@ -22,11 +22,21 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(RegisterBlock.IRIDIUM_COIL.get());
         dropSelf(RegisterBlock.TIN_COIL.get());
         dropSelf(RegisterBlock.TITANIUM_COIL.get());
+        dropSelf(RegisterBlock.ALUMINIUM_COIL.get());
         dropSelf(RegisterBlock.IRIDIUM_BLOCK.get());
         dropSelf(RegisterBlock.TIN_BLOCK.get());
         dropSelf(RegisterBlock.TITANIUM_BLOCK.get());
         dropSelf(RegisterBlock.DILITHIUM_BLOCK.get());
         dropSelf(RegisterBlock.ALUMINIUM_BLOCK.get());
+
+
+        dropSelf(RegisterBlock.TEST_LEAVES.get());
+        dropSelf(RegisterBlock.TEST_LOG.get());
+        dropSelf(RegisterBlock.TEST_PLANKS.get());
+        dropSelf(RegisterBlock.TEST_SAPLING.get());
+        dropSelf(RegisterBlock.TEST_WOOD.get());
+        dropSelf(RegisterBlock.STRIPPED_TEST_LOG.get());
+        dropSelf(RegisterBlock.STRIPPED_TEST_WOOD.get());
 
         dropSelf(RegisterBlock.MOON_TURF.get());
         dropSelf(RegisterBlock.DARK_MOON_TURF.get());

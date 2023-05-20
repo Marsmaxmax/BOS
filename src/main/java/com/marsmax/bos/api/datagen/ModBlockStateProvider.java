@@ -26,7 +26,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(RegisterBlock.DILITHIUM_BLOCK);
         blockWithItem(RegisterBlock.DILITHIUM_ORE);
         blockWithItem(RegisterBlock.IRIDIUM_BLOCK);
-        coilBlock((RotatedPillarBlock)RegisterBlock.IRIDIUM_COIL.get());
+        coilBlock(RegisterBlock.IRIDIUM_COIL);
         blockWithItem(RegisterBlock.IRIDIUM_ORE);
         //blockWithItem(RegisterBlock.TIN_BLOCK);
         //coilBlock(RegisterBlock.TIN_COIL);
@@ -42,10 +42,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         
         
         //TREE blocks 
-        modLogBlock((RotatedPillarBlock) RegisterBlock.TEST_LOG.get());
-        modWoodBlock((RotatedPillarBlock) RegisterBlock.TEST_WOOD.get());
-        modLogBlock((RotatedPillarBlock) RegisterBlock.STRIPPED_TEST_LOG.get());
-        modWoodBlock((RotatedPillarBlock) RegisterBlock.STRIPPED_TEST_WOOD.get());
+        modLogBlock( RegisterBlock.TEST_LOG);
+        modWoodBlock(RegisterBlock.TEST_WOOD);
+        modLogBlock(RegisterBlock.STRIPPED_TEST_LOG);
+        modWoodBlock(RegisterBlock.STRIPPED_TEST_WOOD);
 
         blockWithItem(RegisterBlock.TEST_PLANKS);
         blockWithItem(RegisterBlock.TEST_LEAVES);
@@ -62,35 +62,33 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return new String(name.getNamespace() +":"+ name.getPath());
     }
 
-    public String parentLocation(Block block) {
-        ResourceLocation name = ForgeRegistries.BLOCKS.getKey(block);
-        return new String(name.getNamespace() +":block/"+ name.getPath());
-    }
-
 
     public void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    public void saplingBlock(RegistryObject<Block> blockRegistryObject) {
-        simpleBlock(blockRegistryObject.get(),
-        models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), 
-        blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    public void saplingBlock(RegistryObject<Block> block) {
+        simpleBlock(
+            block.get(),
+            models().cross(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), 
+            blockTexture(block.get())).renderType("cutout"));
+            
+        simpleBlockItem((block.get()), models().withExistingParent(modelLocation(block.get()),"minecraft:item/generated"));
     }
 
-    public void modLogBlock(RotatedPillarBlock block) {
-        axisBlock(block, blockTexture(block), extend(blockTexture(block), "_top"));
-        modBlockItem(block);
+    public void modLogBlock(RegistryObject<Block> block) {
+        axisBlock((RotatedPillarBlock) block.get(), blockTexture((RotatedPillarBlock) block.get()), extend(blockTexture((RotatedPillarBlock) block.get()), "_top"));
+        modBlockItem((RotatedPillarBlock) block.get());
     }
 
-    public void coilBlock(RotatedPillarBlock block){
-        axisBlock(block, blockTexture(block),id("block/coil_top"));
-        modBlockItem(block);
+    public void coilBlock(RegistryObject<Block> block){
+        axisBlock((RotatedPillarBlock) block.get(), blockTexture((RotatedPillarBlock) block.get()),id("block/coil_top"));
+        modBlockItem((RotatedPillarBlock) block.get());
     }
 
-    public void modWoodBlock(RotatedPillarBlock block) {
-        axisBlock(block, blockTexture(block), blockTexture(block));
-        modBlockItem(block);
+    public void modWoodBlock(RegistryObject<Block> block) {
+        axisBlock((RotatedPillarBlock) block.get(), blockTexture((RotatedPillarBlock) block.get()), blockTexture((RotatedPillarBlock) block.get()));
+        modBlockItem((RotatedPillarBlock) block.get());
     }
 
     private void modBlockItem(Block block) {
