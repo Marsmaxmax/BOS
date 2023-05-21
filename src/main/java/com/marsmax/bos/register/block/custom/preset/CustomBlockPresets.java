@@ -1,4 +1,4 @@
-package com.marsmax.bos.register.custom;
+package com.marsmax.bos.register.block.custom.preset;
 
 import javax.annotation.Nullable;
 

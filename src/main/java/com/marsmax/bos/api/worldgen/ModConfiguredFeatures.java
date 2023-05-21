@@ -5,7 +5,7 @@ import static com.marsmax.bos.Bos.id;
 
 import java.util.List;
 
-import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.block.RegisterBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;

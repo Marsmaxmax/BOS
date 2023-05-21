@@ -1,7 +1,7 @@
-package com.marsmax.bos.register.client;
+package com.marsmax.bos.register.armor.client;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.register.custom.SpacesuitArmorItem;
+import com.marsmax.bos.register.armor.custom.SpacesuitArmorItem;
 
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;

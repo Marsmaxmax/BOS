@@ -4,11 +4,14 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.marsmax.bos.register.RegisterBlock;
 import com.marsmax.bos.register.RegisterCreativeTab;
-import com.marsmax.bos.register.RegisterItem;
+import com.marsmax.bos.register.block.RegisterBlock;
+import com.marsmax.bos.register.block.entity.RegisterBlockEntities;
+import com.marsmax.bos.register.item.RegisterItem;
+import com.marsmax.bos.register.modmenu.RegisterMenuTypes;
+import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceScreen;
 
-
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +36,9 @@ public class Bos {
         RegisterItem.register(modEventBus);
         RegisterBlock.register(modEventBus);
 
+        RegisterBlockEntities.register(modEventBus);
+        RegisterMenuTypes.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
 
 
@@ -50,7 +56,7 @@ public class Bos {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), ArcFurnanceScreen::new);
         }
     }
 

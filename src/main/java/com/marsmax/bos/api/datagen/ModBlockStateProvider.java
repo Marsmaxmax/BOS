@@ -3,8 +3,9 @@ package com.marsmax.bos.api.datagen;
 import java.util.function.Supplier;
 
 import com.marsmax.bos.Bos;
+import com.marsmax.bos.register.block.RegisterBlock;
+
 import static com.marsmax.bos.Bos.id;
-import com.marsmax.bos.register.RegisterBlock;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

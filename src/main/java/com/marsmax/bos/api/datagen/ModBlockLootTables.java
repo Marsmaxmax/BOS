@@ -7,8 +7,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
 
-import com.marsmax.bos.register.RegisterBlock;
-import com.marsmax.bos.register.RegisterItem;
+import com.marsmax.bos.register.block.RegisterBlock;
+import com.marsmax.bos.register.item.RegisterItem;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables() {

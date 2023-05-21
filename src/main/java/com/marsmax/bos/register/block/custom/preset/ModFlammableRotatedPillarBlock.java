@@ -1,4 +1,4 @@
-package com.marsmax.bos.register.custom;
+package com.marsmax.bos.register.block.custom.preset;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 import org.jetbrains.annotations.Nullable;
 
-import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.block.RegisterBlock;
 
 //UNUSED IMPLEMENTATION: LOG BLOCKS
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {

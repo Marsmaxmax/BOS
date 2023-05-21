@@ -1,6 +1,6 @@
-package com.marsmax.bos.register.client;
+package com.marsmax.bos.register.armor.client;
 
-import com.marsmax.bos.register.custom.SpacesuitArmorItem;
+import com.marsmax.bos.register.armor.custom.SpacesuitArmorItem;
 
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 

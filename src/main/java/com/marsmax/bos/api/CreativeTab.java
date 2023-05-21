@@ -1,8 +1,8 @@
 package com.marsmax.bos.api;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.register.RegisterItem;
-import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.block.RegisterBlock;
+import com.marsmax.bos.register.item.RegisterItem;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

@@ -1,8 +1,9 @@
-package com.marsmax.bos.register;
+package com.marsmax.bos.register.item;
 
 import com.marsmax.bos.Bos;
-import com.marsmax.bos.register.custom.NetherSpacesuitArmorItem;
-import com.marsmax.bos.register.custom.SpacesuitArmorItem;
+import com.marsmax.bos.register.armor.RegisterModArmorMaterials;
+import com.marsmax.bos.register.armor.custom.NetherSpacesuitArmorItem;
+import com.marsmax.bos.register.armor.custom.SpacesuitArmorItem;
 
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;

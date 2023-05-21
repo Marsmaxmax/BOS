@@ -1,4 +1,4 @@
-package com.marsmax.bos.register;
+package com.marsmax.bos.register.armor;
 
 import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
