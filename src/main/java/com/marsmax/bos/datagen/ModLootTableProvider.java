@@ -1,6 +1,6 @@
-package com.marsmax.bos.api.datagen;
+package com.marsmax.bos.datagen;
 
-import com.marsmax.bos.api.datagen.ModBlockLootTables;
+import com.marsmax.bos.datagen.ModBlockLootTables;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;

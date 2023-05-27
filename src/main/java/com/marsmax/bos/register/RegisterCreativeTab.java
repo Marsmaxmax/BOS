@@ -1,6 +1,8 @@
 package com.marsmax.bos.register;
 
 import com.marsmax.bos.api.CreativeTab;
+import com.marsmax.bos.register.block.RegisterBlock;
+import com.marsmax.bos.register.item.RegisterItem;
 
 import net.minecraftforge.event.CreativeModeTabEvent.BuildContents;
 

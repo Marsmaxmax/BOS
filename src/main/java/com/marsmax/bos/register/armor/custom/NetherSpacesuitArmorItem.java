@@ -1,4 +1,4 @@
-package com.marsmax.bos.register.custom;
+package com.marsmax.bos.register.armor.custom;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 
-import com.marsmax.bos.register.client.SpacesuitArmorRenderer;
+import com.marsmax.bos.register.armor.client.NetherSpacesuitArmorRenderer;
 
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -19,17 +19,17 @@ import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.function.Consumer;
 
-public class SpacesuitArmorItem extends ArmorItem implements GeoItem{
+public class NetherSpacesuitArmorItem extends ArmorItem implements GeoItem{
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public SpacesuitArmorItem(ArmorMaterial material, Type type, Properties properties) {
+    public NetherSpacesuitArmorItem(ArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);
     }
 
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
-            private SpacesuitArmorRenderer renderer;
+            private NetherSpacesuitArmorRenderer renderer;
 
             @Override
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(
@@ -38,7 +38,7 @@ public class SpacesuitArmorItem extends ArmorItem implements GeoItem{
                                                                 EquipmentSlot equipmentSlot, 
                                                                 HumanoidModel<?> original) {
                 if (this.renderer == null)
-                    this.renderer = new SpacesuitArmorRenderer();
+                    this.renderer = new NetherSpacesuitArmorRenderer();
 
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
                 return this.renderer;

@@ -1,4 +1,4 @@
-package com.marsmax.bos.register.custom;
+package com.marsmax.bos.register.block.custom.preset;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 import org.jetbrains.annotations.Nullable;
 
-import com.marsmax.bos.register.RegisterBlock;
+import com.marsmax.bos.register.block.RegisterBlock;
 
 //UNUSED IMPLEMENTATION: LOG BLOCKS
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
@@ -36,13 +36,6 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            //if(state.is(RegisterBlock.TEST_LOG.get())) {
-            //    return RegisterBlock.STRIPPED_TEST_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
-            //}
-            //if(state.is(RegisterBlock.TEST_WOOD.get())) {
-            //    return RegisterBlock.STRIPPED_TEST_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
-            //}
-            // USED FOR TREES
         }
 
         return super.getToolModifiedState(state, context, toolAction, simulate);
