@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceMenu;
 import com.marsmax.bos.register.recipe.ArcFurnanceRecipe;
+import com.marsmax.bos.register.recipe.RegisterModRecipies;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -148,6 +149,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         this.progress = 0;
     }
 
+
     private static void craftItem(ArcFurnanceBlockEntity pEntity) {
 
         Level level = pEntity.level;
@@ -155,35 +157,32 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager()
-                .getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
 
         if(hasRecipe(pEntity)) {
-            pEntity.itemHandler.extractItem(0, 1, false);
+             pEntity.itemHandler.extractItem(0, 1, false);
             pEntity.itemHandler.setStackInSlot(1, new ItemStack(recipe.get().getResultItem(null).getItem(),
-            pEntity.itemHandler.getStackInSlot(1).getCount() + 1));
+                pEntity.itemHandler.getStackInSlot(1).getCount() + 1));
             pEntity.resetProgress();
         }
     }
-
     private static boolean hasRecipe(ArcFurnanceBlockEntity entity) {
         Level level = entity.level;
-
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager()
-        .getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+
+        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
                 canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(null));
-    }
 
+    }
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {
         return inventory.getItem(1).getItem() == stack.getItem() || inventory.getItem(1).isEmpty();
     }
-
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
         return inventory.getItem(1).getMaxStackSize() > inventory.getItem(1).getCount();
     }
