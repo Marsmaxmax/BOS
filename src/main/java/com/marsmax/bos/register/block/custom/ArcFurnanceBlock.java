@@ -24,14 +24,17 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
+
 import org.jetbrains.annotations.Nullable;
 
 import com.marsmax.bos.register.block.entity.ArcFurnanceBlockEntity;
 import com.marsmax.bos.register.block.entity.RegisterBlockEntities;
 
-public class ArcFurnance extends BaseEntityBlock {
+public class ArcFurnanceBlock extends BaseEntityBlock {
+    
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public ArcFurnance(Properties properties) {
+
+    public ArcFurnanceBlock(Properties properties) {
         super(properties);
     }
 
@@ -82,7 +85,8 @@ public class ArcFurnance extends BaseEntityBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
+                                 Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof ArcFurnanceBlockEntity) {
@@ -103,8 +107,9 @@ public class ArcFurnance extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return createTickerHelper(type, RegisterBlockEntities.ARC_FURNANCE.get(),
-                ArcFurnanceBlockEntity::tick);
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
+                                                                  BlockEntityType<T> type) {
+        return createTickerHelper(type, RegisterBlockEntities.ARC_FURNANCE.get(), ArcFurnanceBlockEntity::tick);
     }
+
 }

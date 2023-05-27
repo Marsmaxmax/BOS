@@ -10,10 +10,10 @@ import com.marsmax.bos.register.block.entity.RegisterBlockEntities;
 import com.marsmax.bos.register.item.RegisterItem;
 import com.marsmax.bos.register.modmenu.RegisterMenuTypes;
 import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceScreen;
+import com.marsmax.bos.register.recipe.RegisterModRecipies;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,6 +39,8 @@ public class Bos {
         RegisterBlockEntities.register(modEventBus);
         RegisterMenuTypes.register(modEventBus);
 
+        RegisterModRecipies.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
 
 
@@ -52,10 +54,11 @@ public class Bos {
     }
 
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
             MenuScreens.register(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), ArcFurnanceScreen::new);
         }
     }

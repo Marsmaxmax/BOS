@@ -1,5 +1,7 @@
 package com.marsmax.bos.register.block.custom.preset;
 
+import com.marsmax.bos.register.block.custom.ArcFurnanceBlock;
+
 import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
@@ -184,5 +186,9 @@ public class CustomBlockPresets {
      */
     public static Block ModSaplingBlock(AbstractTreeGrower treeGrower) {
         return new SaplingBlock(treeGrower, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING));
+    }
+
+    public static Block ArcFurnanceBlock() {
+        return new ArcFurnanceBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f));
     }
 }

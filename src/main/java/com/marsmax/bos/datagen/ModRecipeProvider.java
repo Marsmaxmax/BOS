@@ -1,9 +1,10 @@
-package com.marsmax.bos.api.datagen;
+package com.marsmax.bos.datagen;
 import java.util.List;
 import java.util.function.Consumer;
 
 import com.marsmax.bos.register.block.RegisterBlock;
 import com.marsmax.bos.register.item.RegisterItem;
+import static com.marsmax.bos.api.datagen.RecipeDatagenProvider.*;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;

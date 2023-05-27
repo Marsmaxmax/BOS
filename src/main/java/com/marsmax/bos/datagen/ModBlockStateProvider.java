@@ -1,4 +1,4 @@
-package com.marsmax.bos.api.datagen;
+package com.marsmax.bos.datagen;
 
 import java.util.function.Supplier;
 

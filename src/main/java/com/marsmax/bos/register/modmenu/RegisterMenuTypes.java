@@ -15,13 +15,14 @@ import net.minecraftforge.registries.RegistryObject;
 public class RegisterMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, Bos.MODID);
 
-    public static final RegistryObject<MenuType<ArcFurnanceMenu>> ARC_FURNANCE_MENU = 
-        registerMenuType(ArcFurnanceMenu::new, "arc_furnance_menu");
+    public static final RegistryObject<MenuType<ArcFurnanceMenu>> ARC_FURNANCE_MENU =
+            registerMenuType(ArcFurnanceMenu::new, "arc_furnance_menu");
 
 
-    private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
-        return MENUS.register(name, () -> IForgeMenuType.create(factory));
-    }
+            private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(
+                IContainerFactory<T> factory, String name) {
+                return MENUS.register(name, () -> IForgeMenuType.create(factory));
+}
 
     public static void register(IEventBus eventBus) {
         MENUS.register(eventBus);

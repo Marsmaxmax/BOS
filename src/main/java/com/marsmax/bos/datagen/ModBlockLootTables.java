@@ -1,4 +1,4 @@
-package com.marsmax.bos.api.datagen;
+package com.marsmax.bos.datagen;
 
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;

@@ -1,6 +1,8 @@
 package com.marsmax.bos.register.modmenu.arcfurnance;
 
 import static com.marsmax.bos.Bos.id;
+
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -11,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class ArcFurnanceScreen extends AbstractContainerScreen<ArcFurnanceMenu> {
+
     private static final ResourceLocation TEXTURE = id("textures/gui/test.png");
 
     public ArcFurnanceScreen(ArcFurnanceMenu menu, Inventory inventory, Component component) {
@@ -30,7 +33,7 @@ public class ArcFurnanceScreen extends AbstractContainerScreen<ArcFurnanceMenu> 
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        ArcFurnanceScreen.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+        this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
 
         renderProgressArrow(pPoseStack, x, y);
     }
