@@ -44,10 +44,16 @@ public interface IAtmosphereHandler {
     float getOtherGasesLevel(Level level);
 
     /**
+     * Gets the atmospher pressure
+     * @param level the player is currently on
+     * @return the atmospheric pressure
+     */
+    float getAtmospherePressure(Level level);
+
+    /**
     *gets called to trigger the atmosphere
     * 
     * @param level level the player is currently on
     */
     void onTick(Level level);
-    
 }

@@ -7,8 +7,12 @@ public class AtmosphereManager implements IAtmosphereHandler {
         //TODO: Atmosphere
     @Override
     public boolean canBreathe(Level level) {
-
-        return true;
+        if(getOxygenLevel(level) <= 0.35f && getOxygenLevel(level) > 0.15f && 
+           getCO2Level(level) <= 0.1f && getNLevel(level) <= 80 && getOtherGasesLevel(level) <= 0.05) {
+                return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -32,6 +36,11 @@ public class AtmosphereManager implements IAtmosphereHandler {
     @Override
     public float getOtherGasesLevel(Level level){
         return 0.001f;
+    }
+
+    @Override
+    public float getAtmospherePressure(Level level){
+        return 1;
     }
 
     @Override

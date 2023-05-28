@@ -135,7 +135,6 @@ repositories {
     url = "https://maven.blamejared.com/"
   }
   maven {
-    // location of a maven mirror for JEI files, as a fallback
     name = "ModMaven"
     url = "https://modmaven.dev"
   }
@@ -156,6 +155,11 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-1.19.4-forge:13.1.0.11"))
 
+    // compileOnly "mekanism:Mekanism::api"
+    // runtimeOnly fg.deobf("mekanism:Mekanism:10.3.8.477")// core
+    // runtimeOnly fg.deobf("mekanism:Mekanism:10.3.8.477:additions")// Mekanism: Additions
+    // runtimeOnly fg.deobf("mekanism:Mekanism:10.3.8.477:generators")// Mekanism: Generators
+    // runtimeOnly fg.deobf("mekanism:Mekanism:10.3.8.477:tools")// Mekanism: Tools
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
 
