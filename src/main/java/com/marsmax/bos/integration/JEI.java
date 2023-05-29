@@ -2,7 +2,7 @@ package com.marsmax.bos.integration;
 
 import com.marsmax.bos.register.recipe.*;
 import com.marsmax.bos.integration.recipecategory.*;
-import static com.marsmax.bos.Bos.id;
+import static com.marsmax.bos.Bos.bosrl;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -22,7 +22,7 @@ public class JEI implements IModPlugin {
 
     @Override
     public ResourceLocation getPluginUid() {
-        return id("jei_plugin");
+        return bosrl("jei_plugin");
     }
 
     @Override

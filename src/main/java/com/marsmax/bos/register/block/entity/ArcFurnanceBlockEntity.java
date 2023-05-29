@@ -10,6 +10,9 @@ import com.marsmax.bos.register.block.custom.ArcFurnanceBlock;
 import com.marsmax.bos.register.item.RegisterItem;
 import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceMenu;
 import com.marsmax.bos.register.recipe.ArcFurnanceRecipe;
+import com.marsmax.bos.util.energy.CustomEnergyStorage;
+import com.marsmax.bos.util.networking.CustomMessages;
+import com.marsmax.bos.util.networking.packet.EnergySyncS2CPacket;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,6 +32,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -51,6 +55,14 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     };
 
 
+    private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();
+
+    public IEnergyStorage getEnergyStorage() {
+        return ENERGY_STORAGE;
+    }
+    public void setEnergyLevel(int energy) {
+        this.ENERGY_STORAGE.setEnergy(energy);
+    }
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -96,6 +108,15 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         };
     }
 
+    private final CustomEnergyStorage ENERGY_STORAGE = new CustomEnergyStorage(60000, 256) {
+        @Override
+        public void onEnergyChanged() {
+            setChanged();
+            CustomMessages.sendToClients(new EnergySyncS2CPacket(this.energy, getBlockPos()));
+        }
+    };
+    private static final int ENERGY_REQ = 32;
+
     @Override
     public Component getDisplayName() {
         return Component.literal("Arc Furnance");
@@ -109,6 +130,9 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+        if(cap == ForgeCapabilities.ENERGY) {
+            return lazyEnergyHandler.cast();
+        }
 
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             if(side == null) {
@@ -134,18 +158,21 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     public void onLoad() {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
+        lazyEnergyHandler = LazyOptional.of(() -> ENERGY_STORAGE);
     }
 
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
+        lazyEnergyHandler.invalidate();
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putInt("arc_furnance.progress", this.progress);
+        nbt.putInt("arc_furnance.energy", ENERGY_STORAGE.getEnergyStored());
 
         super.saveAdditional(nbt);
     }
@@ -155,6 +182,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("arc_furnance.progress");
+        ENERGY_STORAGE.setEnergy(nbt.getInt("arc_furnance.energy"));
     }
 
     public void drops() {
@@ -171,8 +199,9 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             return;
         }
 
-        if(hasRecipe(pEntity)) {
+        if(hasRecipe(pEntity) && hasEnoughEnergy(pEntity)) {
             pEntity.progress++;
+            extractEnergy(pEntity);
             setChanged(level, pos, state);
 
             if(pEntity.progress >= pEntity.maxProgress) {
@@ -182,6 +211,15 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             pEntity.resetProgress();
             setChanged(level, pos, state);
         }
+        pEntity.ENERGY_STORAGE.receiveEnergy(64, false);
+    }
+
+    private static void extractEnergy(ArcFurnanceBlockEntity pEntity) {
+        pEntity.ENERGY_STORAGE.extractEnergy(ENERGY_REQ, false);
+    }
+
+    private static boolean hasEnoughEnergy(ArcFurnanceBlockEntity pEntity) {
+        return pEntity.ENERGY_STORAGE.getEnergyStored() >= ENERGY_REQ * pEntity.maxProgress;
     }
 
     private void resetProgress() {

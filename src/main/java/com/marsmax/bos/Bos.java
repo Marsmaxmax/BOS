@@ -49,7 +49,7 @@ public class Bos {
 
     }
 
-    public static ResourceLocation id(String path) {
+    public static ResourceLocation bosrl(String path) {
         return new ResourceLocation(MODID, path);
     }
 

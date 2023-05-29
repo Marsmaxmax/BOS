@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 import com.marsmax.bos.Bos;
 import com.marsmax.bos.register.block.RegisterBlock;
 
-import static com.marsmax.bos.Bos.id;
+import static com.marsmax.bos.Bos.bosrl;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -83,7 +83,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     public void coilBlock(RegistryObject<Block> block){
-        axisBlock((RotatedPillarBlock) block.get(), blockTexture((RotatedPillarBlock) block.get()),id("block/coil_top"));
+        axisBlock((RotatedPillarBlock) block.get(), blockTexture((RotatedPillarBlock) block.get()),bosrl("block/coil_top"));
         modBlockItem((RotatedPillarBlock) block.get());
     }
 

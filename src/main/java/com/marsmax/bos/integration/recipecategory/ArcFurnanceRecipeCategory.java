@@ -1,7 +1,7 @@
 package com.marsmax.bos.integration.recipecategory;
 
 import com.marsmax.bos.integration.JEI;
-import static com.marsmax.bos.Bos.id;
+import static com.marsmax.bos.Bos.bosrl;
 
 import com.marsmax.bos.register.block.RegisterBlock;
 import com.marsmax.bos.register.recipe.ArcFurnanceRecipe;
@@ -19,8 +19,8 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 
 public class ArcFurnanceRecipeCategory implements IRecipeCategory<ArcFurnanceRecipe> {
-    public final static ResourceLocation UID = id("arc_blasting");
-    public final static ResourceLocation TEXTURE =id("textures/gui/test.png");
+    public final static ResourceLocation UID = bosrl("arc_blasting");
+    public final static ResourceLocation TEXTURE =bosrl("textures/gui/test.png");
 
     private final IDrawable background;
     private final IDrawable icon;

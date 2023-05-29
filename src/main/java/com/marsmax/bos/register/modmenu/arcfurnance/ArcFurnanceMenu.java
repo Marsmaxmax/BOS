@@ -47,6 +47,10 @@ public class ArcFurnanceMenu extends AbstractContainerMenu {
         addDataSlots(data);
     }
 
+    public ArcFurnanceBlockEntity getBlockEntity() {
+        return this.blockEntity;
+    }
+
     public boolean isCrafting() {
         return data.get(0) > 0;
     }
