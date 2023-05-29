@@ -1,9 +1,9 @@
 package com.marsmax.bos.util.networking;
 
-import static com.marsmax.bos.Bos.bosrl;
-
+import com.marsmax.bos.Bos;
 import com.marsmax.bos.util.networking.packet.EnergySyncS2CPacket;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
@@ -20,7 +20,7 @@ public class CustomMessages {
 
     public static void register() {
         SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(bosrl("messages"))
+                .named(new ResourceLocation(Bos.MODID, "messages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)

@@ -112,7 +112,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         @Override
         public void onEnergyChanged() {
             setChanged();
-            CustomMessages.sendToClients(new EnergySyncS2CPacket(this.energy, getBlockPos()));
+            //CustomMessages.sendToClients(new EnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
     private static final int ENERGY_REQ = 32;

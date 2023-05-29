@@ -1,5 +1,7 @@
 package com.marsmax.bos.register.modmenu.renderer;
 
+import com.marsmax.bos.register.modmenu.renderer.InfoArea;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.network.chat.Component;
