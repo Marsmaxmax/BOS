@@ -1,6 +1,6 @@
 package com.marsmax.bos.register.recipe;
 
-import static com.marsmax.bos.Bos.id;
+import static com.marsmax.bos.Bos.bosrl;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -80,7 +80,7 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
 
     public static class Serializer implements RecipeSerializer<ArcFurnanceRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = id("arc_blasting");
+        public static final ResourceLocation ID = bosrl("arc_blasting");
 
         @Override
         public ArcFurnanceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {

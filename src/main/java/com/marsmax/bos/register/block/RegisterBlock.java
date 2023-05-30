@@ -21,7 +21,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class RegisterBlock {
     public static final DeferredRegister<Block> BLOCKS  = DeferredRegister.create(ForgeRegistries.BLOCKS, Bos.MODID);
 
-
     public static final RegistryObject<Block> LAUNCHPAD = registerBlock("launchpad", () -> MachineBlock());
 
     public static final RegistryObject<Block> ARC_FURNANCE = registerBlock("arc_furnance", () -> ArcFurnanceBlock());

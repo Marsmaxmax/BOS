@@ -11,6 +11,7 @@ import com.marsmax.bos.register.item.RegisterItem;
 import com.marsmax.bos.register.modmenu.RegisterMenuTypes;
 import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceScreen;
 import com.marsmax.bos.register.recipe.RegisterModRecipies;
+import com.marsmax.bos.util.networking.CustomMessages;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +21,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -36,21 +38,24 @@ public class Bos {
         RegisterItem.register(modEventBus);
         RegisterBlock.register(modEventBus);
 
+        //Registering BlockEntities and MenuTypes
         RegisterBlockEntities.register(modEventBus);
         RegisterMenuTypes.register(modEventBus);
 
+        //Registering Custom Recipies
         RegisterModRecipies.register(modEventBus);
 
-        MinecraftForge.EVENT_BUS.register(this);
 
 
+        //And Of course the Creative tab
         RegisterCreativeTab newCreativeTabRegister = new RegisterCreativeTab();
         modEventBus.addListener(newCreativeTabRegister::addCreativeTab);
-
+        modEventBus.addListener(this::commonSetup);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
-    public static ResourceLocation id(String path) {
-        return new ResourceLocation(MODID, path);
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        CustomMessages.register();
     }
 
 
@@ -63,6 +68,8 @@ public class Bos {
         }
     }
 
+
+    //Queue Systemy
     private static final List<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ArrayList<>();
 
 	public static void queueServerWork(int tick, Runnable action) {
@@ -82,4 +89,8 @@ public class Bos {
 			workQueue.removeAll(actions);
 		}
 	}
+
+    public static ResourceLocation bosrl(String path) {
+        return new ResourceLocation(MODID, path);
+    }
 }

@@ -1,7 +1,7 @@
 package com.marsmax.bos.api.worldgen;
 
 
-import static com.marsmax.bos.Bos.id;
+import static com.marsmax.bos.Bos.bosrl;
 
 import java.util.List;
 
@@ -64,7 +64,7 @@ public class ModConfiguredFeatures {
 
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, id(name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, bosrl(name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
