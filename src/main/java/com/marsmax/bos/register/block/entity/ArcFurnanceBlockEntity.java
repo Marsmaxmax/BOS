@@ -46,9 +46,8 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.getItem() == RegisterItem.ALUMINIUM_INGOT.get();
-                case 1 -> stack.getItem() == RegisterItem.BAUXITE_RAW.get();
-                case 2 -> false;
+                case 0 -> true;
+                case 1 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -112,7 +111,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         @Override
         public void onEnergyChanged() {
             setChanged();
-            //CustomMessages.sendToClients(new EnergySyncS2CPacket(this.energy, getBlockPos()));
+            CustomMessages.sendToClients(new EnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
     private static final int ENERGY_REQ = 32;
@@ -199,6 +198,10 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             return;
         }
 
+        if(hasGemInFirstSlot(pEntity)) {
+            pEntity.ENERGY_STORAGE.receiveEnergy(30, false);
+        }
+
         if(hasRecipe(pEntity) && hasEnoughEnergy(pEntity)) {
             pEntity.progress++;
             extractEnergy(pEntity);
@@ -211,7 +214,11 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             pEntity.resetProgress();
             setChanged(level, pos, state);
         }
-        pEntity.ENERGY_STORAGE.receiveEnergy(64, false);
+
+    }
+
+    private static boolean hasGemInFirstSlot(ArcFurnanceBlockEntity pEntity) {
+        return pEntity.itemHandler.getStackInSlot(0).getItem() == RegisterItem.ALUMINIUM_INGOT.get();
     }
 
     private static void extractEnergy(ArcFurnanceBlockEntity pEntity) {
