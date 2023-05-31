@@ -37,7 +37,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -47,7 +47,8 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 0 -> true;
-                case 1 -> false;
+                case 1 -> true;
+                case 2 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -68,9 +69,10 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
     Map.of( Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 1, (i, s) -> false)),
             Direction.UP, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 0, (i, s) -> false)),
-            Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0,
-                    (index, stack) -> itemHandler.isItemValid(0, stack))),
-            Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 1, (i, s) -> false)),
+            Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 1,
+                    (index, stack) -> itemHandler.isItemValid(1, stack))),
+            Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 2,
+                    (index, stack) -> itemHandler.isItemValid(2, stack))),
             Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 0,
                     (index, stack) -> itemHandler.isItemValid(0, stack))),
             Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0 || index == 1,
@@ -193,13 +195,14 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
+    //Crafting
     public static void tick(Level level, BlockPos pos, BlockState state, ArcFurnanceBlockEntity pEntity) {
         if(level.isClientSide()) {
             return;
         }
 
         if(hasGemInFirstSlot(pEntity)) {
-            pEntity.ENERGY_STORAGE.receiveEnergy(30, false);
+            pEntity.ENERGY_STORAGE.receiveEnergy(100, false);
         }
 
         if(hasRecipe(pEntity) && hasEnoughEnergy(pEntity)) {
@@ -214,6 +217,38 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             pEntity.resetProgress();
             setChanged(level, pos, state);
         }
+
+    }
+
+    private static void craftItem(ArcFurnanceBlockEntity pEntity) {
+
+        Level level = pEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
+        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
+        }
+        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+
+        if(hasRecipe(pEntity)) {
+             pEntity.itemHandler.extractItem(0, 1, false);
+             pEntity.itemHandler.extractItem(1, 1, false);
+            pEntity.itemHandler.setStackInSlot(2, new ItemStack(recipe.get().getResultItem(null).getItem(),
+                pEntity.itemHandler.getStackInSlot(2).getCount() + 1));
+            pEntity.resetProgress();
+        }
+    }
+    private static boolean hasRecipe(ArcFurnanceBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+
+
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
+                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(null));
 
     }
 
@@ -233,41 +268,10 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         this.progress = 0;
     }
 
-
-    private static void craftItem(ArcFurnanceBlockEntity pEntity) {
-
-        Level level = pEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
-        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
-        }
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
-
-        if(hasRecipe(pEntity)) {
-             pEntity.itemHandler.extractItem(0, 1, false);
-            pEntity.itemHandler.setStackInSlot(1, new ItemStack(recipe.get().getResultItem(null).getItem(),
-                pEntity.itemHandler.getStackInSlot(1).getCount() + 1));
-            pEntity.resetProgress();
-        }
-    }
-    private static boolean hasRecipe(ArcFurnanceBlockEntity entity) {
-        Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
-
-
-        return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
-                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(null));
-
-    }
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {
-        return inventory.getItem(1).getItem() == stack.getItem() || inventory.getItem(1).isEmpty();
+        return inventory.getItem(2).getItem() == stack.getItem() || inventory.getItem(1).isEmpty();
     }
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(1).getMaxStackSize() > inventory.getItem(1).getCount();
+        return inventory.getItem(2).getMaxStackSize() > inventory.getItem(1).getCount();
     }
 }

@@ -24,13 +24,13 @@ public class ArcFurnanceMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public ArcFurnanceMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(3));
     }
 
 
     public ArcFurnanceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), id);
-        checkContainerSize(inv, 2);
+        checkContainerSize(inv, 3);
         blockEntity = (ArcFurnanceBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -40,8 +40,9 @@ public class ArcFurnanceMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
 
-            this.addSlot(new SlotItemHandler(handler, 0, 86, 15));
-            this.addSlot(new SlotItemHandler(handler, 1, 86, 60));
+            this.addSlot(new SlotItemHandler(handler, 0, 26, 13));
+            this.addSlot(new SlotItemHandler(handler, 1, 134, 13));
+            this.addSlot(new SlotItemHandler(handler, 2, 80, 60));
         });
 
         addDataSlots(data);
@@ -79,7 +80,7 @@ public class ArcFurnanceMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
