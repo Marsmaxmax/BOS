@@ -62,7 +62,7 @@ public class ArcFurnanceScreen extends AbstractContainerScreen<ArcFurnanceMenu> 
 
         energyInfoArea.draw(pPoseStack);
     }
-
+    //TODO: fix graphical shit
     private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
         if(menu.isCrafting()) {
             blit(pPoseStack, x + 105, y + 168, 176, 0, 8, menu.getScaledProgress());
