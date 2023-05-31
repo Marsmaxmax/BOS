@@ -1,11 +1,14 @@
 {
-    "type": "bos:arc_blasting",
-    "ingredients": [
-      {
-        "item": "minecraft:stick"
-      }
-    ],
-    "output": {
-      "item": "minecraft:diamond"
+  "type": "bos:arc_blasting",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
     }
+  ],
+  "result": {
+    "item": "minecraft:diamond"
   }
+}

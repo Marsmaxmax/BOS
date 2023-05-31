@@ -34,7 +34,7 @@ public class Bos {
 
         //IEventBus
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        //Registering Itmes and Blocks
+        //Registering Items and Blocks
         RegisterItem.register(modEventBus);
         RegisterBlock.register(modEventBus);
 
@@ -50,6 +50,8 @@ public class Bos {
         //And Of course the Creative tab
         RegisterCreativeTab newCreativeTabRegister = new RegisterCreativeTab();
         modEventBus.addListener(newCreativeTabRegister::addCreativeTab);
+
+        
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
