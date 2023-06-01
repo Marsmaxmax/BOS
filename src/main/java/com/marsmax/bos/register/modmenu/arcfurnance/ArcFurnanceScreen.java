@@ -17,7 +17,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class ArcFurnanceScreen extends AbstractContainerScreen<ArcFurnanceMenu> {
 
-    private static final ResourceLocation TEXTURE = bosrl("textures/gui/test.png");
+    private static final ResourceLocation TEXTURE = bosrl("textures/gui/arcfurnance.png");
     private EnergyInfoArea energyInfoArea;
 
     public ArcFurnanceScreen(ArcFurnanceMenu menu, Inventory inventory, Component component) {
