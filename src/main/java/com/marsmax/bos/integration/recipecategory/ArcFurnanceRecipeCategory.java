@@ -20,7 +20,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 
 public class ArcFurnanceRecipeCategory implements IRecipeCategory<ArcFurnanceRecipe> {
     public final static ResourceLocation UID = bosrl("arc_blasting");
-    public final static ResourceLocation TEXTURE =bosrl("textures/gui/test.png");
+    public final static ResourceLocation TEXTURE =bosrl("textures/gui/arc_furnance.png");
 
     private final IDrawable background;
     private final IDrawable icon;
@@ -52,8 +52,9 @@ public class ArcFurnanceRecipeCategory implements IRecipeCategory<ArcFurnanceRec
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, ArcFurnanceRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 86, 15).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 13).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 134, 13).addIngredients(recipe.getIngredients().get(1));
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 60).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 60).addItemStack(recipe.getResultItem(null));
     }
 }
