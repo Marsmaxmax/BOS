@@ -1,4 +1,6 @@
-// 1.19.4	2023-05-16T17:05:20.9755503	Recipes
+// 1.19.4	2023-06-05T19:45:29.9147906	Recipes
+6192056728d6367b285ee3ce2ce120bc966a16be data/bos/advancements/recipes/misc/aluminum_titanium_alloy_ingot.json
+033869294a9610bc4377898256a9de0e3fbf5c72 data/bos/recipes/aluminum_titanium_alloy_ingot.json
 1fbe28eef0f955fb125ba26e264044e5d0863403 data/minecraft/advancements/recipes/misc/aluminium_block.json
 a57ce426c0ea6ee387aa4fd936b28b54589ced9b data/minecraft/advancements/recipes/misc/aluminium_ingot.json
 23feab36604d16360cad3cedc47168c3b7c57bde data/minecraft/advancements/recipes/misc/aluminium_ingot_from_blasting_bauxit_raw.json

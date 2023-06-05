@@ -1,0 +1,16 @@
+{
+  "type": "bos:arc_blasting",
+  "category": "misc",
+  "group": "test",
+  "ingredients": [
+    {
+      "item": "bos:aluminium_ingot"
+    },
+    {
+      "item": "bos:titanium_ingot"
+    }
+  ],
+  "result": {
+    "item": "bos:aluminium_ingot"
+  }
+}

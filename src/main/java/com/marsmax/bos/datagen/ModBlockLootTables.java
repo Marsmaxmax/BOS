@@ -18,6 +18,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(RegisterBlock.LAUNCHPAD.get());
+        dropSelf(RegisterBlock.ARC_FURNANCE.get());
 
         dropSelf(RegisterBlock.IRIDIUM_COIL.get());
         dropSelf(RegisterBlock.TIN_COIL.get());
@@ -46,7 +47,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(RegisterBlock.MOON_BRICKS.get());
 
 
-        add(RegisterBlock.IRIDIUM_ORE.get(),
+        add(RegisterBlock.DEEPSLATE_IRIDIUM_ORE.get(),
+            (block) -> createOreDrop(RegisterBlock.DEEPSLATE_IRIDIUM_ORE.get(), RegisterItem.IRIDIUM_RAW.get()));
+            add(RegisterBlock.IRIDIUM_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.IRIDIUM_ORE.get(), RegisterItem.IRIDIUM_RAW.get()));
 
         add(RegisterBlock.DILITHIUM_ORE.get(),
@@ -54,6 +57,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         add(RegisterBlock.TIN_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.TIN_ORE.get(), RegisterItem.TIN_RAW.get()));
+            add(RegisterBlock.DEEPSLATE_TIN_ORE.get(),
+            (block) -> createOreDrop(RegisterBlock.DEEPSLATE_TIN_ORE.get(), RegisterItem.TIN_RAW.get()));
 
         add(RegisterBlock.TITANIUM_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.TITANIUM_ORE.get(), RegisterItem.TITANIUM_RAW.get()));
