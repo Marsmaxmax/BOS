@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 
 
 @Mod.EventBusSubscriber
-public class TestDimension {
+public class MoonDimension {
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static class Fixers {
 		@SubscribeEvent
@@ -31,7 +31,7 @@ public class TestDimension {
 					return false;
 				}
 			};
-			event.enqueueWork(() -> DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("bos:test"), customEffect));
+			event.enqueueWork(() -> DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("bos:moon"), customEffect));
 		}
 	}
 }

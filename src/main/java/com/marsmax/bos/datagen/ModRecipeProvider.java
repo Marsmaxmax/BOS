@@ -1,15 +1,17 @@
 package com.marsmax.bos.datagen;
+
 import java.util.List;
 import java.util.function.Consumer;
 
 import com.marsmax.bos.register.block.RegisterBlock;
 import com.marsmax.bos.register.item.RegisterItem;
-import static com.marsmax.bos.api.datagen.RecipeDatagenProvider.*;
+import static com.marsmax.bos.api.datagen.CustomRecipeProvider.*;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 
@@ -43,6 +45,10 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
                 RecipeCategory.MISC, RegisterBlock.IRIDIUM_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, RegisterItem.ALUMINIUM_INGOT.get(),
                 RecipeCategory.MISC, RegisterBlock.ALUMINIUM_BLOCK.get());
+
+        arcBlasting(consumer, RecipeCategory.MISC, RegisterItem.ALUMINUM_TITANIUM_ALLOY_INGOT.get(), RegisterItem.ALUMINIUM_INGOT.get(), RegisterItem.TITANIUM_INGOT.get(), "test");
+        
+
     }
 
 }
