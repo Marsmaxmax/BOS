@@ -41,15 +41,21 @@ public class ModConfiguredFeatures {
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endstoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-        List<OreConfiguration.TargetBlockState> overworldTitaniumOres = List.of(OreConfiguration.target(stoneReplaceables,
-                RegisterBlock.TITANIUM_ORE.get().defaultBlockState()),
+        List<OreConfiguration.TargetBlockState> overworldTitaniumOres = List.of(
+                OreConfiguration.target(stoneReplaceables,RegisterBlock.TITANIUM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState()));
+        
+        List<OreConfiguration.TargetBlockState> overworldTinOres = List.of(
+                OreConfiguration.target(stoneReplaceables,RegisterBlock.TIN_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_TIN_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldIridiumOres = List.of(
+                OreConfiguration.target(stoneReplaceables,RegisterBlock.IRIDIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_IRIDIUM_ORE.get().defaultBlockState()));
 
         register(context, TITANIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldTitaniumOres, 9));
-        register(context, TIN_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                RegisterBlock.TIN_ORE.get().defaultBlockState(), 9));
-        register(context, IRIDIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                RegisterBlock.IRIDIUM_ORE.get().defaultBlockState(), 9));
+        register(context, TIN_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldTinOres, 9));
+        register(context, IRIDIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldIridiumOres, 9));
         register(context, DILITHIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 RegisterBlock.DILITHIUM_ORE.get().defaultBlockState(), 9));
 

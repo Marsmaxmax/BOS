@@ -1,8 +1,8 @@
 {
-  "type": "bos:test",
+  "type": "bos:moon",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "bos:test",
+    "settings": "bos:moon",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [
@@ -22,7 +22,7 @@
           }
         },
         {
-          "biome": "bos:test",
+          "biome": "bos:moon",
           "parameters": {
             "temperature": [
               0,
