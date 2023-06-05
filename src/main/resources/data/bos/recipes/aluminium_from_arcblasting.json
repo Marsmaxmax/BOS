@@ -2,13 +2,13 @@
   "type": "bos:arc_blasting",
   "ingredients": [
     {
-      "item": "minecraft:stick"
+      "item": "bos:aluminium_ingot"
     },
     {
-      "item": "minecraft:stick"
+      "item": "bos:titanium_ingot"
     }
   ],
   "result": {
-    "item": "minecraft:diamond"
+    "item": "bos:aluminum_titanium_alloy_ingot"
   }
 }

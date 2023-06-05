@@ -1,9 +1,12 @@
-// 1.19.4	2023-05-20T10:53:59.0629753	Loot Tables
+// 1.19.4	2023-06-04T18:50:46.7482541	Loot Tables
 5dc10a7ae9dfe0aed90a266a454d9a49b7e8f66b data/bos/loot_tables/blocks/aluminium_block.json
 dee80c3a687a94c6367a60e902c1601507e08fec data/bos/loot_tables/blocks/aluminium_coil.json
+608af11631c43deb26efe46fbb25ca82d0fd343e data/bos/loot_tables/blocks/arc_furnance.json
 c571b9322f6cd1720d7cae83a1e34a545b9844ff data/bos/loot_tables/blocks/bauxit_ore.json
 b9f561bbeeb1114f78ad7553b48dfb59fabf0db6 data/bos/loot_tables/blocks/chissled_moon_rock.json
 200698ac86d4dfe61f861152597466a678e8f90e data/bos/loot_tables/blocks/dark_moon_turf.json
+836a4eac536e737adb96166372c9b3cea8a7715f data/bos/loot_tables/blocks/deepslate_iridium_ore.json
+17c850a79ce2f717e56f227760030fe8818deb74 data/bos/loot_tables/blocks/deepslate_tin_ore.json
 a88a7b3e422a20164bd54c09c7a9f50bd8bc612c data/bos/loot_tables/blocks/deepslate_titanium_ore.json
 1bc999af87623c8b0fdfb40d4fdb79ef952cdbc7 data/bos/loot_tables/blocks/dilithium_block.json
 1a08fc2f05ec774a209064386289d135b4764f95 data/bos/loot_tables/blocks/dilithium_ore.json

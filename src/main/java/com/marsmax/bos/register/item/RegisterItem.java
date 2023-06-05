@@ -95,10 +95,15 @@ public class RegisterItem {
     public static final RegistryObject<Item> BAUXITE_RAW = ITEMS.register("bauxit_raw", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ALUMINIUM_INGOT = ITEMS.register("aluminium_ingot", () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> ALUMINIUM_SHEET = ITEMS.register("aluminium_sheet", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ALUMINIUM_DUST = ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> ALUMINIUM_SHEET = ITEMS.register("aluminium_sheet", () -> new Item(new Item.Properties()));
+
+
+    public static final RegistryObject<Item> ALUMINUM_TITANIUM_ALLOY_INGOT = ITEMS.register("aluminum_titanium_alloy_ingot", () -> new Item(new Item.Properties()));
+
 
 
     public static final RegistryObject<Item> MOON_DUST = ITEMS.register("moon_dust", () ->new Item(new Item.Properties()));

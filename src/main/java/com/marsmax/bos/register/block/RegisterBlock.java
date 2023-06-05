@@ -28,12 +28,16 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> IRIDIUM_ORE = registerBlock("iridium_ore", () -> OreBlock());
 
+    public static final RegistryObject<Block> DEEPSLATE_IRIDIUM_ORE = registerBlock("deepslate_iridium_ore", () -> OreBlock());
+
     public static final RegistryObject<Block> IRIDIUM_BLOCK = registerBlock("iridium_block", () -> MetalBlock());
 
     public static final RegistryObject<Block> IRIDIUM_COIL = registerBlock("iridium_coil", () -> CoilBlock());
 
 
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", () -> OreBlock());
+
+    public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore", () -> OreBlock());
 
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",  () -> MetalBlock());
 
