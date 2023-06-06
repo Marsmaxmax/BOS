@@ -2,8 +2,6 @@ package com.marsmax.bos.api.datagen;
 
 import java.util.function.Consumer;
 
-import javax.annotation.Nullable;
-
 import com.marsmax.bos.Bos;
 
 import net.minecraft.advancements.critereon.EntityPredicate;
@@ -17,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class CustomRecipeProvider {
     public static void arcBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pOutput, ItemLike pInput, ItemLike pInput2, String pGroup) {
-        ArcFurnanceRecipeBuilder.arcBlaster(pCategory, (pInput)).requires(pInput).requires(pInput2).group(pGroup).save(pFinishedRecipeConsumer, Bos.bosrl(getSimpleRecipeName(pOutput)));
+        ArcFurnanceRecipeBuilder.arcBlaster(pCategory, (pOutput)).requires(pInput).requires(pInput2).group(pGroup).save(pFinishedRecipeConsumer, Bos.bosrl(getSimpleRecipeName(pOutput)));
     }
     
     protected static String getHasName(ItemLike pItemLike) {
