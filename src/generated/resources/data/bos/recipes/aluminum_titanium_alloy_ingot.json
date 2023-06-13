@@ -10,6 +10,7 @@
       "item": "bos:titanium_ingot"
     }
   ],
+  "energy": 65,
   "result": {
     "item": "bos:aluminum_titanium_alloy_ingot"
   }
