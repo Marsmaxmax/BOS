@@ -28,11 +28,13 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack result;
     private final NonNullList<Ingredient> ingredients;
+    private final Integer energy;
 
-    public ArcFurnanceRecipe(ResourceLocation id, ItemStack output,NonNullList<Ingredient> recipeItems) {
+    public ArcFurnanceRecipe(ResourceLocation id, ItemStack output,NonNullList<Ingredient> recipeItems, Integer energy) {
         this.id = id;
         this.result = output;
         this.ingredients = recipeItems;
+        this.energy = energy;
     }
 
 
@@ -92,6 +94,10 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
+    public Integer getEnergy(){
+        return this.energy;
+    }
+
     public static class Type implements RecipeType<ArcFurnanceRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
@@ -106,14 +112,14 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
         @Override
         public ArcFurnanceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(pJson, "ingredients"));
-                
+            Integer pEnergy = GsonHelper.getAsInt(pJson, "energy"); 
             if (nonnulllist.isEmpty()) {
                throw new JsonParseException("No ingredients for bos:arc_blasting recipe");
             } else if (nonnulllist.size() > 2) {
                throw new JsonParseException("Too many ingredients for bos:arc_blasting recipe. The maximum is 2");
             } else {
                ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-               return new ArcFurnanceRecipe(pRecipeId, itemstack, nonnulllist);
+               return new ArcFurnanceRecipe(pRecipeId, itemstack, nonnulllist, pEnergy);
             }
         }
 
@@ -138,10 +144,10 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(buf));
             }
-   
+            Integer pEnergy = buf.readInt();
             ItemStack output = buf.readItem();
-            return new ArcFurnanceRecipe(id, output, inputs);
-         }
+            return new ArcFurnanceRecipe(id, output, inputs, pEnergy);
+        }
 
         @Override
         public void toNetwork(FriendlyByteBuf buf, ArcFurnanceRecipe recipe) {
@@ -150,6 +156,7 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
             }
+            buf.writeInt(recipe.getEnergy());
             buf.writeItemStack(recipe.getResultItem(null), false);
         }
     }

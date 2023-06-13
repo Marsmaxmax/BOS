@@ -33,13 +33,16 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
     private final int count;
     private final List<Ingredient> ingredients = Lists.newArrayList();
     private final Advancement.Builder advancement = Advancement.Builder.advancement();
+    private Integer energy;
     @Nullable
     private String group;
 
-    public ArcFurnanceRecipeBuilder(RecipeCategory pCategory, ItemLike pResult, int pCount){
+
+    public ArcFurnanceRecipeBuilder(RecipeCategory pCategory, ItemLike pResult, int pCount, int pEnergy){
         this.category = pCategory;
         this.result = pResult.asItem();
         this.count = pCount;
+        this.energy = pEnergy;
     }
 
     /**
@@ -47,8 +50,8 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
      * @param pInput
      * @return new Arc Blasting recipe
      */
-    public static ArcFurnanceRecipeBuilder arcBlaster(RecipeCategory pCategory, ItemLike pInput) {
-        return new ArcFurnanceRecipeBuilder(pCategory, pInput, 1);
+    public static ArcFurnanceRecipeBuilder arcBlaster(RecipeCategory pCategory, ItemLike pInput, int energy) {
+        return new ArcFurnanceRecipeBuilder(pCategory, pInput, 1, energy);
     };
 
 
@@ -103,6 +106,7 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
         return this.result;
     }
 
+
     
    /**
     * Makes sure that this recipe is valid and obtainable.
@@ -116,7 +120,7 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
     public void save(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ResourceLocation pRecipeId) {
         this.ensureValid(pRecipeId);
         this.advancement.parent(ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId)).rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
-        pFinishedRecipeConsumer.accept(new ArcFurnanceRecipeBuilder.Result(pRecipeId, this.result, this.count, this.group == null ? "" : this.group, determineBookCategory(this.category), this.ingredients, this.advancement, pRecipeId.withPrefix("recipes/" + this.category.getFolderName() + "/")));
+        pFinishedRecipeConsumer.accept(new ArcFurnanceRecipeBuilder.Result(pRecipeId, this.result, this.count, this.group == null ? "" : this.group, determineBookCategory(this.category), this.ingredients, this.advancement, pRecipeId.withPrefix("recipes/" + this.category.getFolderName() + "/"), this.energy));
     }
     
 
@@ -128,8 +132,9 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
         private final List<Ingredient> ingredients;
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
+        private final Integer energy;
   
-        public Result(ResourceLocation pId, Item pResult, int pCount, String pGroup, CraftingBookCategory pCategory, List<Ingredient> pIngredients, Advancement.Builder pAdvancement, ResourceLocation pAdvancementId) {
+        public Result(ResourceLocation pId, Item pResult, int pCount, String pGroup, CraftingBookCategory pCategory, List<Ingredient> pIngredients, Advancement.Builder pAdvancement, ResourceLocation pAdvancementId, Integer energy) {
            super(pCategory);
            this.id = pId;
            this.result = pResult;
@@ -138,28 +143,25 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
            this.ingredients = pIngredients;
            this.advancement = pAdvancement;
            this.advancementId = pAdvancementId;
+           this.energy = energy;
         }
 
         public void serializeRecipeData(JsonObject pJson) {
             super.serializeRecipeData(pJson);
-            if (!this.group.isEmpty()) {
-               pJson.addProperty("group", this.group);
-            }
    
             JsonArray jsonarray = new JsonArray();
-   
             for(Ingredient ingredient : this.ingredients) {
                jsonarray.add(ingredient.toJson());
             }
-   
+            
             pJson.add("ingredients", jsonarray);
-            JsonObject jsonobject = new JsonObject();
-            jsonobject.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).toString());
-            //if (this.count > 1) { //there is never a count for bos:arc_blasting
-            //   jsonobject.addProperty("count", this.count);
-            //}
-   
-            pJson.add("result", jsonobject);
+
+            JsonObject result = new JsonObject();
+            result.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).toString());
+
+            pJson.add("ingredients", jsonarray);
+            pJson.addProperty("energy", this.energy);
+            pJson.add("result", result);
          }
 
         @Override
