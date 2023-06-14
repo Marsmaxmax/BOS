@@ -18,6 +18,11 @@ public class RegisterBlockEntities {
                                 () -> BlockEntityType.Builder.of(
                                         ArcFurnanceBlockEntity::new,
                                         RegisterBlock.ARC_FURNANCE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<LatheBlockEntity>> LATHE = 
+        BLOCK_ENTITIES.register("lathe", 
+                                () -> BlockEntityType.Builder.of(
+                                        LatheBlockEntity::new,
+                                        RegisterBlock.LATHE.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

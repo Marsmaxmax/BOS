@@ -1,0 +1,14 @@
+{
+    "type":"bos:lathe",
+    "category": "misc",
+    "energy": 150,
+    "drill":"minecraft:stick",
+    "ingredients": [
+      {
+        "item": "bos:titanium_ingot"
+      }
+    ],
+    "result": {
+      "item": "bos:aluminum_titanium_alloy_ingot"
+    }
+}
