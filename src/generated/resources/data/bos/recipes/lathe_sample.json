@@ -2,6 +2,7 @@
     "type":"bos:lathe",
     "category": "misc",
     "energy": 150,
+    "time":150,
     "drill":"minecraft:stick",
     "ingredients": [
       {

@@ -210,7 +210,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
             extractEnergy(pEntity);
             setChanged(level, pos, state);
 
-            if(pEntity.progress >= pEntity.maxProgress) {
+            if(pEntity.progress >= recpieTime(pEntity)) {
                 craftItem(pEntity);
             }
         } else {
@@ -219,6 +219,20 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         }
 
     }
+
+    private static int recpieTime(LatheBlockEntity pEntity){
+        Level level = pEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
+        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
+        }
+        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
+
+        Integer initialtime = pEntity.maxProgress / 78;
+        Integer time = initialtime * recipe.get().getTime();
+        return time;
+    }
+
 
     private static void craftItem(LatheBlockEntity pEntity) {
 
@@ -275,7 +289,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         }
 
         Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
-        return pEntity.ENERGY_STORAGE.getEnergyStored() >= recipe.get().getEnergy() * pEntity.maxProgress;
+        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy()* recpieTime(pEntity);
     }
     private static boolean hasDrillInSlot(LatheBlockEntity pEntity,int slot){
         Level level = pEntity.level;

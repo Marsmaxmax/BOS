@@ -228,7 +228,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
 
         Integer initialtime = pEntity.maxProgress / 78;
-        Integer time = initialtime* recipe.getTime();
+        Integer time = initialtime * recipe.get().getTime();
         return time;
     }
 
@@ -269,11 +269,27 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private static void extractEnergy(ArcFurnanceBlockEntity pEntity) {
-        pEntity.ENERGY_STORAGE.extractEnergy(ENERGY_REQ, false);
+        Level level = pEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
+        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+
+        pEntity.ENERGY_STORAGE.extractEnergy(recipe.get().getEnergy(), false);
     }
 
     private static boolean hasEnoughEnergy(ArcFurnanceBlockEntity pEntity) {
-        return pEntity.ENERGY_STORAGE.getEnergyStored() >= ENERGY_REQ * pEntity.maxProgress;
+        Level level = pEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
+        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+
+        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy()* recpieTime(pEntity);
     }
 
     private void resetProgress() {
