@@ -22,6 +22,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> TIN_PLACED_KEY = createKey("tin_placed");
     public static final ResourceKey<PlacedFeature> IRIDIUM_PLACED_KEY = createKey("iridium_placed");
     public static final ResourceKey<PlacedFeature> DILITHIUM_PLACED_KEY = createKey("dilithium_placed");
+    public static final ResourceKey<PlacedFeature> BAUXITE_PLACED_KEY = createKey("bauxite_placed");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -42,6 +43,9 @@ public class ModPlacedFeatures {
         register(context, DILITHIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DILITHIUM_ORE_OVERWORLD_KEY),
                 ModOrePlacement.commonOrePlacement(16, // veins per chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+        register(context, BAUXITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BAUXITE_ORE_OVERWORLD_KEY),
+                ModOrePlacement.commonOrePlacement(16, // veins per chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(60), VerticalAnchor.absolute(64))));
     }
 
 

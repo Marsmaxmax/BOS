@@ -66,7 +66,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
             (block) -> createOreDrop(RegisterBlock.DEEPSLATE_TITANIUM_ORE.get(), RegisterItem.TITANIUM_RAW.get()));
 
         add(RegisterBlock.BAUXIT_ORE.get(),
-            (block) -> createOreDrop(RegisterBlock.BAUXIT_ORE.get(), RegisterItem.ALUMINIUM_DUST.get()));
+            (block) -> createOreDrop(RegisterBlock.BAUXIT_ORE.get(), RegisterItem.BAUXITE_RAW.get()));
     }
 
     @Override

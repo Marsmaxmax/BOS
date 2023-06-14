@@ -1,19 +1,31 @@
-// 1.19.4	2023-05-20T10:53:59.0669953	Item Models: bos
+// 1.19.4	2023-06-06T20:32:10.025305	Item Models: bos
 dd04c9bba8f04a39ba25645b898bc8c1be65531e assets/bos/models/item/adv_circuit.json
 397ad220018162d4e9edb406c9afde2569569d59 assets/bos/models/item/aluminium_dust.json
 91f16498a7e217ed89dccbc49d834b8c3a480639 assets/bos/models/item/aluminium_ingot.json
+5833944e2e11cb09e19bce876f75cddb30c20418 assets/bos/models/item/aluminium_sheet.json
+3d86406856b9eaa28372e22a96d72c364b12a7fc assets/bos/models/item/aluminum_titanium_alloy_ingot.json
 4b2600fe65acac524d0db130dab74d92655fd4c9 assets/bos/models/item/asteroid_chip.json
 5271063019084382494c9d621faea29b3c754e72 assets/bos/models/item/basic_circuit.json
+0bc16b36e2e7452618257bc09d040433f0aa853a assets/bos/models/item/bauxite_raw.json
 9b5263192f9d6e8801300ca4f6a55242c97f5c2c assets/bos/models/item/contr_circuit.json
 cb9d4320532ef40b98c27b58e593428a78d8a87f assets/bos/models/item/dilithium_crystal.json
 482602a2fbb7df68dbb8469f3cc09871593e586a assets/bos/models/item/dilithium_dust.json
 7172bdaa36407a502d2cb5f40ed7cea21b5c8912 assets/bos/models/item/elevator_chip.json
+8a12c30fe1c8ff250eabebe34429c99511e2d535 assets/bos/models/item/iridium_dust.json
 ad47b32d1da7046d9516c89bcacd0c52e5275e05 assets/bos/models/item/iridium_ingot.json
+d75e1cd542ac7933753e27ffe423f99fe984b905 assets/bos/models/item/iridium_raw.json
+a854cd318bbcc8473c100525c22f2ee31169a785 assets/bos/models/item/iridium_sheet.json
 6bed57abf28dd2593c950273186840697c0fb408 assets/bos/models/item/item_circuit.json
 d21e78d812c378d3c44e93c83e4a0680101c98d3 assets/bos/models/item/liquid_circuit.json
 583addf839045c95f2bf6bdf0a2881baf070dfd8 assets/bos/models/item/planet_chip.json
 0a60e70c6b32abbf8aa634932c3e8c4f8520400d assets/bos/models/item/satellite_chip.json
 4c7f3720faf5ab1262b75e2dd29fa61396c935eb assets/bos/models/item/station_chip.json
+909e9119077dc80b1365c879f686f60be806c01b assets/bos/models/item/tin_dust.json
 a121b47cd6d1c46cfe576140138cb91537daeaf8 assets/bos/models/item/tin_ingot.json
+f132e0aad991141685293d7c867aa6e44940da43 assets/bos/models/item/tin_raw.json
+03b9ba5dcd21288250521f75e3a64ea0b0415606 assets/bos/models/item/tin_sheet.json
+908fd0ea4d13fe48a5a5a79522596f7e30893222 assets/bos/models/item/titanium_dust.json
 567c3a8dd163267923e68ecacbacf21980908371 assets/bos/models/item/titanium_ingot.json
+0f2bf2b7647223a85417b626ed8013fba06b7a6a assets/bos/models/item/titanium_raw.json
+e6d484a835b608c881c746b8741c152820fd3427 assets/bos/models/item/titanium_sheet.json
 c364c01cb24a7e485831aeaf1955d3e7a8cc48db assets/bos/models/item/track_circuit.json

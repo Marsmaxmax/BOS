@@ -46,7 +46,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, RegisterItem.ALUMINIUM_INGOT.get(),
                 RecipeCategory.MISC, RegisterBlock.ALUMINIUM_BLOCK.get());
 
-        arcBlasting(consumer, RecipeCategory.MISC, RegisterItem.ALUMINUM_TITANIUM_ALLOY_INGOT.get(), RegisterItem.ALUMINIUM_INGOT.get(), RegisterItem.TITANIUM_INGOT.get(), "test");
+        arcBlasting(consumer, RecipeCategory.MISC, RegisterItem.ALUMINUM_TITANIUM_ALLOY_INGOT.get(), RegisterItem.ALUMINIUM_INGOT.get(), RegisterItem.TITANIUM_INGOT.get(), "alloys", 150);
         
 
     }
