@@ -1,7 +1,7 @@
 {
   "type": "bos:arc_blasting",
   "category": "misc",
-  "group": "test",
+  "energy": 150,
   "ingredients": [
     {
       "item": "bos:aluminium_ingot"
