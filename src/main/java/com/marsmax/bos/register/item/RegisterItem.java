@@ -92,7 +92,7 @@ public class RegisterItem {
     public static final RegistryObject<Item> SILICON_INGOT = ITEMS.register("silicon_ingot", () -> new Item(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> BAUXITE_RAW = ITEMS.register("bauxit_raw", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BAUXITE_RAW = ITEMS.register("bauxite_raw", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ALUMINIUM_INGOT = ITEMS.register("aluminium_ingot", () -> new Item(new Item.Properties()));
     

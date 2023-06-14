@@ -6,6 +6,7 @@ import com.marsmax.bos.register.item.RegisterItem;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.client.model.IModelBuilder.Simple;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -45,21 +46,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(RegisterItem.DILITIUM_DUST);
 
         simpleItem(RegisterItem.IRIDIUM_INGOT);
-        // simpleItem(RegisterItem.IRIDIUM_RAW);
-        // simpleItem(RegisterItem.IRIDIUM_SHEET);
+        simpleItem(RegisterItem.IRIDIUM_RAW);
+        simpleItem(RegisterItem.IRIDIUM_SHEET);
+        simpleItem(RegisterItem.IRIDIUM_DUST);
 
         simpleItem(RegisterItem.TIN_INGOT);
-        // simpleItem(RegisterItem.TIN_RAW);
-        // simpleItem(RegisterItem.TIN_SHEET);
+        simpleItem(RegisterItem.TIN_RAW);
+        simpleItem(RegisterItem.TIN_SHEET);
+        simpleItem(RegisterItem.TIN_DUST);
 
         simpleItem(RegisterItem.TITANIUM_INGOT);
-        // simpleItem(RegisterItem.TITANIUM_RAW);
-        // simpleItem(RegisterItem.TITANIUM_SHEET);
+        simpleItem(RegisterItem.TITANIUM_RAW);
+        simpleItem(RegisterItem.TITANIUM_SHEET);
+        simpleItem(RegisterItem.TITANIUM_DUST);
 
-        // simpleItem(RegisterItem.BAUXITE_RAW);
+        simpleItem(RegisterItem.BAUXITE_RAW);
         simpleItem(RegisterItem.ALUMINIUM_DUST);
         simpleItem(RegisterItem.ALUMINIUM_INGOT);
-        // simpleItem(RegisterItem.ALUMINIUM_SHEET);
+        simpleItem(RegisterItem.ALUMINIUM_SHEET);
+
+        simpleItem(RegisterItem.ALUMINUM_TITANIUM_ALLOY_INGOT);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

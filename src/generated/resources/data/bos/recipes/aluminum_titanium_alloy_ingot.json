@@ -4,7 +4,6 @@
   "group": "test",
   "energy": 150,
   "time": 150,
-
   "ingredients": [
     {
       "item": "bos:aluminium_ingot"
@@ -14,6 +13,6 @@
     }
   ],
   "result": {
-    "item": "bos:aluminium_ingot"
+    "item": "bos:aluminum_titanium_alloy_ingot"
   }
 }

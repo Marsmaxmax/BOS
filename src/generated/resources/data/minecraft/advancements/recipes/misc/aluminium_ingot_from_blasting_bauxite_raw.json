@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bauxit_raw": {
+    "has_bauxite_raw": {
       "conditions": {
         "items": [
           {
             "items": [
-              "bos:bauxit_raw"
+              "bos:bauxite_raw"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:aluminium_ingot_from_smelting_bauxit_raw"
+        "recipe": "minecraft:aluminium_ingot_from_blasting_bauxite_raw"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bauxit_raw",
+      "has_bauxite_raw",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:aluminium_ingot_from_smelting_bauxit_raw"
+      "minecraft:aluminium_ingot_from_blasting_bauxite_raw"
     ]
   }
 }

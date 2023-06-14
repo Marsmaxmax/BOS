@@ -5,7 +5,7 @@
   "experience": 0.7,
   "group": "aluminium",
   "ingredient": {
-    "item": "bos:bauxit_raw"
+    "item": "bos:bauxite_raw"
   },
   "result": "bos:aluminium_ingot"
 }
