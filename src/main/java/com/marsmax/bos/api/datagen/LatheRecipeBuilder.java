@@ -27,7 +27,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements RecipeBuilder {
+public class LatheRecipeBuilder extends CraftingRecipeBuilder implements RecipeBuilder {
     private final RecipeCategory category;
     private final Item result;
     private final int count;
@@ -39,36 +39,35 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
     private String group;
 
 
-    public ArcFurnanceRecipeBuilder(RecipeCategory pCategory, ItemLike pResult, int pCount, int pEnergy, int time){
+
+    public LatheRecipeBuilder(RecipeCategory pCategory, ItemLike pResult, int pCount, int pEnergy, int time){
         this.category = pCategory;
         this.result = pResult.asItem();
         this.count = pCount;
         this.energy = pEnergy;
-        this.time = time;
+        this.time = time;;
     }
 
     /**
      * @param pCategory
      * @param pInput
-     * @return new Arc Blasting recipe
+     * @return new lathe recipe
      */
-    public static ArcFurnanceRecipeBuilder arcBlaster(RecipeCategory pCategory, ItemLike pInput, int energy, int time) {
-        return new ArcFurnanceRecipeBuilder(pCategory, pInput, 1, energy, time);
+    public static LatheRecipeBuilder lathe(RecipeCategory pCategory, ItemLike pInput, int energy, int time) {
+        return new LatheRecipeBuilder(pCategory, pInput,1, energy, time);
     };
-
-
 
     /**
      * Adds an ingredient of the given item.
      */
-    public ArcFurnanceRecipeBuilder requires(ItemLike pItem) {
+    public LatheRecipeBuilder requires(ItemLike pItem) {
        return this.requires(pItem, 1);
     }
 
     /**
      * Adds the given ingredient multiple times.
      */
-    public ArcFurnanceRecipeBuilder requires(ItemLike pItem, int pQuantity) {
+    public LatheRecipeBuilder requires(ItemLike pItem, int pQuantity) {
        for(int i = 0; i < pQuantity; ++i) {
           this.requires(Ingredient.of(pItem));
        }    
@@ -78,14 +77,14 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
     /**
      * Adds an ingredient.
      */
-    public ArcFurnanceRecipeBuilder requires(Ingredient pIngredient) {
+    public LatheRecipeBuilder requires(Ingredient pIngredient) {
        return this.requires(pIngredient, 1);
     } 
 
     /**
      * Adds an ingredient multiple times.
      */
-    public ArcFurnanceRecipeBuilder requires(Ingredient pIngredient, int pQuantity) {
+    public LatheRecipeBuilder requires(Ingredient pIngredient, int pQuantity) {
        for(int i = 0; i < pQuantity; ++i) {
           this.ingredients.add(pIngredient);
        }    
@@ -93,16 +92,17 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
     }
 
     @Override
-    public ArcFurnanceRecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
+    public LatheRecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
         this.advancement.addCriterion(pCriterionName, pCriterionTrigger);
         return this;
     }
 
     @Override
-    public ArcFurnanceRecipeBuilder group(@Nullable String pGroupName) {
+    public LatheRecipeBuilder group(@Nullable String pGroupName) {
         this.group = pGroupName;
         return this;
     }
+
     @Override
     public Item getResult() {
         return this.result;
@@ -122,7 +122,7 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
     public void save(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ResourceLocation pRecipeId) {
         this.ensureValid(pRecipeId);
         this.advancement.parent(ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId)).rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
-        pFinishedRecipeConsumer.accept(new ArcFurnanceRecipeBuilder.Result(pRecipeId, this.result, this.count, this.group == null ? "" : this.group, determineBookCategory(this.category), this.ingredients, this.advancement, pRecipeId.withPrefix("recipes/" + this.category.getFolderName() + "/"), this.energy, this.time));
+        pFinishedRecipeConsumer.accept(new LatheRecipeBuilder.Result(pRecipeId, this.result, this.count, this.group == null ? "" : this.group, determineBookCategory(this.category), this.ingredients, this.advancement, pRecipeId.withPrefix("recipes/" + this.category.getFolderName() + "/"), this.energy, this.time));
     }
     
 
@@ -163,6 +163,7 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
             JsonObject result = new JsonObject();
             result.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).toString());
 
+
             pJson.add("ingredients", jsonarray);
             pJson.addProperty("energy", this.energy);
             pJson.addProperty("time", this.time);
@@ -176,7 +177,7 @@ public class ArcFurnanceRecipeBuilder extends CraftingRecipeBuilder implements R
 
         @Override
         public RecipeSerializer<?> getType() {
-            return RegisterModRecipies.ARC_BLASTING.get();
+            return RegisterModRecipies.LATHE.get();
         }
 
         @Override

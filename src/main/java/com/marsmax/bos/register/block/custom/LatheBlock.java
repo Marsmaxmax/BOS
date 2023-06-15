@@ -101,7 +101,7 @@ public class LatheBlock extends BaseEntityBlock{
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new LatheBlockEntity(pos, state);
+        return new LatheBlockEntity(pos, state); 
     }
 
     @Nullable

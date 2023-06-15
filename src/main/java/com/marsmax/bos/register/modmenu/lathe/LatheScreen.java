@@ -62,7 +62,7 @@ public class LatheScreen extends AbstractContainerScreen<LatheMenu> {
 
         energyInfoArea.draw(pPoseStack);
     }
-    //TODO: fix graphical shit
+
     private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
         if(menu.isCrafting()) {
             blit(pPoseStack, x + 32 , y + 31, 0, 168, 112, menu.getScaledProgress());

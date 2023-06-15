@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 import com.marsmax.bos.register.block.custom.LatheBlock;
 import com.marsmax.bos.register.item.RegisterItem;
+import com.marsmax.bos.register.modmenu.lathe.LatheMenu;
 import com.marsmax.bos.register.recipe.LatheRecipe;
 import com.marsmax.bos.util.energy.CustomEnergyStorage;
 import com.marsmax.bos.util.networking.CustomMessages;
@@ -89,6 +90,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 78;
+    private static int recipeMaxProgress;
 
     public LatheBlockEntity(BlockPos pos, BlockState state) {
         super(RegisterBlockEntities.LATHE.get(), pos, state);
@@ -98,6 +100,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
                 return switch (index) {
                     case 0 -> LatheBlockEntity.this.progress;
                     case 1 -> LatheBlockEntity.this.maxProgress;
+                    case 2 -> LatheBlockEntity.this.recipeMaxProgress;
                     default -> 0;
                 };
             }
@@ -107,12 +110,13 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
                 switch (index) {
                     case 0 -> LatheBlockEntity.this.progress = value;
                     case 1 -> LatheBlockEntity.this.maxProgress = value;
+                    case 2 -> LatheBlockEntity.this.recipeMaxProgress = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 3;
             }
         };
     }
@@ -125,8 +129,8 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        // return new LatheMenu(id, inventory, this, this.data);
-        return null;
+        return new LatheMenu(id, inventory, this, this.data);
+
     }
 
     @Override
@@ -210,7 +214,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
             extractEnergy(pEntity);
             setChanged(level, pos, state);
 
-            if(pEntity.progress >= recpieTime(pEntity)) {
+            if(pEntity.progress >= recipeTime(pEntity)) {
                 craftItem(pEntity);
             }
         } else {
@@ -220,7 +224,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
 
     }
 
-    private static int recpieTime(LatheBlockEntity pEntity){
+    public static int recipeTime(LatheBlockEntity pEntity){
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
@@ -228,8 +232,8 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         }
         Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
 
-        Integer initialtime = pEntity.maxProgress / 78;
-        Integer time = initialtime * recipe.get().getTime();
+        Integer time = recipe.get().getTime();
+        recipeMaxProgress = time;
         return time;
     }
 
@@ -244,8 +248,8 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
 
         if(hasRecipe(pEntity)) {
-             pEntity.itemHandler.extractItem(0, 1, false);
-             pEntity.itemHandler.extractItem(1, 1, false);
+            pEntity.itemHandler.extractItem(0, 1, false);
+            pEntity.itemHandler.extractItem(1, 0, false);
             pEntity.itemHandler.setStackInSlot(2, new ItemStack(recipe.get().getResultItem(null).getItem(),
                 pEntity.itemHandler.getStackInSlot(2).getCount() + 1));
             pEntity.resetProgress();
@@ -261,9 +265,13 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
 
 
-        return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(null)) && hasDrillInSlot(entity,0);
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(null));
     
 
+    }
+
+    private static boolean hasGemInFirstSlot(LatheBlockEntity pEntity) {
+        return pEntity.itemHandler.getStackInSlot(0).getItem() == RegisterItem.ALUMINIUM_INGOT.get();
     }
 
     private static void extractEnergy(LatheBlockEntity pEntity) {
@@ -277,10 +285,6 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         pEntity.ENERGY_STORAGE.extractEnergy(recipe.get().getEnergy(), false);
     }
 
-    private static boolean hasGemInFirstSlot(LatheBlockEntity pEntity) {
-        return pEntity.itemHandler.getStackInSlot(0).getItem() == RegisterItem.ALUMINIUM_INGOT.get();
-    }
-
     private static boolean hasEnoughEnergy(LatheBlockEntity pEntity) {
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
@@ -289,21 +293,7 @@ public class LatheBlockEntity extends BlockEntity implements MenuProvider{
         }
 
         Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
-        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy()* recpieTime(pEntity);
-    }
-    private static boolean hasDrillInSlot(LatheBlockEntity pEntity,int slot){
-        Level level = pEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
-        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
-        if(pEntity.itemHandler.getStackInSlot(0).getItem() == recipe.get().getDrill().getItem()){
-            return true;
-        } else {
-            return false;
-        }
+        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy()* recipeTime(pEntity);
     }
 
     private void resetProgress() {

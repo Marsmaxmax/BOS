@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bos:aluminum_titanium_alloy_ingot"
+        "recipe": "bos:aluminum_titanium_alloy_ingot_from_lathe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "bos:aluminum_titanium_alloy_ingot"
+      "bos:aluminum_titanium_alloy_ingot_from_lathe"
     ]
   }
 }

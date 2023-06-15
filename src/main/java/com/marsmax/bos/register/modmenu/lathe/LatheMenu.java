@@ -29,7 +29,7 @@ public class LatheMenu extends AbstractContainerMenu {
 
 
     public LatheMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), id);
+        super(RegisterMenuTypes.LATHE_MENU.get(), id);
         checkContainerSize(inv, 3);
         blockEntity = (LatheBlockEntity) entity;
         this.level = inv.player.level;
@@ -58,10 +58,10 @@ public class LatheMenu extends AbstractContainerMenu {
 
     public int getScaledProgress() {
         int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 27; // This is the height in pixels of your arrow
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+        int maxProgress = this.data.get(2);
+        int progressArrowSize = 27;
+    
+        return  progress * progressArrowSize / maxProgress;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -118,7 +118,7 @@ public class LatheMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, RegisterBlock.ARC_FURNANCE.get());
+                player, RegisterBlock.LATHE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

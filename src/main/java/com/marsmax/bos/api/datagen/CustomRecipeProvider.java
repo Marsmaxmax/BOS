@@ -10,13 +10,43 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.util.datafix.fixes.ItemLoreFix;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class CustomRecipeProvider {
-    public static void arcBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pOutput, ItemLike pInput, ItemLike pInput2, String pGroup, int reqEnergy) {
-        ArcFurnanceRecipeBuilder.arcBlaster(pCategory, (pOutput), reqEnergy).requires(pInput).requires(pInput2).group(pGroup).save(pFinishedRecipeConsumer, Bos.bosrl(getSimpleRecipeName(pOutput)));
+    /**
+     * @param pFinishedRecipeConsumer
+     * @param pCategory
+     * @param pOutput
+     * @param pInput
+     * @param pInput2
+     * @param pGroup
+     * @param reqEnergy
+     * @param time
+     * 
+     * Creates a new bos:arc_blasting recipe
+     */
+    public static void arcBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pOutput, ItemLike pInput, ItemLike pInput2, String pGroup, int reqEnergy, int time) {
+        ArcFurnanceRecipeBuilder.arcBlaster(pCategory, (pOutput), reqEnergy, time).requires(pInput).requires(pInput2).group(pGroup).save(pFinishedRecipeConsumer, Bos.bosrl(getSimpleRecipeName(pOutput)+ "_from_arc_blasting"));
     }
+
+    /**
+     * @param pFinishedRecipeConsumer
+     * @param pCategory
+     * @param pOutput
+     * @param pInput
+     * @param pGroup
+     * @param reqEnergy
+     * @param time
+     * 
+     * Creates a new bos:lathe recipe
+     */
+    public static void lathe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pOutput, ItemLike pInput,  ItemLike pTool, String pGroup, int reqEnergy, int time) {
+        LatheRecipeBuilder.lathe(pCategory, (pOutput), reqEnergy, time).requires(pInput).requires(pTool).group(pGroup).save(pFinishedRecipeConsumer, Bos.bosrl(getSimpleRecipeName(pOutput) + "_from_lathe"));
+    }
+
+
     
     protected static String getHasName(ItemLike pItemLike) {
         return "has_" + getItemName(pItemLike);

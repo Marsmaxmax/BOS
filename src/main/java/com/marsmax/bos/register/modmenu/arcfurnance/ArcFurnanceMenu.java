@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ArcFurnanceMenu extends AbstractContainerMenu {
+public class ArcFurnanceMenu extends AbstractContainerMenu{
     public final ArcFurnanceBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
@@ -31,7 +31,7 @@ public class ArcFurnanceMenu extends AbstractContainerMenu {
     public ArcFurnanceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), id);
         checkContainerSize(inv, 3);
-        blockEntity = (ArcFurnanceBlockEntity) entity;
+        this.blockEntity = (ArcFurnanceBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
 
@@ -58,11 +58,12 @@ public class ArcFurnanceMenu extends AbstractContainerMenu {
 
     public int getScaledProgress() {
         int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 27; // This is the height in pixels of your arrow
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+        int maxProgress = this.data.get(2);
+        int progressArrowSize = 27;
+    
+        return  progress * progressArrowSize / maxProgress;
     }
+    
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.

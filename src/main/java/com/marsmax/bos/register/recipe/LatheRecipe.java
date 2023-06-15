@@ -27,15 +27,13 @@ public class LatheRecipe implements Recipe<SimpleContainer> {
     private final ItemStack result;
     private final NonNullList<Ingredient> ingredients;
     private final Integer energy;
-    private final ItemStack drill;
     private final Integer time;
 
-    public LatheRecipe(ResourceLocation id, ItemStack output, ItemStack drill, NonNullList<Ingredient> recipeItems, Integer energy, Integer time) {
+    public LatheRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, Integer energy, Integer time) {
         this.id = id;
         this.result = output;
         this.ingredients = recipeItems;
         this.energy = energy;
-        this.drill = drill;
         this.time = time;
     }
 
@@ -49,13 +47,20 @@ public class LatheRecipe implements Recipe<SimpleContainer> {
     public boolean matches(SimpleContainer pInv, Level pLevel) {
         if(pLevel.isClientSide) { return false; }
         final boolean match;
-        if(ingredients.get(1).test(pInv.getItem(1))){
-            match = true;
-            // System.out.println("test1" + match);
-        }else{
+
+        if(ingredients.get(0).test(pInv.getItem(0))) {
+            if(ingredients.get(1).test(pInv.getItem(1))){
+                match = true;
+                // System.out.println("test1" + match);
+            }else{
+                match = false;
+                // System.out.println("test2");
+            }
+        } else {
             match = false;
-            // System.out.println("test2");
+            // System.out.println("test3");
         }
+        // System.out.println("test4" + match);
         return match;
    }
 
@@ -97,10 +102,6 @@ public class LatheRecipe implements Recipe<SimpleContainer> {
         return this.time;
     }
 
-    public ItemStack getDrill(){
-        return this.drill.copy();
-    }
-
     public static class Type implements RecipeType<LatheRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
@@ -115,16 +116,15 @@ public class LatheRecipe implements Recipe<SimpleContainer> {
         @Override
         public LatheRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(pJson, "ingredients"));
-            ItemStack drill = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "drill"));
             Integer pEnergy = GsonHelper.getAsInt(pJson, "energy"); 
             Integer time = GsonHelper.getAsInt(pJson, "time"); 
             if (nonnulllist.isEmpty()) {
                throw new JsonParseException("No ingredients for bos:lathe recipe");
-            } else if (nonnulllist.size() > 1) {
+            } else if (nonnulllist.size() > 2) {
                throw new JsonParseException("Too many ingredients for bos:lathe recipe. The maximum is 1");
             } else {
                ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-               return new LatheRecipe(pRecipeId, itemstack, drill, nonnulllist, pEnergy, time);
+               return new LatheRecipe(pRecipeId, itemstack, nonnulllist, pEnergy, time);
             }
         }
 
@@ -152,8 +152,7 @@ public class LatheRecipe implements Recipe<SimpleContainer> {
             Integer pEnergy = buf.readInt();
             Integer pTime = buf.readInt();
             ItemStack output = buf.readItem();
-            ItemStack drill = buf.readItem();
-            return new LatheRecipe(id, output, drill, inputs, pEnergy, pTime);
+            return new LatheRecipe(id, output, inputs, pEnergy, pTime);
         }
 
         @Override
@@ -165,7 +164,6 @@ public class LatheRecipe implements Recipe<SimpleContainer> {
             }
             buf.writeInt(recipe.getEnergy());
             buf.writeInt(recipe.getTime());
-            buf.writeItemStack(recipe.getDrill(), false);
             buf.writeItemStack(recipe.getResultItem(null), false);
         }
     }

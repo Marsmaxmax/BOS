@@ -1,18 +1,17 @@
 {
-  "type": "bos:arc_blasting",
+  "type": "bos:lathe",
   "category": "misc",
-  "group": "test",
   "energy": 150,
-  "time": 150,
   "ingredients": [
     {
       "item": "bos:aluminium_ingot"
     },
     {
-      "item": "bos:titanium_ingot"
+      "item": "bos:aluminium_ingot"
     }
   ],
   "result": {
     "item": "bos:aluminum_titanium_alloy_ingot"
-  }
+  },
+  "time": 80
 }

@@ -37,7 +37,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -89,6 +89,8 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 78;
+    private static int recipeMaxProgress;
+
 
     public ArcFurnanceBlockEntity(BlockPos pos, BlockState state) {
         super(RegisterBlockEntities.ARC_FURNANCE.get(), pos, state);
@@ -98,6 +100,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
                 return switch (index) {
                     case 0 -> ArcFurnanceBlockEntity.this.progress;
                     case 1 -> ArcFurnanceBlockEntity.this.maxProgress;
+                    case 2 -> ArcFurnanceBlockEntity.this.recipeMaxProgress;
                     default -> 0;
                 };
             }
@@ -107,12 +110,13 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
                 switch (index) {
                     case 0 -> ArcFurnanceBlockEntity.this.progress = value;
                     case 1 -> ArcFurnanceBlockEntity.this.maxProgress = value;
+                    case 2 -> ArcFurnanceBlockEntity.this.recipeMaxProgress = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 3;
             }
         };
     }
@@ -209,7 +213,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             extractEnergy(pEntity);
             setChanged(level, pos, state);
 
-            if(pEntity.progress >= recpieTime(pEntity) ) {
+            if(pEntity.progress >= recipeTime(pEntity) ) {
                 craftItem(pEntity);
             }
         } else {
@@ -219,7 +223,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
 
     }
 
-    private static int recpieTime(ArcFurnanceBlockEntity pEntity){
+    public static int recipeTime(ArcFurnanceBlockEntity pEntity){
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
@@ -227,8 +231,8 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
         }
         Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
 
-        Integer initialtime = pEntity.maxProgress / 78;
-        Integer time = initialtime * recipe.get().getTime();
+        Integer time = recipe.get().getTime();
+        recipeMaxProgress = time;
         return time;
     }
 
@@ -289,7 +293,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
 
         Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
 
-        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy()* recpieTime(pEntity);
+        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy() * recipeTime(pEntity);
     }
 
     private void resetProgress() {

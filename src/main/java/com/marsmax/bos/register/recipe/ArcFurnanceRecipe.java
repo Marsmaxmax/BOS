@@ -35,7 +35,6 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
         this.ingredients = recipeItems;
         this.energy = energy;
         this.time = time;
-
     }
 
 
@@ -117,9 +116,6 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
         @Override
         public ArcFurnanceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(pJson, "ingredients"));
-
-                
-
             Integer pEnergy = GsonHelper.getAsInt(pJson, "energy"); 
             Integer time = GsonHelper.getAsInt(pJson, "time"); 
             if (nonnulllist.isEmpty()) {

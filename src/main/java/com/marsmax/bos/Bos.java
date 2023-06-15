@@ -10,6 +10,7 @@ import com.marsmax.bos.register.block.entity.RegisterBlockEntities;
 import com.marsmax.bos.register.item.RegisterItem;
 import com.marsmax.bos.register.modmenu.RegisterMenuTypes;
 import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceScreen;
+import com.marsmax.bos.register.modmenu.lathe.LatheScreen;
 import com.marsmax.bos.register.recipe.RegisterModRecipies;
 import com.marsmax.bos.util.networking.CustomMessages;
 
@@ -67,6 +68,7 @@ public class Bos {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
             MenuScreens.register(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), ArcFurnanceScreen::new);
+            MenuScreens.register(RegisterMenuTypes.LATHE_MENU.get(), LatheScreen::new);
         }
     }
 
