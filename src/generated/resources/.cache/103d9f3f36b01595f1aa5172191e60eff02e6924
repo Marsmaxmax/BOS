@@ -1,11 +1,11 @@
-// 1.19.4	2023-06-06T22:14:03.9609038	Registries
+// 1.19.4	2023-06-15T16:25:16.499783	Registries
 58b47c91fad63f5a7a497fe0759214b14768a60d data/bos/worldgen/configured_feature/bauxite_ore_overworld.json
 c611d65876a26ecde032127c0f0c5d6fc49e31cd data/bos/worldgen/configured_feature/dilithium_ore_overworld.json
 6beeb30b8a7af8af358702a586440888ac40efdc data/bos/worldgen/configured_feature/iridium_ore_overworld.json
 f969a0daf5ce97fc74ee74fba88f9c7d2f87ef2c data/bos/worldgen/configured_feature/test.json
 ad0ca7815de6747977156221040e007393a81a45 data/bos/worldgen/configured_feature/tin_ore_overworld.json
 011dff74e31c2f644b367870667b064228b0a5aa data/bos/worldgen/configured_feature/titanium_ore_overworld.json
-7b0328d7162d0d41c376357fdf0f4a6b18fffc75 data/bos/worldgen/placed_feature/bauxite_placed.json
+4e8ab92adf789afcc14c2acac237333c2e05a7c0 data/bos/worldgen/placed_feature/bauxite_placed.json
 7bab392c014d153b9189bc58869ca0122975bc4a data/bos/worldgen/placed_feature/dilithium_placed.json
 a1e17f272b2ebbbcdb898e347e6dde354e314eb8 data/bos/worldgen/placed_feature/iridium_placed.json
 635d054b436004fd222d08a0a71f746d95ddcb10 data/bos/worldgen/placed_feature/tin_placed.json

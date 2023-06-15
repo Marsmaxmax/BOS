@@ -41,11 +41,11 @@ public class ModPlacedFeatures {
                 ModOrePlacement.commonOrePlacement(16, // veins per chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
         register(context, DILITHIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DILITHIUM_ORE_OVERWORLD_KEY),
-                ModOrePlacement.commonOrePlacement(16, // veins per chunk
+                ModOrePlacement.commonOrePlacement(90, // veins per chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
-        register(context, BAUXITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BAUXITE_ORE_OVERWORLD_KEY),
-                ModOrePlacement.commonOrePlacement(16, // veins per chunk
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(60), VerticalAnchor.absolute(64))));
+        // register(context, BAUXITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BAUXITE_ORE_OVERWORLD_KEY),
+                // ModOrePlacement.commonOrePlacement(16, // veins per chunk
+                        // HeightRangePlacement.uniform(VerticalAnchor.belowTop(10), VerticalAnchor.belowTop(1))));
     }
 
 
