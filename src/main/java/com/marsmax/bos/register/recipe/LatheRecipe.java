@@ -22,14 +22,14 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
 
-public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
+public class LatheRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack result;
     private final NonNullList<Ingredient> ingredients;
     private final Integer energy;
     private final Integer time;
 
-    public ArcFurnanceRecipe(ResourceLocation id, ItemStack output,NonNullList<Ingredient> recipeItems, Integer energy, Integer time) {
+    public LatheRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, Integer energy, Integer time) {
         this.id = id;
         this.result = output;
         this.ingredients = recipeItems;
@@ -102,31 +102,29 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
         return this.time;
     }
 
-    public static class Type implements RecipeType<ArcFurnanceRecipe> {
+    public static class Type implements RecipeType<LatheRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "arc_blasting";
+        public static final String ID = "lathe";
     }
 
 
-    public static class Serializer implements RecipeSerializer<ArcFurnanceRecipe> {
+    public static class Serializer implements RecipeSerializer<LatheRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = bosrl("arc_blasting");
+        public static final ResourceLocation ID = bosrl("lathe");
 
         @Override
-        public ArcFurnanceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public LatheRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(pJson, "ingredients"));
             Integer pEnergy = GsonHelper.getAsInt(pJson, "energy"); 
             Integer time = GsonHelper.getAsInt(pJson, "time"); 
             if (nonnulllist.isEmpty()) {
-               throw new JsonParseException("No ingredients for bos:arc_blasting recipe");
+               throw new JsonParseException("No ingredients for bos:lathe recipe");
             } else if (nonnulllist.size() > 2) {
-               throw new JsonParseException("Too many ingredients for bos:arc_blasting recipe. The maximum is 2");
+               throw new JsonParseException("Too many ingredients for bos:lathe recipe. The maximum is 1");
             } else {
                ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-
-               return new ArcFurnanceRecipe(pRecipeId, itemstack, nonnulllist, pEnergy, time);
-
+               return new LatheRecipe(pRecipeId, itemstack, nonnulllist, pEnergy, time);
             }
         }
 
@@ -145,29 +143,25 @@ public class ArcFurnanceRecipe implements Recipe<SimpleContainer> {
          }
 
         @Override
-        public @Nullable ArcFurnanceRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public @Nullable LatheRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
    
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(buf));
             }
-
             Integer pEnergy = buf.readInt();
-            Integer time = buf.readInt();
+            Integer pTime = buf.readInt();
             ItemStack output = buf.readItem();
-            return new ArcFurnanceRecipe(id, output, inputs, pEnergy, time);
+            return new LatheRecipe(id, output, inputs, pEnergy, pTime);
         }
 
-
         @Override
-        public void toNetwork(FriendlyByteBuf buf, ArcFurnanceRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, LatheRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
 
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
             }
-
-
             buf.writeInt(recipe.getEnergy());
             buf.writeInt(recipe.getTime());
             buf.writeItemStack(recipe.getResultItem(null), false);

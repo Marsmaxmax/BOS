@@ -1,7 +1,7 @@
-package com.marsmax.bos.register.modmenu.arcfurnance;
+package com.marsmax.bos.register.modmenu.lathe;
 
 import com.marsmax.bos.register.block.RegisterBlock;
-import com.marsmax.bos.register.block.entity.ArcFurnanceBlockEntity;
+import com.marsmax.bos.register.block.entity.LatheBlockEntity;
 import com.marsmax.bos.register.modmenu.RegisterMenuTypes;
 
 import net.minecraft.network.FriendlyByteBuf;
@@ -18,20 +18,20 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ArcFurnanceMenu extends AbstractContainerMenu{
-    public final ArcFurnanceBlockEntity blockEntity;
+public class LatheMenu extends AbstractContainerMenu {
+    public final LatheBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public ArcFurnanceMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public LatheMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(3));
     }
 
 
-    public ArcFurnanceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(RegisterMenuTypes.ARC_FURNANCE_MENU.get(), id);
+    public LatheMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(RegisterMenuTypes.LATHE_MENU.get(), id);
         checkContainerSize(inv, 3);
-        this.blockEntity = (ArcFurnanceBlockEntity) entity;
+        blockEntity = (LatheBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
 
@@ -48,7 +48,7 @@ public class ArcFurnanceMenu extends AbstractContainerMenu{
         addDataSlots(data);
     }
 
-    public ArcFurnanceBlockEntity getBlockEntity() {
+    public LatheBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -63,7 +63,6 @@ public class ArcFurnanceMenu extends AbstractContainerMenu{
     
         return  progress * progressArrowSize / maxProgress;
     }
-    
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
@@ -119,7 +118,7 @@ public class ArcFurnanceMenu extends AbstractContainerMenu{
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, RegisterBlock.ARC_FURNANCE.get());
+                player, RegisterBlock.LATHE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

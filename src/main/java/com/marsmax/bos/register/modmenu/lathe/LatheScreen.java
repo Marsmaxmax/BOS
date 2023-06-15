@@ -1,4 +1,4 @@
-package com.marsmax.bos.register.modmenu.arcfurnance;
+package com.marsmax.bos.register.modmenu.lathe;
 
 import static com.marsmax.bos.Bos.bosrl;
 
@@ -15,12 +15,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class ArcFurnanceScreen extends AbstractContainerScreen<ArcFurnanceMenu> {
+public class LatheScreen extends AbstractContainerScreen<LatheMenu> {
 
     private static final ResourceLocation TEXTURE = bosrl("textures/gui/arc_furnance.png");
     private EnergyInfoArea energyInfoArea;
 
-    public ArcFurnanceScreen(ArcFurnanceMenu menu, Inventory inventory, Component component) {
+    public LatheScreen(LatheMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
     }
     @Override
@@ -62,6 +62,7 @@ public class ArcFurnanceScreen extends AbstractContainerScreen<ArcFurnanceMenu> 
 
         energyInfoArea.draw(pPoseStack);
     }
+
     private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
         if(menu.isCrafting()) {
             blit(pPoseStack, x + 32 , y + 31, 0, 168, 112, menu.getScaledProgress());

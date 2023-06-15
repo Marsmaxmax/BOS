@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import com.marsmax.bos.register.block.custom.ArcFurnanceBlock;
+import com.marsmax.bos.register.block.custom.LatheBlock;
 import com.marsmax.bos.register.item.RegisterItem;
-import com.marsmax.bos.register.modmenu.arcfurnance.ArcFurnanceMenu;
-import com.marsmax.bos.register.recipe.ArcFurnanceRecipe;
+import com.marsmax.bos.register.modmenu.lathe.LatheMenu;
+import com.marsmax.bos.register.recipe.LatheRecipe;
 import com.marsmax.bos.util.energy.CustomEnergyStorage;
 import com.marsmax.bos.util.networking.CustomMessages;
 import com.marsmax.bos.util.networking.packet.EnergySyncS2CPacket;
@@ -36,8 +36,9 @@ import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+public class LatheBlockEntity extends BlockEntity implements MenuProvider{
+
+    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -55,7 +56,6 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     };
 
 
-    
     private final CustomEnergyStorage ENERGY_STORAGE = new CustomEnergyStorage(60000, 256) {
         @Override
         public void onEnergyChanged() {
@@ -63,6 +63,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             CustomMessages.sendToClients(new EnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
+
     private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();
 
     public IEnergyStorage getEnergyStorage() {
@@ -91,16 +92,15 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     private int maxProgress = 78;
     private static int recipeMaxProgress;
 
-
-    public ArcFurnanceBlockEntity(BlockPos pos, BlockState state) {
-        super(RegisterBlockEntities.ARC_FURNANCE.get(), pos, state);
+    public LatheBlockEntity(BlockPos pos, BlockState state) {
+        super(RegisterBlockEntities.LATHE.get(), pos, state);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> ArcFurnanceBlockEntity.this.progress;
-                    case 1 -> ArcFurnanceBlockEntity.this.maxProgress;
-                    case 2 -> ArcFurnanceBlockEntity.this.recipeMaxProgress;
+                    case 0 -> LatheBlockEntity.this.progress;
+                    case 1 -> LatheBlockEntity.this.maxProgress;
+                    case 2 -> LatheBlockEntity.this.recipeMaxProgress;
                     default -> 0;
                 };
             }
@@ -108,9 +108,9 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             @Override
             public void set(int index, int value) {
                 switch (index) {
-                    case 0 -> ArcFurnanceBlockEntity.this.progress = value;
-                    case 1 -> ArcFurnanceBlockEntity.this.maxProgress = value;
-                    case 2 -> ArcFurnanceBlockEntity.this.recipeMaxProgress = value;
+                    case 0 -> LatheBlockEntity.this.progress = value;
+                    case 1 -> LatheBlockEntity.this.maxProgress = value;
+                    case 2 -> LatheBlockEntity.this.recipeMaxProgress = value;
                 }
             }
 
@@ -120,16 +120,17 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             }
         };
     }
-
+    //MENU
     @Override
     public Component getDisplayName() {
-        return Component.literal("Arc Furnance");
+        return Component.literal("Lathe");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        return new ArcFurnanceMenu(id, inventory, this, this.data);
+        return new LatheMenu(id, inventory, this, this.data);
+
     }
 
     @Override
@@ -143,7 +144,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
                 return lazyItemHandler.cast();
             }
             if(directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(ArcFurnanceBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(LatheBlock.FACING);
                 if(side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
                 }
@@ -175,8 +176,8 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putInt("arc_furnance.progress", this.progress);
-        nbt.putInt("arc_furnance.energy", ENERGY_STORAGE.getEnergyStored());
+        nbt.putInt("lathe.progress", this.progress);
+        nbt.putInt("lathe.energy", ENERGY_STORAGE.getEnergyStored());
 
         super.saveAdditional(nbt);
     }
@@ -185,8 +186,8 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("arc_furnance.progress");
-        ENERGY_STORAGE.setEnergy(nbt.getInt("arc_furnance.energy"));
+        progress = nbt.getInt("lathe.progress");
+        ENERGY_STORAGE.setEnergy(nbt.getInt("lathe.energy"));
     }
 
     public void drops() {
@@ -199,7 +200,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     //Crafting
-    public static void tick(Level level, BlockPos pos, BlockState state, ArcFurnanceBlockEntity pEntity) {
+    public static void tick(Level level, BlockPos pos, BlockState state, LatheBlockEntity pEntity) {
         if(level.isClientSide()) {
             return;
         }
@@ -213,7 +214,7 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
             extractEnergy(pEntity);
             setChanged(level, pos, state);
 
-            if(pEntity.progress >= recipeTime(pEntity) ) {
+            if(pEntity.progress >= recipeTime(pEntity)) {
                 craftItem(pEntity);
             }
         } else {
@@ -223,44 +224,45 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
 
     }
 
-    public static int recipeTime(ArcFurnanceBlockEntity pEntity){
+    public static int recipeTime(LatheBlockEntity pEntity){
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
 
         Integer time = recipe.get().getTime();
         recipeMaxProgress = time;
         return time;
     }
 
-    private static void craftItem(ArcFurnanceBlockEntity pEntity) {
+
+    private static void craftItem(LatheBlockEntity pEntity) {
 
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
 
         if(hasRecipe(pEntity)) {
-             pEntity.itemHandler.extractItem(0, 1, false);
-             pEntity.itemHandler.extractItem(1, 1, false);
+            pEntity.itemHandler.extractItem(0, 1, false);
+            pEntity.itemHandler.extractItem(1, 0, false);
             pEntity.itemHandler.setStackInSlot(2, new ItemStack(recipe.get().getResultItem(null).getItem(),
                 pEntity.itemHandler.getStackInSlot(2).getCount() + 1));
             pEntity.resetProgress();
         }
     }
-    private static boolean hasRecipe(ArcFurnanceBlockEntity entity) {
+    private static boolean hasRecipe(LatheBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
+        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
 
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(null));
@@ -268,32 +270,30 @@ public class ArcFurnanceBlockEntity extends BlockEntity implements MenuProvider 
 
     }
 
-    private static boolean hasGemInFirstSlot(ArcFurnanceBlockEntity pEntity) {
+    private static boolean hasGemInFirstSlot(LatheBlockEntity pEntity) {
         return pEntity.itemHandler.getStackInSlot(0).getItem() == RegisterItem.ALUMINIUM_INGOT.get();
     }
 
-    private static void extractEnergy(ArcFurnanceBlockEntity pEntity) {
+    private static void extractEnergy(LatheBlockEntity pEntity) {
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
-
+        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
         pEntity.ENERGY_STORAGE.extractEnergy(recipe.get().getEnergy(), false);
     }
 
-    private static boolean hasEnoughEnergy(ArcFurnanceBlockEntity pEntity) {
+    private static boolean hasEnoughEnergy(LatheBlockEntity pEntity) {
         Level level = pEntity.level;
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<ArcFurnanceRecipe> recipe = level.getRecipeManager().getRecipeFor(ArcFurnanceRecipe.Type.INSTANCE, inventory, level);
-
-        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy() * recipeTime(pEntity);
+        Optional<LatheRecipe> recipe = level.getRecipeManager().getRecipeFor(LatheRecipe.Type.INSTANCE, inventory, level);
+        return pEntity.ENERGY_STORAGE.getEnergyStored() >=  recipe.get().getEnergy()* recipeTime(pEntity);
     }
 
     private void resetProgress() {

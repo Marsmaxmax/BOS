@@ -1,6 +1,7 @@
 package com.marsmax.bos.register.block.custom.preset;
 
 import com.marsmax.bos.register.block.custom.ArcFurnanceBlock;
+import com.marsmax.bos.register.block.custom.LatheBlock;
 
 import javax.annotation.Nullable;
 
@@ -190,5 +191,9 @@ public class CustomBlockPresets {
 
     public static Block ArcFurnanceBlock() {
         return new ArcFurnanceBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f));
+    }
+
+    public static Block LatheBlock() {
+        return new LatheBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f));
     }
 }

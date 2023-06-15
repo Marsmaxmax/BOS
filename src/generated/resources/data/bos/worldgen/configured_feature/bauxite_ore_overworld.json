@@ -1,18 +1,40 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0.0,
-    "size": 9,
-    "targets": [
-      {
-        "state": {
-          "Name": "bos:bauxit_ore"
-        },
-        "target": {
-          "block": "minecraft:dirt",
-          "predicate_type": "minecraft:block_match"
-        }
+    "state_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "bos:bauxite_ore"
       }
-    ]
-  }
+    },
+    "size": 10,
+    "target": {
+      "type": "minecraft:target_block",
+      "block": "minecraft:dirt",
+      "state": {
+        "Properties": {
+          "snowy": "false"
+        }
+      },
+      "method": "predicate"
+    }
+  },
+  "decorators": [
+    {
+      "type": "minecraft:range",
+      "config": {
+        "min_top_offset": 0,
+        "max_top_offset": 10,
+        "maximum": 64
+      }
+    },
+    {
+      "type": "minecraft:count_noise_dependant",
+      "config": {
+        "count": 10,
+        "noise_level": 0.0,
+        "noise_factor": 0.0
+      }
+    }
+  ]
 }

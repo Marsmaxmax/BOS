@@ -13,6 +13,8 @@ public class RegisterModRecipies {
 
     public static final RegistryObject<RecipeSerializer<ArcFurnanceRecipe>> ARC_BLASTING =
         SERIALIZERS.register("arc_blasting", () -> ArcFurnanceRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<LatheRecipe>> LATHE =
+        SERIALIZERS.register("lathe", () -> LatheRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

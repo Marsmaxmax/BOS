@@ -25,6 +25,8 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> ARC_FURNANCE = registerBlock("arc_furnance", () -> ArcFurnanceBlock());
 
+    public static final RegistryObject<Block> LATHE = registerBlock("lathe", () -> LatheBlock());
+
 
     public static final RegistryObject<Block> IRIDIUM_ORE = registerBlock("iridium_ore", () -> OreBlock());
 

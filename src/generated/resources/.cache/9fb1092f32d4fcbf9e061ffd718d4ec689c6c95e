@@ -1,6 +1,8 @@
-// 1.19.4	2023-06-13T22:39:08.1853691	Recipes
-6192056728d6367b285ee3ce2ce120bc966a16be data/bos/advancements/recipes/misc/aluminum_titanium_alloy_ingot.json
-c4051a47f6f471850cd53d5e011ba4198b91c557 data/bos/recipes/aluminum_titanium_alloy_ingot.json
+// 1.19.4	2023-06-14T22:25:44.5250073	Recipes
+4d28caa9cd8a2749fb83edc503eedf147f595943 data/bos/advancements/recipes/misc/aluminum_titanium_alloy_ingot_from_arc_blasting.json
+68952d58eb6299438ac2a9ce47497d0a118b4ec4 data/bos/advancements/recipes/misc/aluminum_titanium_alloy_ingot_from_lathe.json
+87aefe35d092ffe45d2219514f26cfeea515e81b data/bos/recipes/aluminum_titanium_alloy_ingot_from_arc_blasting.json
+72b1666955d04e50d616118193aab0ece12cf68d data/bos/recipes/aluminum_titanium_alloy_ingot_from_lathe.json
 1fbe28eef0f955fb125ba26e264044e5d0863403 data/minecraft/advancements/recipes/misc/aluminium_block.json
 a57ce426c0ea6ee387aa4fd936b28b54589ced9b data/minecraft/advancements/recipes/misc/aluminium_ingot.json
 0b13ed0d544d29ced094f06ca52464098ab1d327 data/minecraft/advancements/recipes/misc/aluminium_ingot_from_blasting_bauxite_raw.json
