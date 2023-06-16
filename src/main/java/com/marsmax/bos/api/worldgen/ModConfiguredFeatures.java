@@ -65,7 +65,7 @@ public class ModConfiguredFeatures {
         register(context, TIN_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldTinOres, 9));
         register(context, IRIDIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldIridiumOres, 9));
         register(context, DILITHIUM_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldDilithiumOres, 9));
-        register(context, BAUXITE_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldBauxiteOres, 5, 0.0f));
+        register(context, BAUXITE_ORE_OVERWORLD_KEY, Feature.ORE, new OreConfiguration(overworldBauxiteOres, 12, 0.0f));
 
         register(context, TESTTREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(RegisterBlock.TEST_LOG.get()),
