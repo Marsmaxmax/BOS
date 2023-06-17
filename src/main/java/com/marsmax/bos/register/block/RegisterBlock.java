@@ -30,7 +30,7 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> IRIDIUM_ORE = registerBlock("iridium_ore", () -> OreBlock());
 
-    public static final RegistryObject<Block> DEEPSLATE_IRIDIUM_ORE = registerBlock("deepslate_iridium_ore", () -> OreBlock());
+    public static final RegistryObject<Block> IRIDIUM_ORE_DEEPSLATE = registerBlock("iridium_ore_deepslate", () -> OreBlock());
 
     public static final RegistryObject<Block> IRIDIUM_BLOCK = registerBlock("iridium_block", () -> MetalBlock());
 
@@ -39,7 +39,7 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", () -> OreBlock());
 
-    public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore", () -> OreBlock());
+    public static final RegistryObject<Block> TIN_ORE_DEEPSLATE = registerBlock("tin_ore_deepslate", () -> OreBlock());
 
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",  () -> MetalBlock());
 
@@ -48,7 +48,7 @@ public class RegisterBlock {
 
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", () -> OreBlock());
     
-    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock("deepslate_titanium_ore", () -> OreBlock());
+    public static final RegistryObject<Block> TITANIUM_ORE_DEEPSLATE = registerBlock("titanium_ore_deepslate", () -> OreBlock());
     
     public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block", () -> MetalBlock());
 

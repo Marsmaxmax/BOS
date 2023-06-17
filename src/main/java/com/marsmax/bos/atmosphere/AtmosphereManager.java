@@ -1,6 +1,7 @@
 package com.marsmax.bos.atmosphere;
 
 import com.marsmax.bos.api.atmosphere.IAtmosphereHandler;
+
 import net.minecraft.world.level.Level;
 
 public class AtmosphereManager implements IAtmosphereHandler {
@@ -17,7 +18,6 @@ public class AtmosphereManager implements IAtmosphereHandler {
 
     @Override
     public float getOxygenLevel(Level level) {
-
         return 0.21f; //Example: 21% Oxygen
     }
 
@@ -45,6 +45,6 @@ public class AtmosphereManager implements IAtmosphereHandler {
 
     @Override
     public void onTick(Level level) {
-
+        
     }
 }
