@@ -47,8 +47,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(RegisterBlock.MOON_BRICKS.get());
 
 
-        add(RegisterBlock.DEEPSLATE_IRIDIUM_ORE.get(),
-            (block) -> createOreDrop(RegisterBlock.DEEPSLATE_IRIDIUM_ORE.get(), RegisterItem.IRIDIUM_RAW.get()));
+        add(RegisterBlock.IRIDIUM_ORE_DEEPSLATE.get(),
+            (block) -> createOreDrop(RegisterBlock.IRIDIUM_ORE_DEEPSLATE.get(), RegisterItem.IRIDIUM_RAW.get()));
             add(RegisterBlock.IRIDIUM_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.IRIDIUM_ORE.get(), RegisterItem.IRIDIUM_RAW.get()));
 
@@ -57,13 +57,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         add(RegisterBlock.TIN_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.TIN_ORE.get(), RegisterItem.TIN_RAW.get()));
-            add(RegisterBlock.DEEPSLATE_TIN_ORE.get(),
-            (block) -> createOreDrop(RegisterBlock.DEEPSLATE_TIN_ORE.get(), RegisterItem.TIN_RAW.get()));
+            add(RegisterBlock.TIN_ORE_DEEPSLATE.get(),
+            (block) -> createOreDrop(RegisterBlock.TIN_ORE_DEEPSLATE.get(), RegisterItem.TIN_RAW.get()));
 
         add(RegisterBlock.TITANIUM_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.TITANIUM_ORE.get(), RegisterItem.TITANIUM_RAW.get()));
-        add(RegisterBlock.DEEPSLATE_TITANIUM_ORE.get(),
-            (block) -> createOreDrop(RegisterBlock.DEEPSLATE_TITANIUM_ORE.get(), RegisterItem.TITANIUM_RAW.get()));
+        add(RegisterBlock.TITANIUM_ORE_DEEPSLATE.get(),
+            (block) -> createOreDrop(RegisterBlock.TITANIUM_ORE_DEEPSLATE.get(), RegisterItem.TITANIUM_RAW.get()));
 
         add(RegisterBlock.BAUXIT_ORE.get(),
             (block) -> createOreDrop(RegisterBlock.BAUXIT_ORE.get(), RegisterItem.BAUXITE_RAW.get()));

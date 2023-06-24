@@ -56,10 +56,13 @@ public class RegisterCreativeTab {
 
             event.accept(RegisterBlock.BAUXIT_ORE);
             event.accept(RegisterBlock.TIN_ORE);
-            event.accept(RegisterBlock.TITANIUM_ORE);
-            event.accept(RegisterBlock.DEEPSLATE_TITANIUM_ORE);
             event.accept(RegisterBlock.IRIDIUM_ORE);
             event.accept(RegisterBlock.DILITHIUM_ORE);
+            event.accept(RegisterBlock.TITANIUM_ORE);
+
+            event.accept(RegisterBlock.TIN_ORE_DEEPSLATE);
+            event.accept(RegisterBlock.IRIDIUM_ORE_DEEPSLATE);
+            event.accept(RegisterBlock.TITANIUM_ORE_DEEPSLATE);
 
             event.accept(RegisterItem.BAUXITE_RAW);
             event.accept(RegisterItem.TIN_RAW);

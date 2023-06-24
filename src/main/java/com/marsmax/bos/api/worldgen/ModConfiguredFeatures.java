@@ -45,15 +45,15 @@ public class ModConfiguredFeatures {
 
         List<OreConfiguration.TargetBlockState> overworldTitaniumOres = List.of(
                 OreConfiguration.target(stoneReplaceables,RegisterBlock.TITANIUM_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, RegisterBlock.TITANIUM_ORE_DEEPSLATE.get().defaultBlockState()));
         
         List<OreConfiguration.TargetBlockState> overworldTinOres = List.of(
                 OreConfiguration.target(stoneReplaceables,RegisterBlock.TIN_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_TIN_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, RegisterBlock.TIN_ORE_DEEPSLATE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> overworldIridiumOres = List.of(
                 OreConfiguration.target(stoneReplaceables,RegisterBlock.IRIDIUM_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, RegisterBlock.DEEPSLATE_IRIDIUM_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, RegisterBlock.IRIDIUM_ORE_DEEPSLATE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> overworldDilithiumOres = List.of(
                 OreConfiguration.target(stoneReplaceables, RegisterBlock.DILITHIUM_ORE.get().defaultBlockState()));
